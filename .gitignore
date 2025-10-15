@@ -15,15 +15,15 @@
 /recipes/
 /vendor/
 
-/web/core/
-/web/modules/composer/
-/web/themes/composer/
-/web/profiles/composer/
-/web/libraries/
-/web/private/scripts/quicksilver
-/web/modules/contrib/
-/web/themes/contrib/
-/web/themes/dist/
+# /web/core/
+# /web/modules/composer/
+# /web/themes/composer/
+# /web/profiles/composer/
+# /web/libraries/
+# /web/private/scripts/quicksilver
+# /web/modules/contrib/
+# /web/themes/contrib/
+# /web/themes/dist/
 
 # Generally you should only ignore the root vendor directory. It's important
 # that core/assets/vendor and any other vendor directories within contrib or
@@ -39,21 +39,21 @@
 # additional .gitignore files, add all of the scaffold file
 # locations to the top-level .gitignore file, as shown below.
 # ------------------------------------------------------------------
-/web/.csslintrc
-/web/.editorconfig
-/web/.eslintignore
-/web/.eslintrc.json
-/web/.gitattributes
-/web/.ht.router.php
-/web/.htaccess
-/web/INSTALL.txt
-/web/README.txt
-/web/autoload.php
-/web/example.gitignore
-/web/index.php
-/web/robots.txt
-/web/update.php
-/web/web.config
-/web/modules/contrib/
-/web/libraries/
-web/themes/contrib/
+# /web/.csslintrc
+# /web/.editorconfig
+# /web/.eslintignore
+# /web/.eslintrc.json
+# /web/.gitattributes
+# /web/.ht.router.php
+# /web/.htaccess
+# /web/INSTALL.txt
+# /web/README.txt
+# /web/autoload.php
+# /web/example.gitignore
+# /web/index.php
+# /web/robots.txt
+# /web/update.php
+# /web/web.config
+# /web/modules/contrib/
+# /web/libraries/
+# web/themes/contrib/
