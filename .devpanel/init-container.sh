@@ -30,12 +30,3 @@ if [[ -n "$DB_SYNC_VOL" ]]; then
     rsync -av --delete --delete-excluded $APP_ROOT/ /var/www/build
   fi
 fi
-
-drush -n updb
-echo
-echo 'Run cron.'
-drush cron
-echo
-echo 'Populate caches.'
-drush cache:warm
-$APP_ROOT/.devpanel/warm
