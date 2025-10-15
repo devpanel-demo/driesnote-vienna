@@ -39,21 +39,21 @@ cd $WEB_ROOT && git submodule update --init --recursive
 if [[ $(mysql -h$DB_HOST -P$DB_PORT -u$DB_USER -p$DB_PASSWORD $DB_NAME -e "show tables;") == '' ]]; then
   echo "Site installing ..."
   cd $APP_ROOT
-  sudo chown -R $APACHE_RUN_USER:$APACHE_RUN_GROUP $STATIC_FILES_PATH
+  # sudo chown -R $APACHE_RUN_USER:$APACHE_RUN_GROUP $STATIC_FILES_PATH
   # Install
   drush si drupal_cms_installer installer_site_template_form.add_ons=byte --account-name=devpanel --account-pass=devpanel --site-name="Driesnote Vienna 2025 Demo" --db-url=mysql://$DB_USER:$DB_PASSWORD@$DB_HOST:$DB_PORT/$DB_NAME -y
   # Install byte
   #ddev install-byte
 
   # Composer stuff
-  composer require 'drupal/ai:1.2.x-dev@dev' \
-  'drupal/ai_agents:1.2.x-dev@dev' \
-  'drupal/ai_provider_openai:1.2.x-dev@dev' \
-  'drupal/ai_simple_pdf_to_text:^1.0@alpha' \
-  'drupal/ai_vdb_provider_milvus:1.1.x-dev@dev' \
-  'drupal/page_cache_exclusion:^1.0' \
-  'drupal/pexels_ai:^1.0@alpha' \
-  'jfcherng/php-diff:^6.0'
+  # composer require 'drupal/ai:1.2.x-dev@dev' \
+  # 'drupal/ai_agents:1.2.x-dev@dev' \
+  # 'drupal/ai_provider_openai:1.2.x-dev@dev' \
+  # 'drupal/ai_simple_pdf_to_text:^1.0@alpha' \
+  # 'drupal/ai_vdb_provider_milvus:1.1.x-dev@dev' \
+  # 'drupal/page_cache_exclusion:^1.0' \
+  # 'drupal/pexels_ai:^1.0@alpha' \
+  # 'jfcherng/php-diff:^6.0'
 
   drush cr
   # Install the AI stuff.
