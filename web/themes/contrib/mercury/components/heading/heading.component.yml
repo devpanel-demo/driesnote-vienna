@@ -1,0 +1,81 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Heading
+group: Base
+status: stable
+description: Text wrapped in a heading tag
+props:
+  type: object
+  properties:
+    heading_text:
+      type: string
+      title: Heading Text
+      description: The heading text.
+      default: 'Enter title'
+      examples: 
+        - One Giant Leap for Open Source
+    level:
+      type: number
+      title: Heading Level
+      description: The heading level (h1-h6).
+      enum: [1,2,3,4,5,6]
+      default: 2
+      examples: 
+        - 2
+    font_size:
+      type: string
+      title: Font Size
+      description: Select Font Size
+      enum:
+        - default
+        - heading-responsive-8xl
+        - heading-responsive-7xl
+        - heading-responsive-6xl
+        - heading-responsive-5xl
+        - heading-responsive-4xl
+        - heading-responsive-3xl
+        - heading-responsive-2xl
+        - heading-responsive-xl
+      meta:enum:
+        default: Default
+        heading-responsive-8xl: 8xl 72px
+        heading-responsive-7xl: 7xl 96px
+        heading-responsive-6xl: 6xl 60px
+        heading-responsive-5xl: 5xl 48px
+        heading-responsive-4xl: 4xl 40px
+        heading-responsive-3xl: 3xl 32px
+        heading-responsive-2xl: 2xl 24px
+        heading-responsive-xl: xl 20px
+      default: default
+      examples: 
+        - default
+    font_color:
+      type: string
+      title: Font Color
+      description: Select Font Color
+      enum:
+        - text-inherit
+        - hg:text-body-text-dark 
+        - hg:text-white
+        - hg:text-brand
+      meta:enum:
+        text-inherit: Default
+        hg:text-body-text-dark: Dark
+        hg:text-white: Light
+        hg:text-brand: Brand
+      default: text-inherit
+      examples: 
+        - text-inherit
+    align:
+      type: string
+      title: Text Alignment
+      description: The heading alignment.
+      enum:
+        - left
+        - center
+        - right
+      default: left
+      examples: 
+        - left
+    url:
+      type: string
+      title: Link

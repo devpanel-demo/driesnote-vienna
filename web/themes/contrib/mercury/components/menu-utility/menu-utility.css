@@ -1,0 +1,32 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer components {
+  .utility-menu {
+    .utility-menu--item-text {
+      font-size: var(--hg-text-sm, 0.875rem);
+      line-height: var(--tw-leading, var(--hg-text-sm--line-height, 1.5));
+      --tw-leading: var(--hg-leading-tight, 1.25);
+      line-height: var(--hg-leading-tight, 1.25);
+      &:hover {
+        @media (hover: hover) {
+          text-decoration-line: underline;
+        }
+      }
+      color: var(--hgc-menu-link-color);
+      &:hover, &:focus {
+        color: var(--hgc-menu-link-color-hover);
+      }
+    }
+  }
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-leading: initial;
+    }
+  }
+}

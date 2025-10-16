@@ -1,0 +1,21 @@
+{% set classes = [
+    'hero-fullwidth',
+    'media-last' in layout ? 'hg:flex-col-reverse' : 'hg:flex-col',
+  ]
+%}
+
+<section class="{{ classes|join(' ') }}">
+  <div class="hero-fullwidth--media hg:aspect-4/3 hg:sm:aspect-2/1 hg:overflow-hidden">
+  {% block hero_media %}
+    <img src="{{ media.src }}" alt="{{ media.alt }}" class="hg:w-full hg:h-full hg:object-cover"/>
+  {% endblock %}
+  </div>
+  <div class="hero-fullwidth--content">
+  {% block hero_content %}
+    {{ include('mercury:heading', {
+      url: 'No URL',
+      font_size: font_size|default('default'),
+    }) }}
+  {% endblock %}
+  </div>
+</section>

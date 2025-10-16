@@ -1,0 +1,5 @@
+pexels_ai.settings:
+  title: "Pexels AI Config"
+  description: "Setup Pexels AI"
+  route_name: pexels_ai.settings
+  parent: system.admin_config_services

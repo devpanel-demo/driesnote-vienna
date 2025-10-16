@@ -1,0 +1,141 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Icon Tile
+description: A component showing its children in a grid on desktop and in a horizontally-scrolling line on mobile.
+group: Components
+props:
+  type: object
+  properties:
+    tile_size:
+      type: string
+      title: Tile aspect ratio
+      description: Set aspect ratio of the tile.
+      enum:
+        - hg:aspect-none
+        - hg:aspect-square
+        - hg:aspect-4/3
+        - hg:aspect-16/9
+      meta:enum:
+        hg:aspect-none: Fit content
+        hg:aspect-square: Square
+        hg:aspect-4/3: Rectangle 4 × 3
+        hg:aspect-16/9: Rectangle 16 × 9
+      default:
+        - 'hg:aspect-none'
+      examples:
+        - 'hg:aspect-none'
+    flex_align:
+      type: string
+      title: Alignment
+      description: Set alignment of the tile.
+      enum:
+        - start
+        - center
+        - end
+        - between
+      default:
+        - 'center'
+      examples:
+        - 'center'
+    border:
+      type: boolean
+      title: Border
+      description: Add a border to the tile.
+      default: TRUE
+      examples:
+        - TRUE
+    border_radius:
+      type: string
+      title: Border radius
+      description: Set rounded corner radius
+      enum:
+        - hg:rounded-none
+        - hg:rounded-sm
+        - hg:rounded-xl hg:md:rounded-2xl
+        - hg:rounded-[24px] hg:md:rounded-[32px]
+      meta:enum:
+        hg:rounded-none: None
+        hg:rounded-sm: Small
+        hg:rounded-xl hg:md:rounded-2xl: Large
+        hg:rounded-[24px] hg:md:rounded-[32px]: Extra-Large
+      default: hg:rounded-sm
+      examples:
+        - 'hg:rounded-sm'
+    background:
+      type: boolean
+      title: Background
+      description: Add a background to the tile.
+      default: FALSE
+      examples:
+        -  FALSE
+    text:
+      type: string
+      title: Heading text
+      description: Add heading text to the tile.
+      examples:
+        - Heading
+    description:
+      type: string
+      title: Paragraph text
+      description: Add paragraph text to the tile.
+      contentMediaType: text/html
+      x-formatting-context: block
+      examples:
+        - '<p>This is placeholder text.</p>'
+    text_align:
+      type: string
+      title: Text alignment
+      description: Set text alignment of the tile.
+      enum:
+        - hg:text-start
+        - hg:text-center
+        - hg:text-end
+      meta:enum:
+        hg:text-start: Left
+        hg:text-center: Center
+        hg:text-end: Right
+      default:
+        - 'hg:text-center'
+      examples:
+        - 'hg:text-center'
+    url:
+      type: string
+      title: Link
+    icon:
+      type: string
+      title: Icon name (exclude prefix)
+      description: Set icon name (exclude prefix).
+      default: 'rocket'
+      examples:
+        - 'rocket'
+    icon_size:
+      type: string
+      title: Icon size
+      description: Set icon size.
+      enum:
+        - hg:text-2xl
+        - hg:text-4xl
+        - hg:text-6xl
+      meta:enum:
+        hg:text-2xl: Small
+        hg:text-4xl: Regular
+        hg:text-6xl: Large
+      default:
+        - 'hg:text-4xl'
+      examples:
+        - 'hg:text-4xl'
+    icon_align:
+      type: string
+      title: Icon alignment
+      description: Set icon alignment.
+      enum:
+        - hg:justify-start
+        - hg:justify-end
+        - hg:justify-center
+      meta:enum:
+        hg:justify-start: Left
+        hg:justify-end: Right
+        hg:justify-center: Center
+      default:
+        - 'hg:justify-center'
+      examples:
+        - 'hg:justify-center'

@@ -1,0 +1,82 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Hero billboard
+description: Hero with stacked slots for media and content.
+group: Layout
+props:
+  type: object
+  properties:
+    height:
+      type: string
+      title: Hero height
+      enum:
+        - hg:h-dvh
+        - hg:h-3/4 hg:min-h-[500px] hg:md:max-h-[600px] hg:xl:max-h-[800px]
+        - hg:h-1/2 hg:md:min-h-[400px] hg:md:max-h-[450px] hg:xl:max-h-[600px]
+      meta:enum:
+        hg:h-dvh: Full screen
+        hg:h-3/4 hg:min-h-[500px] hg:md:max-h-[600px] hg:xl:max-h-[800px]: Large
+        hg:h-1/2 hg:md:min-h-[400px] hg:md:max-h-[450px] hg:xl:max-h-[600px]: Ribbon
+      default: hg:h-dvh
+      examples:
+        - hg:h-dvh
+    flex_position:
+      type: string
+      title: Content position
+      enum:
+        - hg:justify-start
+        - hg:justify-center-safe
+        - hg:justify-end
+        - hero-center
+      meta:enum:
+        hg:justify-start: Top/left
+        hg:justify-center-safe: Center/left
+        hg:justify-end: Bottom/left
+        hero-center: Center/Center
+      default: hg:justify-center-safe
+      examples:
+        - hg:justify-center-safe
+    overlay_opacity:
+      type: string
+      title: Overlay opacity
+      description: Set overlay opacity
+      enum:
+        - hg:bg-black/0
+        - hg:bg-black/20
+        - hg:bg-black/40
+        - hg:bg-black/60
+        - hg:bg-black/75
+      meta:enum:
+        hg:bg-black/0: 0%
+        hg:bg-black/20: 20%
+        hg:bg-black/40: 40%
+        hg:bg-black/60: 60%
+        hg:bg-black/75: 75%
+      default: hg:bg-black/40
+      examples:
+        - hg:bg-black/40
+    object_position:
+      type: string
+      title: Background image position
+      enum:
+        - hg:object-top
+        - hg:object-center
+        - hg:object-bottom
+      meta:enum:
+        hg:object-top: Top
+        hg:object-center: Center
+        hg:object-bottom: Bottom
+      default: hg:object-center
+      examples:
+        - hg:object-center
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Background image
+      description: Media image for the hero.
+      type: object
+      examples:
+        - src: 'assets/boliviainteligente-QPu42AAJ5ZY-unsplash.jpg'
+          alt: 'Placeholder image'
+
+slots:
+  hero_slot:
+    title: 'Hero content'

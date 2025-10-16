@@ -1,0 +1,72 @@
+phosphor:
+  enabled: true
+  label: Phosphor
+  description: 'A flexible icon family for interfaces, diagrams, presentations — whatever, really.'
+  links:
+    - https://phosphoricons.com
+    - https://github.com/phosphor-icons/core
+  version: 2.1.1
+  license:
+    name: MIT
+    url: https://github.com/phosphor-icons/core/blob/main/LICENSE
+    gpl-compatible: true
+  extractor: svg
+  config:
+    sources:
+      - icons/phosphor/{icon_id}.svg
+  settings:
+    size:
+      title: 'Size'
+      type: 'integer'
+      default: 32
+      multipleOf: 4
+      minimum: 16
+      maximum: 96
+    color:
+      title: Color
+      type: string
+      format: color
+    alt:
+      title: 'Alt text'
+      type: 'string'
+      description: 'Accessibility alternative text, leave empty for decorative icon.'
+  template: >-
+    <i class="ph ph-{{ icon_id }}"></i>
+
+social:
+  enabled: true
+  label: 'Social'
+  description: 'A set of social media icons for the Mercury theme.'
+  version: 1.0.0
+  extractor: svg
+  config:
+    sources:
+      - 'icons/social/*.svg'
+  settings:
+    size:
+      title: Size
+      type: integer
+      default: 32
+    color:
+      title: Color
+      type: string
+      format: color
+    alt:
+      title: Alt text
+      type: string
+      description: 'Accessibility alternative text; leave empty for decorative icons.'
+  template: >-
+    <svg xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-{{ icon_id|clean_class }}"
+      height="{{ size|default(32) }}"
+      width="{{ size|default(32) }}"
+      fill="{{ color|default('currentColor') }}"
+      {% if alt is empty %}
+        aria-hidden="true"
+        focusable="false"
+      {% else %}
+        aria-label="{{ alt }}"
+      {% endif %}
+    >
+      <use href="{{ source }}#{{ icon_id }}"/>
+    </svg>

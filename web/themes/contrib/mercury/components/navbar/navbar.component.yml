@@ -1,0 +1,30 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Navbar
+description: Navigation bar with branding, a menu, and miscellaneous calls to action
+group: Navigation
+props:
+  type: object
+  properties:
+    menu_align:
+      title: Menu alignment
+      type: string
+      enum:
+        - left
+        - center
+        - right
+      default: center
+      examples:
+        - center
+slots:
+  logo:
+    title: Site Logo
+  navigation:
+    title: Navigation menu
+  links:
+    title: Misc. CTAs
+
+libraryOverrides:
+  js:
+    navbar.js:
+      attributes:
+        type: module

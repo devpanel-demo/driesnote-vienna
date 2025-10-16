@@ -1,0 +1,117 @@
+{# Base section classes for layout and positioning #}
+{% set classes = classes|default([])|merge([
+    'section',
+    'hg:relative',
+    'hg:flex',
+    'hg:flex-col',
+    'hg:items-stretch',
+    'hg:mx-auto',
+])|filter(v => v is not empty) %}
+
+{# Grid column configurations for different layout ratios #}
+{% set grid_class = {
+  '100':         'hg:grid-cols-1',
+  '50-50':       'hg:md:grid-cols-2',
+  '33-33-33':    'hg:md:grid-cols-3',
+  '75-25':       'hg:md:grid-cols-[minmax(0,3fr)_minmax(0,1fr)]',
+  '25-75':       'hg:md:grid-cols-[minmax(0,1fr)_minmax(0,3fr)]',
+  '67-33':       'hg:md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]',
+  '33-67':       'hg:md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]',
+  '50-25-25':    'hg:md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]',
+  '25-25-50':    'hg:md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,2fr)]',
+  '25-25-25-25': 'hg:grid-cols-1 hg:sm:grid-cols-2 hg:lg:grid-cols-4',
+}[columns] ?? 'hg:grid-cols-1' %}
+
+{# Top margin spacing options with responsive breakpoints #}
+{% set margin_block_map = {
+  '0': 'hg:mt-0',
+  '8': 'hg:mt-2',
+  '20': 'hg:mt-5',
+  '32': 'hg:mt-6 hg:md:mt-7 hg:xl:mt-8',
+  '48': 'hg:mt-8 hg:md:mt-10 hg:xl:mt-12',
+  '64': 'hg:mt-10 hg:md:mt-13 hg:xl:mt-16',
+  '96': 'hg:mt-16 hg:md:mt-20 hg:xl:mt-24',
+  '128': 'hg:mt-20 hg:md:mt-24 hg:xl:mt-32',
+} %}
+
+{# Bottom margin spacing options with responsive breakpoints #}
+{% set margin_block_end_map = {
+  '0': 'hg:mb-0',
+  '8': 'hg:mb-2',
+  '20': 'hg:mb-5',
+  '32': 'hg:mb-6 hg:md:mb-7 hg:xl:mb-8',
+  '48': 'hg:mb-8 hg:md:mb-10 hg:xl:mb-12',
+  '64': 'hg:mb-10 hg:md:mb-13 hg:xl:mb-16',
+  '96': 'hg:mb-16 hg:md:mb-20 hg:xl:mb-24',
+  '128': 'hg:mb-20 hg:md:mb-24 hg:xl:mb-32',
+} %}
+
+{# Top padding spacing options with responsive breakpoints #}
+{% set padding_block_start_map = {
+  '0': 'hg:pt-0',
+  '16': 'hg:pt-4',
+  '32': 'hg:pt-6 hg:md:pt-7 hg:xl:pt-8',
+  '64': 'hg:pt-10 hg:md:pt-13 hg:xl:pt-16',
+} %}
+
+{# Bottom padding spacing options with responsive breakpoints #}
+{% set padding_block_end_map = {
+  '0': 'hg:pb-0',
+  '16': 'hg:pb-4',
+  '32': 'hg:pb-6 hg:md:pb-7 hg:xl:pb-8',
+  '64': 'hg:pb-10 hg:md:pb-13 hg:xl:pb-16',
+} %}
+
+{# Apply spacing classes based on component variables #}
+{% set margin_block_start = margin_block_map[margin_block_start] ?? '' %}
+{% set margin_block_end = margin_block_end_map[margin_block_end] ?? '' %}
+{% set padding_block_start = padding_block_start_map[padding_block_start] ?? '' %}
+{% set padding_block_end = padding_block_end_map[padding_block_end] ?? '' %}
+{# Background classes for full-width background positioning #}
+{% set bgd_class = background_color ~ ' hg:absolute hg:w-screen hg:inset-0 hg:z-[-1] hg:ms-[-50vw] hg:left-[50%]' %}
+
+<section class="{{ classes|join(' ') }} {{ margin_block_start }} {{ margin_block_end }} {{ padding_block_start }} {{ padding_block_end }} hg:mx-auto {{ width }}">
+
+  {# if there is background media #}
+  {% if background_media is not empty and background_media.src is not empty %}
+    {% block background_media_block %}
+      <div class="section--background-media hg:absolute hg:w-screen hg:inset-0 hg:z-[-1] hg:ms-[-50vw] hg:left-[50%]">
+        <img src="{{ background_media.src }}" alt="{{ background_media.alt }}" class="hg:w-full hg:h-full hg:object-cover"/>
+      </div>
+    {% endblock %}
+  {% endif %}
+
+  {# if there is background color (can work with or without background media) #}
+  {% if background_color is not empty and background_color != 'hg:bg-none' %}
+    <div class="{{ bgd_class }}"></div>
+  {% endif %}
+
+  {% if section_header %}
+    {% set header_content %}
+      {% block header_slot %}
+      {% endblock %}
+    {% endset %}
+    {% if header_content|trim is not empty %}
+      <header class="section--header hg:mb-6 hg:md:mb-8 hg:xl:mb-10">
+        {{ header_content }}
+      </header>
+    {% endif %}
+  {% endif %}
+
+  <div class="section--main hg:grid hg:gap-4 hg:md:gap-6 hg:xl:gap-8 hg:w-full {{ grid_class }}">
+    {% block main_slot %}
+    {% endblock %}
+  </div>
+
+  {% if section_footer %}
+    {% set footer_content %}
+      {% block footer_slot %}
+      {% endblock %}
+    {% endset %}
+    {% if footer_content|trim is not empty %}
+      <footer class="section--footer hg:mt-6 hg:md:mt-8 hg:xl:mt-10">
+        {{ footer_content }}
+      </footer>
+    {% endif %}
+  {% endif %}
+</section>

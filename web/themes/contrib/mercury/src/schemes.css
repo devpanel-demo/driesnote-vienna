@@ -1,0 +1,558 @@
+@layer components;
+
+.mercury-scheme--vanilla-light {
+  /* Vanilla Light takes its main Tailwind variables (--hg- prefix) from the
+  default values in main.css. */
+  --hgc-menu-link-color:       #1f2937;
+  --hgc-menu-link-color-hover: #1d4ed8;
+
+  --hg-color-body-bg:       var(--hg-color-white);
+  --hg-color-body-text:     var(--hg-color-black);
+  --hg-color-body-text-dark:     var(--hg-color-body-text);
+  --hg-color-body-text-light:     var(--hg-color-white);
+
+  --hgc-color-body-text:     var(--hg-color-gray-dark);
+  --hgc-hyperlink-color:       #155DFC;
+  --hgc-hyperlink-color-hover: #193CB8;
+
+  --hgc-tile-logo-bg: var(--hg-color-brand-light);
+  --hgc-footer-border: var(--hg-color-gray-light);
+
+  /* Breadcrumb. */
+  --hgc-color-breadcrumb-caret: var(--hg-color-gray);
+  --hgc-color-breadcrumb-dots: var(--hg-color-gray);
+  --hgc-color-breadcrumb-home: var(--hg-color-gray);
+  --hgc-color-breadcrumb-home-hover: var(--hg-color-brand);
+  --hgc-color-breadcrumb: var(--hg-color-gray);
+  --hgc-color-breadcrumb-hover: var(--hg-color-brand);
+  --hgc-color-breadcrumb-active: var(--hg-color-gray-dark);
+  /* Collapsible Section. */
+  --hgc-collapsible-content-bg: #eeeeee;
+  --hgc-collapsible-title-bg: var(--hg-color-gray-lightest);
+  --hgc-collapsible-title-bg-hover: var(--hg-color-gray-light);
+  --hgc-collapsible-title-bg-active: var(--hg-color-gray-lightest);
+  --hgc-collapsible-content-text: var(--hg-color-black);
+  --hgc-collapsible-border-color: var(--hg-color-black);
+  /* Style Cards. */
+  --hgc-card-bg: transparent;
+  --hgc-card-bg-hover: transparent;
+  --hgc-card-framed-bg: transparent;
+  --hgc-card-framed-bg-hover: transparent;
+  --hgc-card-featured-bg: transparent;
+  --hgc-card-featured-bg-hover: transparent;
+  --hgc-card-shadow-color: rgb(0 0 0 / 0.1);
+  --hgc-card-shadow-color-hover: rgb(0 0 0 / 0.4);
+  /* Style Pricing Cards. */
+  --hgc-card-price-bg: var(--hg-color-white);
+  --hgc-card-price-border: var(--hg-color-slate-300);
+  --hgc-card-price-border-hover: var(--hg-color-blue-400);
+  --hgc-card-price-title: var(--hg-color-blue-600);
+  --hgc-card-price-text: var(--hg-color-body-text);
+  --hgc-card-price-divider: var(--hg-color-slate-300);
+  --hgc-card-price-price: var(--hg-color-blue-600);
+  --hgc-card-price-text-promoted: var(--hg-color-white);
+  --hgc-card-price-price-promoted: var(--hg-color-white);
+  --hgc-card-price-bg-promoted: var(--hg-color-blue-600);
+  --hgc-card-price-bg-promoted-hover: var(--hg-color-blue-800);
+  --hgc-card-price-border-promoted: var(--hg-color-blue-600);
+  --hgc-card-price-border-promoted-hover: var(--hg-color-blue-800);
+  /* Style Buttons and Badges. */
+  /* Primary */
+  --hgc-btn-bg: var(--hg-color-brand);
+  --hgc-btn-border: var(--hg-color-brand);
+  --hgc-btn-label: var(--hg-color-white);
+  --hgc-btn-bg-hover: var(--hg-color-brand-dark);
+  --hgc-btn-border-hover: var(--hg-color-brand);
+  --hgc-btn-label-hover: var(--hg-color-white);
+  --hgc-btn-bg-disabled: var(--hg-color-gray-light);
+  --hgc-btn-border-disabled: var(--hg-color-gray-light);
+  --hgc-btn-label-disabled: rgb(from var(--hg-color-gray) r g b / 50%);
+  /* Secondary */
+  --hgc-btn-secondary-bg: transparent;
+  --hgc-btn-secondary-border: var(--hg-color-brand);
+  --hgc-btn-secondary-label: var(--hg-color-brand);
+  --hgc-btn-secondary-bg-hover: var(--hg-color-brand-light);
+  --hgc-btn-secondary-border-hover: var(--hg-color-brand);
+  --hgc-btn-secondary-label-hover: var(--hg-color-gray-dark);
+  --hgc-btn-secondary-bg-disabled: transparent;
+  --hgc-btn-secondary-border-disabled: var(--hg-color-gray-light);
+  --hgc-btn-secondary-label-disabled: rgb(from var(--hg-color-gray) r g b / 50%);
+  /* Negative */
+  --hgc-btn-negative-bg: var(--hg-color-white);
+  --hgc-btn-negative-border: var(--hg-color-white);
+  --hgc-btn-negative-label: var(--hg-color-brand);
+  --hgc-btn-negative-bg-hover: var(--hg-color-brand-light);
+  --hgc-btn-negative-border-hover: var(--hg-color-white);
+  --hgc-btn-negative-label-hover: var(--hg-color-brand);
+  --hgc-btn-negative-bg-disabled: var(--hg-color-gray-light);
+  --hgc-btn-negative-border-disabled: var(--hg-color-gray-light);
+  --hgc-btn-negative-label-disabled: rgb(from var(--hg-color-gray) r g b / 50%);
+  /* Style testimonial cards. */
+  --hgc-card-testimonial-bg: transparent;
+  --hgc-card-testimonial-text: var(--hg-color-body-text);
+  --hgc-card-testimonial-cite: var(--hg-color-body-text);
+  --hgc-card-testimonial-cite-url: var(--hg-color-body-text);
+  /* Style basic webform. */
+  --hgc-webform-label: var(--hg-color-gray-dark);
+  --hgc-webform-label-focus: var(--hg-color-brand-dark);
+  --hgc-webform-radio-label: var(--hg-color-black);
+  --hgc-webform-placeholder: var(--hg-color-gray);
+  --hgc-webform-description: var(--hg-color-gray);
+  --hgc-webform-text: var(--hg-color-black);
+  --hgc-webform-border: var(--hg-color-gray);
+  --hgc-webform-focus-border: var(--hg-color-brand);
+  --hgc-webform-error-text: var(--hg-color-negative);
+  --hgc-webform-button-fill: var(--hg-color-brand);
+  --hgc-webform-button-border: var(--hg-color-brand);
+  --hgc-webform-button-fill-hover: var(--hg-color-brand-dark);
+  --hgc-webform-button-border-hover: var(--hg-color-brand);
+  --hgc-webform-button-text: var(--hg-color-white);
+  --hgc-webform-button-text-hover: var(--hg-color-white);
+  --hgc-webform-button-radius: 6px;
+  --hgc-webform-radio-checkbox-bg: var(--hg-color-white);
+  --hgc-webform-radio-checkbox-border: var(--hg-color-gray);
+  --hgc-webform-radio-checkbox-bg-checked: var(--hg-color-white);
+  --hgc-webform-radio-checkbox-border-checked: var(--hg-color-brand);
+  --hgc-webform-radio-checkbox-bg-center: var(--hg-color-brand);
+  /* Dialogs. */
+  --hgc-dialog-background: var(--hg-color-white);
+  --hgc-dialog-border: var(--hg-color-brand);
+  --hgc-dialog-text: var(--hg-color-body-text);
+  --hgc-dialog-close: var(--hg-color-brand);
+  /* Tile Icon. */
+  --hgc-tile-border: var(--hg-color-gray-light);
+  --hgc-tile-border-hover: var(--hg-color-brand);
+  --hgc-tile-bg: var(--hg-color-gray-lightest);
+  --hgc-tile-bg-hover: var(--hg-color-brand-light);
+  --hgc-tile-icon-color: var(--hg-color-brand);
+  --hgc-tile-icon-color-hover: var(--hg-color-brand-dark);
+  --hgc-tile-icon-text-color: var(--hgc-color-body-text);
+}
+
+.mercury-scheme--vanilla-dark {
+  --hgc-hyperlink-color:       #51A2FF;
+  --hgc-hyperlink-color-hover: #BEDBFF;
+
+  --hgc-tile-logo-bg: var(--hg-color-brand);
+  --hgc-footer-border: var(--hg-color-gray-dark);
+
+  --hg-color-body-bg:       var(--hg-color-black);
+  --hg-color-body-text:     var(--hg-color-white);
+  --hg-color-body-text-dark:     var(--hg-color-body-text);
+  --hg-color-body-text-light:     var(--hg-color-white);
+
+  /* Breadcrumb. */
+  --hgc-color-breadcrumb-caret: var(--hg-color-gray);
+  --hgc-color-breadcrumb-dots: var(--hg-color-gray);
+  --hgc-color-breadcrumb-home: var(--hg-color-gray);
+  --hgc-color-breadcrumb-home-hover: var(--hg-color-white);
+  --hgc-color-breadcrumb: var(--hg-color-gray-light);
+  --hgc-color-breadcrumb-hover: var(--hg-color-white);
+  --hgc-color-breadcrumb-active: var(--hg-color-white);
+  /* Collapsible Section. */
+  --hgc-collapsible-content-bg: var(--hg-color-brand-light);
+  --hgc-collapsible-title-bg: var(--hg-color-brand);
+  --hgc-collapsible-title-bg-hover: var(--hg-color-brand-dark);
+  --hgc-collapsible-title-bg-active: var(--hg-color-brand);
+  /* Style Cards. */
+  --hgc-card-bg: transparent;
+  --hgc-card-bg-hover: transparent;
+  --hgc-card-framed-bg: var(--hg-color-gray-darkest);
+  --hgc-card-framed-bg-hover: var(--hg-color-gray-dark);
+  --hgc-card-featured-bg: var(--hg-color-gray-darkest);
+  --hgc-card-featured-bg-hover: var(--hg-color-gray-dark);
+  --hgc-card-shadow-color: transparent;
+  --hgc-card-shadow-color-hover: transparent;
+  /* Style Pricing Cards. */
+  --hgc-card-price-bg: var(--hg-color-white);
+  --hgc-card-price-border: var(--hg-color-white);
+  --hgc-card-price-border-hover: var(--hg-color-blue-600);
+  --hgc-card-price-title: var(--hg-color-brand);
+  --hgc-card-price-text: var(--hg-color-black);
+  --hgc-card-price-divider: var(--hg-color-slate-300);
+  --hgc-card-price-price: var(--hg-color-brand);
+  --hgc-card-price-bg-promoted: var(--hg-color-brand);
+  --hgc-card-price-bg-promoted-hover: var(--hg-color-brand-dark);
+  --hgc-card-price-border-promoted: var(--hg-color-brand);
+  --hgc-card-price-border-promoted-hover: var(--hg-color-brand-dark);
+  --hgc-card-price-text-promoted: var(--hg-color-white);
+  --hgc-card-price-price-promoted: var(--hg-color-white);
+  /* Style Buttons and Badges. */
+  /* Primary */
+  --hgc-btn-bg: var(--hg-color-brand);
+  --hgc-btn-border: var(--hg-color-brand);
+  --hgc-btn-label: var(--hg-color-white);
+  --hgc-btn-label-hover: var(--hg-color-white);
+  --hgc-btn-bg-hover: var(--hg-color-brand-dark);
+  --hgc-btn-border-hover: var(--hg-color-brand);
+  --hgc-btn-bg-disabled: var(--hg-color-gray-darkest);
+  --hgc-btn-border-disabled: var(--hg-color-gray-darkest);
+  --hgc-btn-label-disabled: rgb(from var(--hg-color-gray) r g b / 50%);
+  /* Secondary */
+  --hgc-btn-secondary-bg: transparent;
+  --hgc-btn-secondary-border: var(--hg-color-brand-light);
+  --hgc-btn-secondary-label: var(--hg-color-brand-light);
+  --hgc-btn-secondary-bg-hover: var(--hg-color-brand-dark);
+  --hgc-btn-secondary-border-hover: var(--hg-color-white);
+  --hgc-btn-secondary-label-hover: var(--hg-color-brand-light);
+  --hgc-btn-secondary-bg-disabled: transparent;
+  --hgc-btn-secondary-border-disabled: var(--hg-color-gray-darkest);
+  --hgc-btn-secondary-label-disabled: rgb(from var(--hg-color-gray) r g b / 50%);
+  /* Negative */
+  --hgc-btn-negative-bg: var(--hg-color-brand-light);
+  --hgc-btn-negative-border: var(--hg-color-brand-light);
+  --hgc-btn-negative-label: var(--hg-color-brand-dark);
+  --hgc-btn-negative-bg-hover: var(--hg-color-brand);
+  --hgc-btn-negative-border-hover: var(--hg-color-brand-light);
+  --hgc-btn-negative-label-hover: var(--hg-color-brand-light);
+  --hgc-btn-negative-bg-disabled: var(--hg-color-gray-darkest);
+  --hgc-btn-negative-border-disabled: var(--hg-color-gray-darkest);
+  --hgc-btn-negative-label-disabled: rgb(from var(--hg-color-gray) r g b / 50%);
+  /* Style testimonial cards. */
+  --hgc-card-testimonial-bg: transparent;
+  --hgc-card-testimonial-text: var(--hg-color-body-text);
+  --hgc-card-testimonial-cite: var(--hg-color-body-text);
+  --hgc-card-testimonial-cite-url: var(--hg-color-body-text);
+  /* Style basic webform. */
+  --hgc-webform-label: var(--hg-color-white);
+  --hgc-webform-label-focus: var(--hg-color-gray-lightest);
+  --hgc-webform-radio-label: var(--hg-color-gray-lightest);
+  --hgc-webform-placeholder: var(--hg-color-accent-light);
+  --hgc-webform-description: var(--hg-color-accent-light);
+  --hgc-webform-text: var(--hg-color-gray-lightest);
+  --hgc-webform-border: var(--hg-color-gray-lightest);
+  --hgc-webform-focus-border: var(--hg-color-accent-light);
+  --hgc-webform-error-text: var(--hg-color-negative);
+  --hgc-webform-button-fill: var(--hg-color-brand);
+  --hgc-webform-button-border: var(--hg-color-brand);
+  --hgc-webform-button-fill-hover: var(--hg-color-brand-dark);
+  --hgc-webform-button-border-hover: var(--hg-color-brand);
+  --hgc-webform-button-text: var(--hg-color-white);
+  --hgc-webform-button-text-hover: var(--hg-color-white);
+  --hgc-webform-button-radius: 6px;
+  --hgc-webform-radio-checkbox-bg: var(--hg-color-body-bg);
+  --hgc-webform-radio-checkbox-border: var(--hg-color-gray);
+  --hgc-webform-radio-checkbox-bg-checked: var(--hg-color-body-bg);
+  --hgc-webform-radio-checkbox-border-checked: var(--hg-color-brand);
+  --hgc-webform-radio-checkbox-bg-center: var(--hg-color-white);
+  /* Dialogs. */
+  --hgc-dialog-background: var(--hg-color-gray-darkest);
+  --hgc-dialog-border: var(--hg-color-brand-light);
+  --hgc-dialog-text: var(--hg-color-body-text);
+  --hgc-dialog-close: var(--hg-color-brand-light);
+  /* Tile Icon. */
+  --hgc-tile-border: var(--hg-color-gray);
+  --hgc-tile-border-hover: var(--hg-color-gray-light);
+  --hgc-tile-bg: var(--hg-color-gray-darkest);
+  --hgc-tile-bg-hover: var(--hg-color-gray-dark);
+  --hgc-tile-icon-color: var(--hg-color-brand);
+  --hgc-tile-icon-color-hover: var(--hg-color-brand-light);
+  --hgc-tile-icon-text-color: var(--hg-color-body-text);
+}
+
+.mercury-scheme--byte-light {
+  --hg-color-gray-lightest: #f3f4f6;
+  --hg-color-gray-light:    #d1d5db;
+  --hg-color-gray:          #6b7280;
+  --hg-color-gray-dark:     #1f2937;
+  --hg-color-gray-darkest:  #030712;
+
+  --hg-color-brand-light:   #cdfbf1;
+  --hg-color-brand:         #00d5be;
+  --hg-color-brand-dark:    #0c4f4a;
+
+  --hg-color-accent-light:  #cad5e2;
+  --hg-color-accent:        #1d283d;
+  --hg-color-accent-dark:   #050819;
+
+  --hg-color-info:          #01a8e4;
+  --hg-color-positive:      #00cc41;
+  --hg-color-warning:       #ffbf00;
+  --hg-color-negative:      #e60032;
+
+   /* Fonts */
+  --hg-font-sans:    'Outfit', 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  --hg-font-body:  'Inter', -apple-system, 'Segoe UI', Arial, sans-serif;
+  --hg-font-mono:    'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
+  --hg-font-display: 'Outfit', 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+  --hg-color-body-bg:       #ffffff;
+  --hg-color-body-text:     #1f2937;
+  --hg-color-body-text-dark:     var(--hgc-color-body-text);
+  --hg-color-body-text-light:     #ffffff;
+
+  --hgc-font-weight-light:    300;
+  --hgc-font-weight-normal:   400;
+  --hgc-font-weight-medium:   500;
+  --hgc-font-weight-semibold: 600;
+  --hgc-font-weight-bold:     700;
+
+  --hgc-font-weight-p:  400;
+  --hgc-font-weight-h1: 600;
+  --hgc-font-weight-h2: 600;
+  --hgc-font-weight-h3: 600;
+  --hgc-font-weight-h4: 500;
+  --hgc-font-weight-h5: 500;
+  --hgc-font-weight-h6: 500;
+
+  --hgc-menu-link-color:       #1f2937;
+  --hgc-menu-link-color-hover: #1d4ed8;
+
+  --hgc-hyperlink-color:       #008577;
+  --hgc-hyperlink-color-hover: #0D6D63;
+
+  --hgc-radius-sm: 0;
+  --hgc-tile-logo-bg: var(--hg-color-brand);
+  --hgc-footer-border: var(--hg-color-gray-light);
+
+  /* Breadcrumb. */
+  --hgc-color-breadcrumb-caret: var(--hg-color-gray);
+  --hgc-color-breadcrumb-dots: var(--hg-color-gray);
+  --hgc-color-breadcrumb-home: var(--hg-color-gray);
+  --hgc-color-breadcrumb-home-hover: var(--hg-color-brand);
+  --hgc-color-breadcrumb: var(--hg-color-gray);
+  --hgc-color-breadcrumb-hover: var(--hg-color-brand);
+  --hgc-color-breadcrumb-active: var(--hg-color-gray-dark);
+  /* Collapsible Section. */
+  --hgc-collapsible-content-bg: var(--hg-color-brand-light);
+  --hgc-collapsible-title-bg: var(--hg-color-brand);
+  --hgc-collapsible-title-bg-hover: var(--hg-color-brand-light);
+  --hgc-collapsible-title-bg-active: var(--hg-color-brand);
+  /* Style Cards. */
+  --hgc-card-bg: transparent;
+  --hgc-card-bg-hover: transparent;
+  --hgc-card-framed-bg: transparent;
+  --hgc-card-framed-bg-hover: transparent;
+  --hgc-card-featured-bg: transparent;
+  --hgc-card-featured-bg-hover: transparent;
+  --hgc-card-shadow-color: rgb(0 0 0 / 0.1);
+  --hgc-card-shadow-color-hover: rgb(0 0 0 / 0.4);
+  /* Style Pricing Cards. */
+  --hgc-card-price-bg: var(--hg-color-white);
+  --hgc-card-price-border: var(--hg-color-gray-light);
+  --hgc-card-price-border-hover: var(--hg-color-brand);
+  --hgc-card-price-title: var(--hg-color-brand);
+  --hgc-card-price-text: var(--hg-color-accent);
+  --hgc-card-price-price: var(--hg-color-brand);
+  --hgc-card-price-divider: var(--hg-color-gray-light);
+  --hgc-card-price-bg-promoted: var(--hg-color-brand);
+  --hgc-card-price-bg-promoted-hover: var(--hg-color-brand-light);
+  --hgc-card-price-border-promoted: var(--hg-color-brand);
+  --hgc-card-price-text-promoted: var(--hg-color-black);
+  --hgc-card-price-price-promoted: var(--hg-color-black);
+  --hgc-card-price-border-promoted-hover: var(--hg-color-brand);
+  /* Used for both buttons and badges. */
+  --hgc-btn-bg: var(--hg-color-brand);
+  --hgc-btn-border: var(--hg-color-brand);
+  --hgc-btn-label: var(--hg-color-brand-dark);
+  --hgc-btn-bg-hover: var(--hg-color-brand-light);
+  --hgc-btn-border-hover: var(--hg-color-brand);
+  --hgc-btn-label-hover: var(--hg-color-brand-dark);
+  --hgc-btn-bg-disabled: var(--hg-color-gray-light);
+  --hgc-btn-border-disabled: var(--hg-color-gray-light);
+  --hgc-btn-label-disabled: rgb(from var(--hg-color-gray) r g b / 50%);
+  /* Secondary */
+  --hgc-btn-secondary-bg: transparent;
+  --hgc-btn-secondary-border: var(--hg-color-brand);
+  --hgc-btn-secondary-label: var(--hg-color-brand-dark);
+  --hgc-btn-secondary-bg-hover: var(--hg-color-brand-light);
+  --hgc-btn-secondary-border-hover: var(--hg-color-gray-dark);
+  --hgc-btn-secondary-label-hover: var(--hg-color-gray-dark);
+  --hgc-btn-secondary-bg-disabled: transparent;
+  --hgc-btn-secondary-border-disabled: var(--hg-color-gray-light);
+  --hgc-btn-secondary-label-disabled: rgb(from var(--hg-color-gray) r g b / 50%);
+  /* Negative */
+  --hgc-btn-negative-bg: var(--hg-color-white);
+  --hgc-btn-negative-border: var(--hg-color-white);
+  --hgc-btn-negative-label: var(--hg-color-brand-dark);
+  --hgc-btn-negative-bg-hover: var(--hg-color-brand);
+  --hgc-btn-negative-border-hover: var(--hg-color-brand-light);
+  --hgc-btn-negative-label-hover: var(--hg-color-white);
+  --hgc-btn-negative-bg-disabled: var(--hg-color-gray-light);
+  --hgc-btn-negative-border-disabled: var(--hg-color-gray-light);
+  --hgc-btn-negative-label-disabled: rgb(from var(--hg-color-gray) r g b / 50%);
+  /* Style testimonial cards. */
+  --hgc-card-testimonial-bg: var(--hg-color-brand);
+  --hgc-card-testimonial-text: var(--hg-color-body-text);
+  --hgc-card-testimonial-cite: var(--hg-color-body-text);
+  --hgc-card-testimonial-cite-url: var(--hg-color-body-text);
+  /* Style basic webform. */
+  --hgc-webform-label: var(--hg-color-gray-dark);
+  --hgc-webform-label-focus: var(--hg-color-brand-dark);
+  --hgc-webform-radio-label: var(--hg-color-white);
+  --hgc-webform-placeholder: var(--hg-color-gray);
+  --hgc-webform-description: var(--hg-color-gray);
+  --hgc-webform-text: var(--hg-color-white);
+  --hgc-webform-border: var(--hg-color-white);
+  --hgc-webform-focus-border: var(--hg-color-white);
+  --hgc-webform-error-text: var(--hg-color-negative);
+  --hgc-webform-button-fill: var(--hg-color-brand);
+  --hgc-webform-button-border: var(--hg-color-brand);
+  --hgc-webform-button-fill-hover: var(--hg-color-brand-dark);
+  --hgc-webform-button-border-hover: var(--hg-color-brand);
+  --hgc-webform-button-text: var(--hg-color-white);
+  --hgc-webform-button-text-hover: var(--hg-color-white);
+  --hgc-webform-button-radius: 6px;
+  --hgc-webform-radio-checkbox-bg: var(--hg-color-white);
+  --hgc-webform-radio-checkbox-border: var(--hg-color-gray);
+  --hgc-webform-radio-checkbox-bg-checked: var(--hg-color-white);
+  --hgc-webform-radio-checkbox-border-checked: var(--hg-color-brand);
+  --hgc-webform-radio-checkbox-bg-center: var(--hg-color-brand);
+    /* Dialogs. */
+  --hgc-dialog-background: var(--hg-color-brand);
+  --hgc-dialog-border: var(--hg-color-brand-light);
+  --hgc-dialog-text: var(--hg-color-body-text);
+  --hgc-dialog-close: var(--hg-color-brand-light);
+  /* Tile Icon. */
+  --hgc-tile-border: var(--hg-color-gray-light);
+  --hgc-tile-border-hover: var(--hg-color-brand);
+  --hgc-tile-bg: var(--hg-color-gray-lightest);
+  --hgc-tile-bg-hover: var(--hg-color-brand-light);
+  --hgc-tile-icon-color: var(--hg-color-brand);
+  --hgc-tile-icon-color-hover: var(--hg-color-brand-dark);
+  --hgc-tile-icon-text-color: var(--hg-color-body-text);
+}
+
+.mercury-scheme--byte-dark {
+  --hg-color-brand-light:   #dbeafe;
+  --hg-color-brand:         #155dfc;
+  --hg-color-brand-dark:    #1c398e;
+
+  --hg-color-accent-light:  #90a1b9;
+  --hg-color-accent:        #1d293d;
+  --hg-color-accent-dark:   #020618;
+
+  --hg-color-body-bg:       #1d283d;
+  --hg-color-body-text:     var(--hg-color-white);
+  --hg-color-body-text-dark:     #1d283d;
+  --hg-color-body-text-light:     #ffffff;
+
+  --hg-font-sans:    'Outfit', 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  --hg-font-body:  'Inter', -apple-system, 'Segoe UI', Arial, sans-serif;
+  --hg-font-mono:    'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
+  --hg-font-display: 'Outfit', 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+  --hgc-radius-sm: 0;
+
+  --hgc-menu-link-color:       #1f2937;
+  --hgc-menu-link-color-hover: #1d4ed8;
+
+  --hgc-hyperlink-color:       #51A2FF;
+  --hgc-hyperlink-color-hover: #BEDBFF;
+
+  --hgc-main-heading-color: var(--hg-color-brand-light);
+
+  --hgc-menu-link-color: var(--hg-color-white);
+  --hgc-menu-link-color-hover: var(--hg-color-brand-light);
+
+  --hgc-tile-logo-bg: #536487;
+  --hgc-footer-border: #536487;
+
+  /* Breadcrumb. */
+  --hgc-color-breadcrumb-caret: var(--hg-color-accent-light);
+  --hgc-color-breadcrumb-dots: var(--hg-color-accent-light);
+  --hgc-color-breadcrumb-home: var(--hg-color-accent-light);
+  --hgc-color-breadcrumb-home-hover: var(--hg-color-white);
+  --hgc-color-breadcrumb: var(--hg-color-accent-light);
+  --hgc-color-breadcrumb-hover: var(--hg-color-white);
+  --hgc-color-breadcrumb-active: var(--hg-color-white);
+  /* Collapsible Section. */
+  --hgc-collapsible-content-bg: transparent;
+  --hgc-collapsible-title-bg: transparent;
+  --hgc-collapsible-title-bg-hover: var(--hg-color-accent-dark);
+  --hgc-collapsible-title-bg-active: transparent;
+  --hgc-collapsible-content-text: var(--hg-color-white);
+  --hgc-collapsible-border-color: var(--hg-color-gray);
+  /* Style Cards. */
+  --hgc-card-bg: transparent;
+  --hgc-card-bg-hover: transparent;
+  --hgc-card-framed-bg: var(--hg-color-accent-dark);
+  --hgc-card-framed-bg-hover: #162034;
+  --hgc-card-featured-bg: var(--hg-color-accent-dark);
+  --hgc-card-featured-bg-hover: #162034;
+  --hgc-card-shadow-color: transparent;
+  --hgc-card-shadow-color-hover: transparent;
+  /* Style Pricing Cards. */
+  --hgc-card-price-bg: var(--hg-color-accent-dark);
+  --hgc-card-price-border: var(--hg-color-accent-dark);
+  --hgc-card-price-border-hover: var(--hg-color-accent-light);
+  --hgc-card-price-text: var(--hg-color-body-text);
+  --hgc-card-price-price: var(--hg-color-white);
+  --hgc-card-price-divider: var(--hg-color-accent-light);
+  --hgc-card-price-bg-promoted: var(--hg-color-brand);
+  --hgc-card-price-bg-promoted-hover: var(--hg-color-brand-dark);
+  --hgc-card-price-border-promoted: var(--hg-color-brand);
+  --hgc-card-price-border-promoted-hover: var(--hg-color-brand-dark);
+  --hgc-card-price-text-promoted: var(--hg-color-body-text);
+  --hgc-card-price-price-promoted: var(--hg-color-body-text);
+  /* Used for both buttons and badges. */
+  --hgc-btn-bg: var(--hg-color-brand);
+  --hgc-btn-border: var(--hg-color-brand);
+  --hgc-btn-label: var(--hg-color-white);
+  --hgc-btn-bg-hover: var(--hg-color-brand-dark);
+  --hgc-btn-border-hover: var(--hg-color-brand);
+  --hgc-btn-label-hover: var(--hg-color-white);
+  --hgc-btn-bg-disabled: var(--hg-color-gray-light);
+  --hgc-btn-border-disabled: var(--hg-color-gray-light);
+  --hgc-btn-label-disabled: rgb(from var(--hg-color-gray) r g b / 50%);
+  /* Secondary */
+  --hgc-btn-secondary-bg: transparent;
+  --hgc-btn-secondary-border: var(--hg-color-brand-light);
+  --hgc-btn-secondary-label: var(--hg-color-brand-light);
+  --hgc-btn-secondary-bg-hover: var(--hg-color-brand-light);
+  --hgc-btn-secondary-border-hover: var(--hg-color-brand-light);
+  --hgc-btn-secondary-label-hover: var(--hg-color-brand-dark);
+  --hgc-btn-secondary-bg-disabled: transparent;
+  --hgc-btn-secondary-border-disabled: var(--hg-color-gray-light);
+  --hgc-btn-secondary-label-disabled: rgb(from var(--hg-color-gray) r g b / 50%);
+  /* Negative */
+  --hgc-btn-negative-bg: var(--hg-color-brand-light);
+  --hgc-btn-negative-border: var(--hg-color-brand-light);
+  --hgc-btn-negative-label: var(--hg-color-brand-dark);
+  --hgc-btn-negative-bg-hover: var(--hg-color-brand);
+  --hgc-btn-negative-border-hover: var(--hg-color-brand-light);
+  --hgc-btn-negative-label-hover: var(--hg-color-brand-light);
+  --hgc-btn-negative-bg-disabled: var(--hg-color-gray-light);
+  --hgc-btn-negative-border-disabled: var(--hg-color-gray-light);
+  --hgc-btn-negative-label-disabled: rgb(from var(--hg-color-gray) r g b / 50%);
+  /* Style testimonial cards. */
+  --hgc-card-testimonial-bg: var(--hg-color-accent-dark);
+  --hgc-card-testimonial-text: var(--hg-color-body-text);
+  --hgc-card-testimonial-cite: var(--hg-color-body-text);
+  --hgc-card-testimonial-cite-url: var(--hg-color-body-text);
+  /* Style basic webform. */
+  --hgc-webform-label: var(--hg-color-white);
+  --hgc-webform-label-focus: var(--hg-color-gray-lightest);
+  --hgc-webform-radio-label: var(--hg-color-gray-lightest);
+  --hgc-webform-placeholder: var(--hg-color-accent-light);
+  --hgc-webform-description: var(--hg-color-accent-light);
+  --hgc-webform-text: var(--hg-color-gray-lightest);
+  --hgc-webform-border: var(--hg-color-gray-lightest);
+  --hgc-webform-focus-border: var(--hg-color-accent-light);
+  --hgc-webform-error-text: var(--hg-color-negative);
+  --hgc-webform-button-fill: var(--hg-color-brand);
+  --hgc-webform-button-border: var(--hg-color-brand);
+  --hgc-webform-button-fill-hover: var(--hg-color-brand-dark);
+  --hgc-webform-button-border-hover: var(--hg-color-brand);
+  --hgc-webform-button-text: var(--hg-color-white);
+  --hgc-webform-button-text-hover: var(--hg-color-white);
+  --hgc-webform-button-radius: 6px;
+  --hgc-webform-radio-checkbox-bg: var(--hg-color-body-bg);
+  --hgc-webform-radio-checkbox-border: var(--hg-color-gray);
+  --hgc-webform-radio-checkbox-bg-checked: var(--hg-color-body-bg);
+  --hgc-webform-radio-checkbox-border-checked: var(--hg-color-brand);
+  --hgc-webform-radio-checkbox-bg-center: var(--hg-color-white);
+  /* Dialogs. */
+  --hgc-dialog-background: var(--hg-color-accent-dark);
+  --hgc-dialog-border: var(--hg-color-gray);
+  --hgc-dialog-text: var(--hg-color-body-text);
+  --hgc-dialog-close: var(--hg-color-accent-light);
+  /* Tile Icon. */
+  --hgc-tile-border: var(--hg-color-accent-light);
+  --hgc-tile-border-hover: var(--hg-color-brand-light);
+  --hgc-tile-bg: #343e50;
+  --hgc-tile-bg-hover: var(--hg-color-accent-dark);
+  --hgc-tile-icon-color: var(--hg-color-brand-light);
+  --hgc-tile-icon-color-hover: var(--hg-color-accent-light);
+  --hgc-tile-icon-text-color: var(--hg-color-body-text);
+}

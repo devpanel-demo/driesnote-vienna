@@ -1,0 +1,18 @@
+{% set button_id = 'collapsible-section--title'|clean_unique_id %}
+{% set content_id = 'collapsible-section--content'|clean_unique_id %}
+{% set heading_level = heading_level|default('3') %}
+
+<div class="collapsible-section hg:overflow-hidden" data-open-by-default="{{ open_by_default ? 'true' : 'false' }}">
+  {# The heading tag is necessary for accessibility reasons. #}
+  <h{{ heading_level }} class="hg:text-2xl">
+    <button id="{{ button_id }}" aria-controls="{{ content_id }}" class="collapsible-section--title hg:p-4 hg:w-full hg:text-left hg:flex hg:justify-between hg:items-center hg:cursor-pointer">
+      {{ title }}
+      <i class="collapsible-section--icon hg:transition-transform hg:duration-(--animate-speed) ph-bold ph-caret-down"></i>
+    </button>
+  </h{{ heading_level}}>
+  <div class="collapsible-section--content hg:transition-[height, padding] hg:duration-(--animate-speed) hg:px-4" id="{{ content_id }}" role="region" aria-labelledby="{{ button_id }}">
+    {% block collapsible_content %}
+      {{ storybook.content }}
+    {% endblock %}
+  </div>
+</div>

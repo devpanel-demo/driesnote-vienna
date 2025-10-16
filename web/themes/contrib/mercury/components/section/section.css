@@ -1,0 +1,11 @@
+/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+.storybook-component--section {
+  padding: calc(var(--hg-spacing, 4px) * 5);
+}
+@layer components {
+  .section--main > * {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+}

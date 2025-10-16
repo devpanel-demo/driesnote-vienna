@@ -1,0 +1,26 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Footer
+group: Layout
+description: The site footer assembled
+props:
+  type: object
+  properties:
+    align:
+      type: boolean
+      title: Display links horizontally
+      description: Align links in row or stack
+      examples:
+        - true
+slots:
+  footer_first:
+    title: Branding & Social
+    description: Stack branding and social links
+  footer_last:
+    title: Call to action
+    description: Add subscription webform
+  footer_utility_first:
+    title: Utility links
+    description: Utility links or similar
+  footer_utility_last:
+    title: Copyright text
+    description: For legal/copyright text.

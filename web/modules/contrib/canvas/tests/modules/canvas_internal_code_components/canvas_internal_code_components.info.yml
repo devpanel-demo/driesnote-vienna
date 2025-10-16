@@ -1,0 +1,11 @@
+# @todo Delete this module in https://www.drupal.org/project/canvas/issues/3543533
+name: 'Test Internal Code Components'
+type: module
+dependencies:
+  - canvas:canvas
+package: Testing
+
+# Information added by Drupal.org packaging script on 2025-10-10
+version: '1.0.0-rc1'
+project: 'canvas'
+datestamp: 1760137240

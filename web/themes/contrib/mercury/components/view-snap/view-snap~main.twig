@@ -1,0 +1,18 @@
+<div class="view-content view-snap hide-scrollbar-x hg:sm:container hg:grid hg:overflow-x-auto hg:snap-x hg:snap-mandatory hg:gap-6 hg:lg:gap-8 hg:grid-cols-[272px_248px_272px] hg:sm:grid-cols-3 hg:sm:overflow-x-visible hg:sm:snap-none hg:sm:mx-auto hg:sm:px-6">
+  {% if storybook.items %}
+    {% for item in storybook.items %}
+      <div class="view-item hg:bg-white hg:rounded-lg hg:p-6 hg:shadow-md">
+        <h3 class="hg:text-lg hg:font-semibold hg:mb-2">
+          <a href="{{ item.url }}" class="hg:text-blue-600 hover:hg:text-blue-800">
+            {{ item.title }}
+          </a>
+        </h3>
+        {% if item.summary %}
+          <p class="hg:text-gray-600 hg:text-sm">{{ item.summary }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% else %}
+    {{ rows }}
+  {% endif %}
+</div>

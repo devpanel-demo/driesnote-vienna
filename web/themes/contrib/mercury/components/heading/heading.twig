@@ -1,0 +1,18 @@
+{% set has_url = url is not empty and url != 'No URL' %}
+
+{% set heading_classes = heading_classes|default([])|merge([
+    'heading',
+    'hg:text-' ~ align,
+    has_url ? 'hg:hover:underline hg:decoration-2 hg:underline-offset-4' : '',
+    font_color,
+])|filter(v => v is not empty) %}
+
+{% set level = level|default(2) %}
+
+<h{{ level }} class="{{ heading_classes|join(' ') }} {{ font_size == 'default' ? '' : font_size }}">
+  {% if has_url %}
+    <a href="{{ url }}">{{ heading_text }}</a>
+  {% else %}
+    {{ heading_text }}
+  {% endif %}
+</h{{ level }}>

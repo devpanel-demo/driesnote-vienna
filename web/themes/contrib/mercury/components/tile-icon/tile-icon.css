@@ -1,0 +1,56 @@
+/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+@layer properties;
+.storybook-component--tile-icon {
+  max-width: 300px;
+  padding: 1rem;
+}
+@layer components {
+  .icon-tile {
+    background-color: var(--hg-page-bg);
+    border-color: var(--hgc-tile-border);
+    color: var(--hg-page-text);
+    * {
+      --tw-leading: var(--hg-leading-tight, 1.25);
+      line-height: var(--hg-leading-tight, 1.25);
+    }
+    .ph {
+      color: var(--hgc-tile-icon-color);
+    }
+    &.has-link {
+      .tile-icon--title {
+        color: var(--hgc-tile-icon-text-color);
+      }
+      &:hover, &:focus {
+        border-color: var(--hgc-tile-border-hover);
+        --hgc-tile-icon-text-color: var(--hgc-tile-icon-text-color-hover);
+        --hgc-tile-bg: var(--hgc-tile-bg-hover);
+        .icon-tile--link--text {
+          opacity: 100%;
+        }
+        .ph {
+          --hgc-tile-icon-color: var(--hgc-tile-icon-color-hover);
+        }
+      }
+    }
+    &.has-bg {
+      background-color: var(--hgc-tile-bg);
+    }
+  }
+  .icon-tile--title, .icon-tile--text .icon-tile--link-title, .icon-tile--link--text {
+    color: var(--hgc-tile-icon-text-color);
+  }
+  .icon-tile--text, .icon-tile--link--text {
+    opacity: 75%;
+  }
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-leading: initial;
+    }
+  }
+}

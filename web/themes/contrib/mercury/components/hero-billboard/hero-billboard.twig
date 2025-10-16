@@ -1,0 +1,29 @@
+{% set classes = classes|default([])|merge([
+    'hero-overlay',
+    'hg:relative',
+    'hg:flex',
+    'hg:flex-col',
+    height,
+  ])|filter(v => v is not empty)
+%}
+
+{% set img_position = 'hg:object-' ~ background_position %}
+
+<section class="{{ classes|join(' ') }} {{ flex_position == 'hero-center' ? 'hg:justify-center' : flex_position }}">
+  {% if media.src is not empty %}
+    <div class="hero-overlay--media hg:absolute hg:h-full hg:w-screen hg:z-[-1] hg:ms-[-50vw] hg:left-[50%]">
+    {% block hero_media %}
+      {% if media.src is not empty %}
+        <div class="hg:absolute hg:inset-0 {{ overlay_opacity }}"></div>
+      {% endif %}
+      <img src="{{ media.src }}" alt="{{ media.alt }}" class="hg:w-full hg:h-full hg:object-cover {{ object_position }}"/>
+    {% endblock %}
+    </div>
+  {% endif %}
+  <div class="hero-overlay--content {{ flex_position == 'hero-center' ? 'hg:text-center hg:items-center hg:lg:max-w-2/3 hg:lg:mx-auto' : 'hg:lg:max-w-2/3' }} hg:relative hg:flex hg:flex-col hg:gap-6 hg:py-6 hg:md:py-10 hg:xl:py-20 hg:z-1">
+  {% block hero_content %}
+    {% block hero_slot %}
+    {% endblock %}
+  {% endblock %}
+  </div>
+</section>

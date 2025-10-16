@@ -1,0 +1,21 @@
+{% embed 'mercury:logo-grid' %}
+  {% block logos %}
+    {% for i in 1..8 %}
+      {% embed 'mercury:tile-logo' %}
+        {% block logo %}
+          {% set src_prefix = componentMetadata.path ~ '/assets/logo-' %}
+          {% set vanilla_light_src = src_prefix ~ i ~'-vanilla-light.png' %}
+          {% set byte_light_src = src_prefix ~ i ~ '-byte-light.png' %}
+          {% set dark_src = src_prefix ~ i ~'-dark.png' %}
+          <img
+            src="{{ vanilla_light_src }}"
+            data-vanilla-light-src="{{ vanilla_light_src }}"
+            data-vanilla-dark-src="{{ dark_src }}"
+            data-byte-light-src="{{ byte_light_src }}"
+            data-byte-dark-src="{{ dark_src }}"
+          />
+        {% endblock %}
+      {% endembed %}
+    {% endfor %}
+  {% endblock %}
+{% endembed %}

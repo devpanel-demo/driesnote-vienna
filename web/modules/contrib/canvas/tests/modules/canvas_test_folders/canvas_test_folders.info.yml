@@ -1,0 +1,15 @@
+name: Test Canvas Folders
+type: module
+dependencies:
+  - canvas:canvas
+  - canvas:canvas_test_code_components
+  - canvas:canvas_test_sdc
+  - canvas:canvas_test_patterns
+  # @todo Remove these in https://www.drupal.org/project/canvas/issues/3543533
+  - canvas:canvas_internal_code_components
+package: Testing
+
+# Information added by Drupal.org packaging script on 2025-10-10
+version: '1.0.0-rc1'
+project: 'canvas'
+datestamp: 1760137240

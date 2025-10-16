@@ -1,0 +1,50 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Project
+description: Basic card with image, title, teaser, tags
+group: Components/Cards
+props:
+  type: object
+  properties:
+    heading_text:
+      type: string
+      title: Heading Text
+      examples:
+        - 'Stillhouse Spirits Co.'
+    level:
+      type: number
+      title: Heading Level
+      description: The heading level (h2-h6) for the component title.
+      enum: [2, 3, 4, 5, 6]
+      default: 3
+      examples:
+        - 2
+        - 3
+        - 4
+    url:
+      type: string
+      title: Link
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Media Image
+      description: Media image for the card.
+      type: object
+      examples:
+        - src: 'assets/stillhouse.png'
+          alt: 'A picture of the sea shore.'
+    text:
+      type: string
+      title: Text
+      description: Teaser text
+      examples:
+        - 'Lorem ipsum dolor sit amet suspendisse consectetur sociosqu dapibus ridiculus etiam malesuada. Luctus inceptos dictumst pede commodo donec bibendum blandit. Egestas molestie litora pulvinar justo quam porta pede bibendum consectetur. Efficitur suspendisse cubilia nibh turpis egestas montes sed.'
+    layout:
+      type: string
+      title: Layout
+      description: Set hero layout
+      enum:
+        - media-first
+        - media-last
+      default: 'media-first'
+      examples:
+        - 'media-first'
+        - 'media-last'

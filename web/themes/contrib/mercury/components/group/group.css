@@ -1,0 +1,10 @@
+/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+.storybook-component--group {
+  padding: calc(var(--hg-spacing, 4px) * 5);
+}
+@layer components {
+  .group {
+    display: flex;
+    min-height: calc(var(--hg-spacing, 4px) * 20);
+  }
+}

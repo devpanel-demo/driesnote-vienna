@@ -1,0 +1,44 @@
+{% set classes = [
+    'cta',
+    'hg:relative',
+    'hg:z-1',
+  ]
+%}
+
+{% if text_align == 'left' %}
+  {% set alignment = 'hg:text-left' %}
+  {% set list_extras = 'hg:md:justify-start' %}
+{% elseif text_align == 'right' %}
+  {% set alignment = 'hg:text-right' %}
+  {% set list_extras = 'hg:md:justify-end' %}
+{% else %}
+  {% set alignment = 'hg:text-center hg:lg:max-w-3/4 hg:mx-auto' %}
+  {% set list_extras = 'hg:justify-center hg:items-center' %}
+{% endif %}
+
+{% if has_background_image == true %}
+  {% set text_color = 'hg:text-white!' %}
+{% endif %}
+
+<section class="{{ classes|join(' ') }}">
+  {% block media %}
+    {% if media.src is not empty and has_background_image %}
+      <div class="cta--media hg:absolute hg:w-screen hg:h-full hg:z-[-1] hg:ms-[-50vw] hg:left-[50%]">
+        <div class="hg:absolute hg:inset-0 hg:bg-black/30"></div>
+        <img src="{{ media.src }}" alt="{{ media.alt }}" class="hg:w-full hg:h-full hg:object-cover"/>
+      </div>
+    {% endif %}
+  {% endblock %}
+  <div class="cta--content hg:relative hg:min-h-80 hg:flex hg:flex-col hg:justify-center hg:gap-6 hg:lg:gap-8 hg:py-[90px] hg:lg:py-[115px] hg:xl:py-[140px] {{ text_align == 'center' ? 'hg:items-center' }} {{ alignment }} {{ text_color }}">
+    {{ include('mercury:heading', {
+        heading_classes: ['hg:font-extrabold']
+    }) }}
+    <p class="hg:font-normal hg:text-md">{{ text }}</p>
+    {% if block('actions') is defined %}
+    <div class="cta--links hg:w-full hg:flex hg:flex-col hg:sm:flex-row hg:gap-6 {{ list_extras }}">
+      {% block actions %}
+      {% endblock %}
+    </div>
+    {% endif %}
+  </div>
+</section>

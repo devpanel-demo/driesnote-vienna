@@ -1,0 +1,6 @@
+{% set class_from_weight = {
+  normal: 'ph',
+  bold: 'ph-bold',
+} %}
+
+<i class="{{ class_from_weight[weight|default('normal')] }} ph-{{ icon }} {{ icon_size|default('hg:text-base') }}"></i>

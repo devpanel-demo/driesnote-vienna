@@ -1,0 +1,45 @@
+{% set footer_classes = footer_classes|default([])|merge([
+    'hg:flex',
+    'hg:flex-col',
+])|filter(v => v is not empty) %}
+
+<section class="site-footer">
+  <div class="{{ footer_classes|join(' ') }}">
+    <div class="site-footer--top hg:flex hg:flex-col hg:md:grid hg:md:grid-cols-2 hg:w-full hg:gap-6 hg:md:gap-6 hg:py-8 hg:justify-between hg:border-t hg:border-(--hgc-footer-border)">
+      
+      {% if block("footer_first") is defined %}
+        <div class="site-footer--first-col hg:flex hg:flex-col hg:gap-6">
+        {% block footer_first %}
+          {# Slot for components. #}
+        {% endblock %}
+        </div>
+      {% endif %}
+
+      {% if block("footer_last") is defined %}
+        <div class="site-footer--last-col hg:flex hg:flex-col hg:gap-6">
+        {% block footer_last %}
+          {# Slot for components. #}
+        {% endblock %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="site-footer--bottom hg:flex hg:flex-col hg:md:grid hg:md:grid-cols-2 hg:w-full hg:gap-2 hg:md:gap-6 hg:pt-3 hg:md:pt-4 hg:border-t hg:border-(--hgc-footer-border)">
+      {% if block("footer_utility_first") is defined %}
+        <div class="site-footer--bottom-col">
+          {% block footer_utility_first %}
+            {# Slot for components. #}
+          {% endblock %}
+        </div>
+      {% endif %}
+
+      {% if block("footer_utility_last") is defined %}
+        <div class="site-footer--bottom-col hg:md:flex hg:md:justify-end">
+          {% block footer_utility_last %}
+            {# Slot for components. #}
+          {% endblock %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

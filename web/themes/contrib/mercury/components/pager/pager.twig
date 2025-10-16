@@ -1,0 +1,91 @@
+{% set classes = [
+    'pager',
+    'hg:my-4',
+  ]
+%}
+
+{% set ellipsis_container_classes = [
+    'hg:flex hg:items-center hg:justify-center hg:rounded hg:px-2 hg:py-1.5',
+] %}
+
+
+{% if items %}
+  <nav class="{{ classes|join(' ') }}" role="navigation" aria-labelledby="{{ heading_id }}">
+    <{{ pagination_heading_level }} id="{{ heading_id }}" class="hg:sr-only">{{ 'Pagination'|t }}</{{ pagination_heading_level }}>
+    <ul class="hg:flex hg:items-center hg:justify-center hg:gap-1 hg:list-none">
+      {# Print first item if we are not on the first page. #}
+      {% if items.first %}
+        <li>
+          <a href="{{ items.first.href }}" title="{{ 'Go to first page'|t }}"{{ items.first.attributes|without('href', 'title') }}>
+            <span class="hg:sr-only">{{ 'First page'|t }}</span>
+            <span aria-hidden="true" class="pager__list-item hg:hover:underline hg:hover:decoration-1 hg:hover:underline-offset-3">{{ items.first.text|default('« First'|t) }}</span>
+          </a>
+        </li>
+      {% endif %}
+      {# Print previous item if we are not on the first page. #}
+      {% if items.previous %}
+        <li>
+          <a href="{{ items.previous.href }}" title="{{ 'Go to previous page'|t }}" rel="prev" class="hg:flex hg:items-center hg:justify-center hg:rounded hg:pe-2 hg:lg:pe-4 hg:gap-1"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
+            <span class="hg:sr-only">{{ 'Previous page'|t }}</span>
+            <i class="pager__icon ph ph-caret-left hg:flex hg:items-center hg:justify-center hg:px-2 hg:lg:px-4"></i>
+            <span class="pager__list-item hg:hover:underline hg:hover:decoration-1 hg:hover:underline-offset-3" aria-hidden="true">{{ items.previous.text|default('Previous'|t) }}</span>
+          </a>
+        </li>
+      {% endif %}
+      {# Add an ellipsis if there are further previous pages. #}
+
+      {% if ellipses.previous %}
+        <li>
+          <span class="{{ ellipsis_container_classes|join(' ') }}" role="presentation">
+            <i class="pager__icon ph ph-caret-left"></i>
+          </span>
+        </li>
+      {% endif %}
+      {# Now generate the actual pager piece. #}
+      {% for key, item in items.pages %}
+        <li>
+          {% if current == key %}
+            {% set title = 'Current page'|t %}
+            {% set page_classes = 'hg:flex hg:items-center hg:justify-center hg:aspect-square hg:rounded hg:px-2 hg:lg:px-4 hg:border hg:border' %}
+          {% else %}
+            {% set title = 'Go to page @key'|t({'@key': key}) %}
+            {% set page_classes = 'hg:hover:underline hg:hover:decoration-1 hg:hover:underline-offset-3 hg:flex hg:items-center hg:justify-center hg:aspect-square hg:rounded hg:px-2 hg:lg:px-4' %}
+          {% endif %}
+          <a href="{{ item.href }}" title="{{ title }}" class="{{ page_classes }}"{{ item.attributes|without('href', 'title') }}>
+            <span class="hg:sr-only">
+              {{ 'Page'|t }}
+            </span>
+            <span class="pager__list-item">{{- key -}}</span>
+          </a>
+        </li>
+      {% endfor %}
+      {# Add an ellipsis if there are further next pages. #}
+      {% if ellipses.next %}
+        <li>
+          <span class="{{ ellipsis_container_classes|join(' ') }}" role="presentation">
+            <i class="pager__icon ph ph-caret-right"></i>
+          </span>
+        </li>
+      {% endif %}
+      {# Print next item if we are not on the last page. #}
+      {% if items.next %}
+        <li>
+          <a href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" rel="next" class="hg:flex hg:items-center hg:justify-center hg:rounded hg:ps-2 hg:lg:ps-4 hg:gap-1"{{ items.next.attributes|without('href', 'title', 'rel') }}>
+            <span class="hg:sr-only">{{ 'Next page'|t }}</span>
+            <span class="pager__list-item hg:hover:underline hg:hover:decoration-1 hg:hover:underline-offset-3" aria-hidden="true">{{ items.next.text|default('Next'|t) }}</span>
+            <i class="pager__icon ph ph-caret-right hg:flex hg:items-center hg:justify-center hg:px-2 hg:lg:px-4"></i>
+          </a>
+        </li>
+      {% endif %}
+      {# Print last item if we are not on the last page. #}
+      {% if items.last %}
+        <li>
+          <a href="{{ items.last.href }}" title="{{ 'Go to last page'|t }}"{{ items.last.attributes|without('href', 'title') }}>
+            <span class="hg:sr-only">{{ 'Last page'|t }}</span>
+            <span aria-hidden="true" class="pager__list-item hg:hover:underline hg:hover:decoration-1 hg:hover:underline-offset-3">{{ items.last.text|default('Last »'|t) }}</span>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

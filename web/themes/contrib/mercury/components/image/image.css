@@ -1,0 +1,5 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+.storybook-component--image {
+  max-width: var(--hg-container-lg, 32rem);
+}
+@layer components;

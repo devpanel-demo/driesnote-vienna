@@ -1,0 +1,9 @@
+{% embed 'mercury:navbar' %}
+  {% block branding %}
+    {{ include('@mercury/components/branding/branding.twig') }}
+  {% endblock %}
+
+  {% block navigation %}
+    {{ include('@mercury/components/dropdown-menu/dropdown-menu.twig', storybook.menu) }}
+  {% endblock %}
+{% endembed %}

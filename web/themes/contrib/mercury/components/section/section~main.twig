@@ -1,0 +1,69 @@
+{# Main variant for Storybook #}
+{% embed 'mercury:components/section/section' with { 
+  background_media: {
+    src: componentMetadata.path ~ '/' ~ storybook.main.background_media.src,
+    alt: storybook.main.background_media.alt
+  }
+} %}
+
+  {% block header_slot %}
+    {{ include('mercury:heading',
+      {
+        level: 2,
+        heading_text: storybook.main.header_text,
+        url: '',
+      } )
+    }}
+  {% endblock %}
+
+  {% block main_slot %}
+
+    {% embed 'mercury:group' with {
+      flex_direction: 'column',
+      flex_gap: 'none',
+      flex_align: 'center',
+      background: 'hg:bg-none',
+      radius: 'none',
+    }  %}
+      {% block group_slot %}
+        {{ include('mercury:heading',
+          {
+            level: 2,
+            heading_text: "Group Heading",
+            url: '',
+          } )
+        }}
+        {{ include('mercury:text',
+          {
+            text: "<p>Nulla purus suscipit nostra sagittis lectus sapien gravida ultrices. Euismod condimentum volutpat natoque feugiat consequat rutrum duis tellus vestibulum cubilia.</p>",
+          } )
+        }}
+        {{ include('mercury:button',
+          {
+            label: 'click me',
+            href: 'https://example.com',
+            variant: primary,
+          } )
+        }}
+      {% endblock %}
+    {% endembed %}
+
+    {% embed 'mercury:image' with {
+      size: 'hg:aspect-1/1',
+      caption: '',
+    } %}
+      {% block media %}
+        <img class="hg:object-cover hg:w-full hg:h-full" src="{{  componentMetadata.path ~ '/' ~ storybook.main.media.src }}" alt="{{ storybook.main.media.alt }}" />
+      {% endblock %}
+    {% endembed %}
+
+  {% endblock %}
+
+  {% block footer_slot %}
+    {{ storybook.main.footer_text }}
+  {% endblock %}
+
+
+
+
+{% endembed %}

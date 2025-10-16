@@ -1,0 +1,54 @@
+global:
+  version: VERSION
+  css:
+    base:
+      src/fonts.css: {}
+      build/css/main.min.css: {}
+      components/webform-newsletter/webform-newsletter.css: {}
+    theme:
+      src/globals.css: {}
+      src/schemes.css: {}
+
+dialog:
+  version: VERSION
+  css:
+    component:
+      css/components/dialog.css: {}
+      components/dialog/dialog.css: {}
+      components/dialog-webform/dialog-webform.css: {}
+dropdown-menu:
+  css:
+    component:
+      components/dropdown-menu/dropdown-menu.css: {}
+  js:
+    components/dropdown-menu/dropdown-menu.js:
+      attributes:
+        type: module
+indented:
+  version: VERSION
+  css:
+    component:
+      css/components/indented.css: {}
+messages:
+  version: VERSION
+  css:
+    component:
+      css/components/messages.css: {}
+phosphor-icons:
+  css:
+    theme:
+      src/phosphor-icons.css: {}
+search-results:
+  version: VERSION
+  css:
+    component:
+      css/components/search-results.css: {}
+webform:
+  version: VERSION
+  css:
+    component:
+      components/webform/webform.css: {}
+breadcrumb:
+  css:
+    component:
+      components/breadcrumb/breadcrumb.css: {}

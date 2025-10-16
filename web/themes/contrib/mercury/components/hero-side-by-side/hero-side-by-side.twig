@@ -1,0 +1,43 @@
+{% set classes = classes|default([])|merge([
+    'hero',
+    'hg:relative',
+    'hg:h-full',
+    'hg:flex',
+  ])|filter(v => v is not empty)
+%}
+{# Top padding spacing options with responsive breakpoints #}
+{% set padding_block_start_map = {
+  '0': 'hg:pt-0',
+  '16': 'hg:pt-4',
+  '32': 'hg:pt-6 hg:md:pt-7 hg:xl:pt-8',
+  '64': 'hg:pt-10 hg:md:pt-13 hg:xl:pt-16',
+} %}
+
+{# Bottom padding spacing options with responsive breakpoints #}
+{% set padding_block_end_map = {
+  '0': 'hg:pb-0',
+  '16': 'hg:pb-4',
+  '32': 'hg:pb-6 hg:md:pb-7 hg:xl:pb-8',
+  '64': 'hg:pb-10 hg:md:pb-13 hg:xl:pb-16',
+} %}
+{# Apply spacing classes based on component variables #}
+{% set padding_block_start = padding_block_start_map[padding_block_start] ?? '' %}
+{% set padding_block_end = padding_block_end_map[padding_block_end] ?? '' %}
+{# Background classes for full-width background positioning #}
+{% set bgd_class = background ~ ' hg:absolute hg:w-screen hg:inset-0 hg:z-[-1] hg:ms-[-50vw] hg:left-[50%]' %}
+
+<section class="{{ classes|join(' ') }} {{ image_position }} {{ hero_flex_gap }} {{ hero_flex_direction_mobile }} {{ padding_block_start }} {{ padding_block_end }}">
+  {% if background is not empty and background != 'None' %}<div class="{{ bgd_class }}"></div>{% endif %}
+
+  <div class="hero--media hg:flex-1 hg:overflow-hidden {{ image_size }} {{ image_radius }}">
+  {% block hero_media %}
+    <img src="{{ media.src }}" alt="{{ media.alt }}" class="hg:w-full hg:h-full hg:object-cover"/>
+  {% endblock %}
+  </div>
+  <div class="hero--content hg:flex-1 hg:flex {{ slot_flex_direction }} {{ slot_flex_gap }} {{ slot_flex_align }}">
+  {% block hero_content %}
+    {% block hero_slot %}
+    {% endblock %}
+  {% endblock %}
+  </div>
+</section>

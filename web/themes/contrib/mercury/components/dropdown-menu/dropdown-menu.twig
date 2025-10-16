@@ -1,0 +1,78 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+
+{{ attach_library('mercury/dropdown-menu') }}
+
+{% import _self as dropdown %}
+
+{% macro menu_links(items, level = 1) %}
+  {% import _self as dropdown %}
+  <ul class="dropdown-menu__menu hg:flex hg:flex-col hg:w-full hg:md:flex-row hg:md:w-auto hg:p-0" data-level="{{ level }}">
+    {% for item in items %}
+      {% set title = item.title is not empty ? item.title : item.text %}
+      {# Capture the rendered URL before testing it for emptiness,
+        since it's a Drupal object under the hood. #}
+      {% set url %}{{ item.url }}{% endset %}
+
+      {% set item_classes = [
+        'dropdown-menu__item',
+        item.in_active_trail ? 'dropdown-menu__item--active-trail' : '',
+        'hg:flex', 'hg:flex-wrap', 'hg:justify-between', 'hg:md:flex-nowrap', 'hg:w-full', 'hg:md:w-auto', 'hg:md:relative', 'hg:md:max-w-[375px]',
+      ]|filter(c => c is not empty) %}
+
+      {% if item.attributes %}
+        {% do item.attributes.addClass(item_classes) %}
+        {% do item.attributes.setAttribute('data-level', level) %}
+      {% endif %}
+
+      <li{{ item.attributes ?? " class=\"#{ item_classes|join(' ') }\" data-level=\"#{ level }\"" }}>
+        {% if url is not empty %}
+          <a href="{{ url }}" class="dropdown-menu__link hg:flex hg:gap-1 hg:items-center hg:grow-1 hg:shrink-1 hg:basis-0 hg:min-h-[44px] hg:md:min-h-auto" data-level="{{ level }}">{{ title }}</a>
+        {% endif %}
+
+        {% if item.below is not empty %}
+          <button aria-label="{{ 'Expand @link'|t({'@link': title|striptags|trim }) }}" value="{{ menu_level }}" class="dropdown-menu__expand-button hg:flex hg:justify-center hg:items-center hg:grow-1 hg:shrink-0 hg:basis-0 hg:border-0 hg:bg-transparent hg:text-center hg:appearance-none hg:h-auto hg:min-h-[44px] hg:md:min-h-auto hg:cursor-pointer" data-level="{{ level }}">
+            <div class="dropdown-menu__expand-button-contents hg:md:w-auto hg:flex hg:justify-center hg:items-center" data-level="{{ level }}">
+              {% if url is empty %}
+                <div class="dropdown-menu__expand-button-no-link-title hg:flex hg:items-center hg:gap-1" data-level="{{ level }}">{{ title }}</div>
+              {% endif %}
+
+              <div class="dropdown-menu__expand-button-icon hg:w-[44px] hg:md:w-auto hg:flex hg:justify-center hg:items-center hg:h-full hg:md:h-auto hg:z-1" data-level="{{ level }}">
+                {{ include('@mercury/components/dropdown-menu/assets/arrow.svg.twig') }}
+              </div>
+            </div>
+          </button>
+
+          {{ dropdown.menu_links(item.below, level + 1) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}
+
+{% set classes = 'dropdown-menu hg:flex hg:justify-start hg:relative' %}
+
+{% set attributes = attributes ? attributes.addClass(classes) : ' class="' ~ classes ~ '"' %}
+
+<nav{{ attributes }} aria-label="{{ menu_label }}">
+  {# We call a macro which calls itself to render the full tree. @see http://twig.sensiolabs.org/doc/tags/macro.html #}
+  {{ dropdown.menu_links(items) }}
+</nav>

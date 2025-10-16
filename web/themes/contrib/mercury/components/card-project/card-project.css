@@ -1,0 +1,16 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+.storybook-component--card-project {
+  max-width: var(--hg-container-md, 28rem);
+  @media (width >= 48rem) {
+    max-width: var(--hg-container-5xl, 64rem);
+  }
+}
+@layer components {
+  .card-project {
+    background-color: var(--hg-color-body-bg);
+    color: var(--hg-color-body-text);
+  }
+  .card-project .card--media {
+    aspect-ratio: 1 / 1;
+  }
+}

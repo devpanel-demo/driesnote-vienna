@@ -1,0 +1,6 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+@layer components {
+  .social-menu--item .ui-icons-menu-text {
+    display: none;
+  }
+}

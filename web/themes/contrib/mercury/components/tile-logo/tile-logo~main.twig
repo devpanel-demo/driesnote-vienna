@@ -1,0 +1,16 @@
+{# Overriding media_slot just for Storybook #}
+{% embed 'mercury:tile-logo' %}
+  {% block logo %}
+    {% set src_prefix = componentMetadata.path ~ '/assets/' %}
+    {% set vanilla_light_src = src_prefix ~ 'vanilla-light.png' %}
+    {% set byte_light_src = src_prefix ~ 'byte-light.png' %}
+    {% set dark_src = src_prefix ~ 'dark.png' %}
+    <img
+      src="{{ vanilla_light_src }}"
+      data-vanilla-light-src="{{ vanilla_light_src }}"
+      data-vanilla-dark-src="{{ dark_src }}"
+      data-byte-light-src="{{ byte_light_src }}"
+      data-byte-dark-src="{{ dark_src }}"
+    />
+  {% endblock %}
+{% endembed %}

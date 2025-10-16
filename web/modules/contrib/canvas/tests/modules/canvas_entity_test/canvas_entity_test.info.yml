@@ -1,0 +1,11 @@
+name: Canvas Entity Test
+description: 'Test hooks for test entities'
+type: module
+package: Testing
+dependencies:
+  - canvas:canvas
+
+# Information added by Drupal.org packaging script on 2025-10-10
+version: '1.0.0-rc1'
+project: 'canvas'
+datestamp: 1760137240

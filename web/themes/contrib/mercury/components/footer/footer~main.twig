@@ -1,0 +1,42 @@
+{% embed 'mercury:footer' %}
+  {% block footer_first %}
+    <a href="/" rel="home" class="branding hg:w-40 hg:block">
+      <img class="hg:object-cover hg:w-full hg:h-full" src="{{ componentMetadata.path ~ '/' ~ storybook.site_logo.src }}" alt="{{ storybook.site_logo.alt }}" />
+    </a>
+    {{ include('mercury:menu-utility', { items: storybook.utility }) }}
+    {{ include('mercury:menu-social~main', { items: storybook.social } ) }}
+  {% endblock %}
+
+  {% block footer_last %}
+    <div id="block-id" class="block block-webform block-webform-block">
+      <form accept-charset="UTF-8" action="#" class="webform-category--footer webform-submission-form webform-submission-add-form webform-submission-newsletter-signup-form webform-submission-newsletter-signup-add-form webform-submission-newsletter-signup-xb_page-4-form webform-submission-newsletter-signup-xb_page-4-add-form webform-submission-newsletter-signup-xb-page-4-add-form js-webform-details-toggle webform-details-toggle contextual-region" data-drupal-form-fields="edit-email,edit-actions-submit" data-drupal-selector="webform-submission-newsletter-signup-xb-page-4-add-form" data-once="webform-details-toggle form-updated" id="webform-submission-newsletter-signup-xb-page-4-add-form" method="post" name="webform-submission-newsletter-signup-xb-page-4-add-form">
+        <div class="js-form-item form-item js-form-type-webform-markup form-type-webform-markup js-form-item-markup form-item-markup form-no-label" id="edit-markup">
+          <h2>Join Our Newsletter</h2>
+          <p>Be the first to know about our latest updates, exclusive offers, and more.</p>
+        </div>
+
+        <fieldset data-drupal-selector="edit-newsletter" id="edit-newsletter" class="js-webform-type-fieldset webform-type-fieldset js-form-item form-item js-form-wrapper form-wrapper">
+          <legend>
+            <span class="visually-hidden fieldset-legend">newsletter</span>
+          </legend>
+          <div class="fieldset-wrapper">
+            <div class="js-form-item form-item js-form-type-email form-type-email js-form-item-email form-item-email">
+              <label class="js-form-required form-required" for="edit-email">Email</label> <input class="form-email required" data-drupal-selector="edit-email" id="edit-email" maxlength="254" name="email" placeholder="email" required="required" size="60" type="email" value="">
+            </div>
+            <div class="form-actions webform-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions">
+              <input class="webform-button--submit button button--primary js-form-submit form-submit" data-drupal-selector="edit-actions-submit" id="edit-actions-submit" name="op" type="submit" value="Join">
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  {% endblock %}
+
+  {% block footer_utility_first %}
+    {{ include('mercury:menu-utility', { items: storybook.utility_meta }) }}
+  {% endblock %}
+
+  {% block footer_utility_last %}
+    {{ include('mercury:text', { text: storybook.copyright } ) }}
+  {% endblock %}
+{% endembed %}

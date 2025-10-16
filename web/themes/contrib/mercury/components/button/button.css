@@ -1,0 +1,120 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+@layer properties;
+.storybook-component--button {
+  padding: 1rem;
+}
+button.button {
+  cursor: pointer;
+}
+.button {
+  width: fit-content;
+  cursor: pointer;
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  --tw-leading: var(--hg-leading-tight, 1.25);
+  line-height: var(--hg-leading-tight, 1.25);
+  --tw-font-weight: var(--hg-font-weight-medium, 500);
+  font-weight: var(--hg-font-weight-medium, 500);
+  text-decoration-line: none;
+  &:hover {
+    @media (hover: hover) {
+      text-decoration-line: none;
+    }
+  }
+  background-color: var(--hgc-btn-bg);
+  color: var(--hgc-btn-label);
+  border-color: var(--hgc-btn-border);
+  &:hover, &:focus {
+    background-color: var(--hgc-btn-bg-hover);
+    color: var(--hgc-btn-label-hover);
+    border-color: var(--hgc-btn-border-hover);
+  }
+  &:disabled {
+    cursor: default;
+    background-color: var(--hgc-btn-bg-disabled);
+    border-color: var(--hgc-btn-border-disabled);
+    color: var(--hgc-btn-label-disabled);
+  }
+  &.small .ph-bold {
+    height: calc(var(--hg-spacing, 4px) * 4);
+    width: calc(var(--hg-spacing, 4px) * 4);
+  }
+  &.medium .ph-bold {
+    font-size: var(--hg-text-3xl, 2rem);
+    line-height: var(--tw-leading, var(--hg-text-3xl--line-height, 1.3125));
+  }
+  &.large .ph-bold {
+    font-size: var(--hg-text-4xl, 2.5rem);
+    line-height: var(--tw-leading, var(--hg-text-4xl--line-height, 1.2));
+  }
+}
+.button--primary-accent {
+  --hgc-btn-bg: var(--hg-color-accent);
+  --hgc-btn-border: var(--hg-color-accent);
+  --hgc-btn-label: var(--hg-color-white);
+  --hgc-btn-bg-hover: var(--hg-color-accent-dark);
+  --hgc-btn-border-hover: var(--hg-color-accent);
+  --hgc-btn-label-hover: var(--hg-color-white);
+}
+.button--secondary {
+  --hgc-btn-bg: var(--hgc-btn-secondary-bg);
+  --hgc-btn-border: var(--hgc-btn-secondary-border);
+  --hgc-btn-label: var(--hgc-btn-secondary-label);
+  --hgc-btn-bg-hover: var(--hgc-btn-secondary-bg-hover);
+  --hgc-btn-border-hover: var(--hgc-btn-secondary-border-hover);
+  --hgc-btn-label-hover: var(--hgc-btn-secondary-label-hover);
+  &:disabled {
+    --hgc-btn-bg-disabled: var(--hgc-btn-secondary-bg-disabled);
+    --hgc-btn-border-disabled: var(--hgc-btn-secondary-border-disabled);
+    --hgc-btn-label-disabled: var(--hgc-btn-secondary-label-disabled);
+    --hgc-btn-bg-hover: var(--hgc-btn-secondary-bg-disabled);
+    --hgc-btn-border-hover: var(--hgc-btn-secondary-border-disabled);
+    --hgc-btn-label-hover: var(--hgc-btn-secondary-label-disabled);
+  }
+}
+.button--negative {
+  --hgc-btn-bg: var(--hgc-btn-negative-bg);
+  --hgc-btn-border: var(--hgc-btn-negative-border);
+  --hgc-btn-label: var(--hgc-btn-negative-label);
+  --hgc-btn-bg-hover: var(--hgc-btn-negative-bg-hover);
+  --hgc-btn-border-hover: var(--hgc-btn-negative-border-hover);
+  --hgc-btn-label-hover: var(--hgc-btn-negative-label-hover);
+  &:disabled {
+    --hgc-btn-bg-disabled: var(--hgc-btn-negative-bg-disabled);
+    --hgc-btn-border-disabled: var(--hgc-btn-negative-border-disabled);
+    --hgc-btn-label-disabled: var(--hgc-btn-negative-label-disabled);
+    --hgc-btn-bg-hover: var(--hgc-btn-negative-bg-disabled);
+    --hgc-btn-border-hover: var(--hgc-btn-negative-border-disabled);
+    --hgc-btn-label-hover: var(--hgc-btn-negative-label-disabled);
+  }
+}
+.button--secondary-accent {
+  --hgc-btn-bg: var(--hg-color-body-bg);
+  --hgc-btn-border: var(--hg-color-accent);
+  --hgc-btn-label: var(--hg-color-label);
+  --hgc-btn-bg-hover: var(--hg-color-accent-light);
+  --hgc-btn-border-hover: var(--hg-color-accent);
+  --hgc-btn-label-hover: var(--hg-color-accent-dark);
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+[data-component-id="mercury:starter"] {
+
+  &.wrapper {
+    border: 1ch solid #000;
+    padding: 20px;
+  }
+}

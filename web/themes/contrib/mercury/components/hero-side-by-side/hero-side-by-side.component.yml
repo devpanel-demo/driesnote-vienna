@@ -1,0 +1,179 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Hero side-by-side
+description: Hero with side-by-side slots for media and content.
+group: Layout
+props:
+  type: object
+  properties:
+    hero_flex_gap:
+      type: string
+      title: Hero flex gap
+      enum:
+        - hg:gap-0
+        - hg:gap-4 hg:md:gap-6 hg:xl:gap-8
+        - hg:gap-16 hg:md:gap-24 hg:xl:gap-32
+      meta:enum:
+        hg:gap-0: None
+        hg:gap-4 hg:md:gap-6 hg:xl:gap-8: Large (default)
+        hg:gap-16 hg:md:gap-24 hg:xl:gap-32: Extra-Large
+      default: hg:gap-4 hg:md:gap-6 hg:xl:gap-8
+      examples:
+        - 'hg:gap-4 hg:md:gap-6 hg:xl:gap-8'
+    hero_flex_direction_mobile:
+      type: string
+      title: Hero flex direction (mobile)
+      enum:
+        - hg:flex-col
+        - hg:flex-col-reverse
+      meta:enum:
+        hg:flex-col: Vertical
+        hg:flex-col-reverse: Vertical (reverse)
+      default: hg:flex-col
+      examples:
+        - 'hg:flex-col'
+    background:
+      type: string
+      title: Background color
+      enum:
+        - hg:bg-none
+        - hg:bg-brand
+        - hg:bg-brand-light
+        - hg:bg-brand-dark
+        - hg:bg-accent
+        - hg:bg-accent-light
+        - hg:bg-accent-dark
+      meta:enum:
+        hg:bg-none: None
+        hg:bg-brand: Brand
+        hg:bg-brand-light: Brand Light
+        hg:bg-brand-dark: Brand Dark
+        hg:bg-accent: Accent
+        hg:bg-accent-light: Accent Light
+        hg:bg-accent-dark: Accent Dark
+      default:
+        - 'hg:bg-none'
+      examples:
+        - 'hg:bg-none'
+    padding_block_start:
+      type: string
+      title: Padding top
+      enum:
+        - '0'
+        - '16'
+        - '32'
+        - '64'
+      examples:
+        - '0'
+    padding_block_end:
+      type: string
+      title: Padding bottom
+      enum:
+        - '0'
+        - '16'
+        - '32'
+        - '64'
+      examples:
+        - '0'
+    image_size:
+      type: string
+      title: Image size
+      description: Set the image aspect ratio
+      enum:
+        - hg:aspect-2/1
+        - hg:aspect-16/9
+        - hg:aspect-3/2
+        - hg:aspect-4/3
+        - hg:aspect-1/1
+      meta:enum:
+        hg:aspect-2/1: 2 × 1
+        hg:aspect-16/9: 16 × 9
+        hg:aspect-3/2: 3 × 2
+        hg:aspect-4/3: 4 × 3
+        hg:aspect-1/1: Square
+      default: hg:aspect-4/3
+      examples:
+        - hg:aspect-4/3
+    image_position:
+      type: string
+      title: Image position
+      description: Set the image position
+      enum:
+        - hg:md:flex-row
+        - hg:md:flex-row-reverse
+      meta:enum:
+        hg:md:flex-row: Left
+        hg:md:flex-row-reverse: Right
+      default: hg:md:flex-row
+      examples:
+        - 'hg:md:flex-row'
+    image_radius:
+      type: string
+      title: Image border radius
+      description: Set the image border radius
+      enum:
+        - hg:rounded-none
+        - hg:rounded-sm
+        - hg:rounded-xl hg:md:rounded-2xl
+        - hg:rounded-[24px] hg:md:rounded-[32px]
+      meta:enum:
+        hg:rounded-none: None
+        hg:rounded-sm: Small
+        hg:rounded-xl hg:md:rounded-2xl: Large
+        hg:rounded-[24px] hg:md:rounded-[32px]: Extra-Large
+      default: hg:rounded-sm
+      examples:
+        - 'hg:rounded-sm'
+    slot_flex_align:
+      type: string
+      title: Slot align content
+      enum:
+        - hg:md:self-start
+        - hg:md:self-center
+        - hg:md:self-end
+      meta:enum:
+        hg:md:self-start: Start
+        hg:md:self-center: Center
+        hg:md:self-end: End
+      default: hg:md:self-center
+      examples:
+        - 'hg:md:self-center'
+    slot_flex_direction:
+      type: string
+      title: Slot flex direction
+      enum:
+        - hg:flex-col
+        - hg:flex-col-reverse
+      meta:enum:
+        hg:flex-col: Vertical
+        hg:flex-col-reverse: Vertical (reverse)
+      default: hg:flex-col
+      examples:
+        - 'hg:flex-col'
+    slot_flex_gap:
+      type: string
+      title: Slot flex gap
+      enum:
+        - hg:gap-0
+        - hg:gap-4
+        - hg:gap-6 hg:md:gap-8
+        - hg:gap-12 hg:md:gap-16
+      meta:enum:
+        hg:gap-0: None
+        hg:gap-4: Small
+        hg:gap-6 hg:md:gap-8: Medium
+        hg:gap-12 hg:md:gap-16: Large
+      default: hg:gap-4
+      examples:
+        - 'hg:gap-4'
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Media Image
+      description: Media image for the hero.
+      type: object
+      examples:
+        - src: 'assets/boliviainteligente-QPu42AAJ5ZY-unsplash.jpg'
+          alt: 'Placeholder image'
+
+slots:
+  hero_slot:
+    title: 'Content'

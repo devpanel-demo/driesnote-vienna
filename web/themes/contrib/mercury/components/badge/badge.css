@@ -1,0 +1,64 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+@layer properties;
+.storybook-component--badge {
+  padding: calc(var(--hg-spacing, 4px) * 2);
+}
+.badge {
+  background-color: var(--hgc-btn-bg);
+  border-color: var(--hgc-btn-border);
+  color: var(--hgc-btn-label);
+  &:hover, &:focus {
+    --hgc-btn-bg: var(--hgc-btn-bg-hover);
+    --hgc-btn-border: var(--hgc-btn-border-hover);
+    --hgc-btn-label: var(--hgc-btn-label-hover);
+  }
+  &.secondary {
+    background-color: var(--hgc-btn-secondary-bg);
+    border-color: var(--hgc-btn-secondary-border);
+    color: var(--hgc-btn-secondary-label);
+    &:hover, &:focus {
+      --hgc-btn-secondary-bg: var(--hgc-btn-secondary-bg-hover);
+      --hgc-btn-secondary-border: var(--hgc-btn-secondary-border-hover);
+      --hgc-btn-secondary-label: var(--hgc-btn-secondary-label-hover);
+    }
+    .ph {
+      font-size: var(--hg-text-xl, 1.25rem);
+      line-height: calc(var(--hg-spacing, 4px) * 2);
+      color: var(--hgc-btn-secondary-label);
+    }
+  }
+  .ph {
+    font-size: var(--hg-text-xl, 1.25rem);
+    line-height: calc(var(--hg-spacing, 4px) * 2);
+    color: var(--hgc-btn-label);
+  }
+}
+.badge-label {
+  font-family: var(--hg-font-sans, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+  font-size: var(--hg-text-sm, 0.875rem);
+  line-height: var(--tw-leading, var(--hg-text-sm--line-height, 1.5));
+  --tw-leading: 1;
+  line-height: 1;
+  --tw-font-weight: var(--hg-font-weight-normal, 400);
+  font-weight: var(--hg-font-weight-normal, 400);
+  color: inherit;
+  -webkit-user-select: none;
+  user-select: none;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{# Pricing variant for Storybook #}
+{% embed 'mercury:components/section/section' with { 
+  background_media: null,
+  columns: '25-25-25-25'
+} %}
+
+  {% block header_slot %}
+    {{ include('mercury:heading',
+      {
+        level: 2,
+        heading_text: storybook.price.header_text,
+        url: '',
+      } )
+    }}
+  {% endblock %}
+
+  {% block main_slot %}
+    {% for pricing in storybook.price.pricing %}
+        {{ include('mercury:card-pricing', pricing) }}
+    {% endfor %}
+  {% endblock %}
+
+  {% block footer_slot %}
+    {{ storybook.footer_text }}
+  {% endblock %}
+
+{% endembed %}

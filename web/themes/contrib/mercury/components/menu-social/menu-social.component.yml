@@ -1,0 +1,24 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Social
+description: A navigation menu component that displays a list of Social Media platform links.
+group: Navigation/Menus
+props:
+  type: object
+  properties:
+    items:
+      type: array
+      title: Menu Items
+      description: List of social platforms to display
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            description: The title of the social media platform
+          url:
+            type: string
+            description: The URL the menu item links to
+          icon:
+            type: string
+            description: The svg for icon
+      examples: []

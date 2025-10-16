@@ -1,0 +1,4 @@
+services:
+  pexels_ai.api:
+    class: Drupal\pexels_ai\PexelsApi
+    arguments: ['@http_client', '@config.factory', '@entity_type.manager']

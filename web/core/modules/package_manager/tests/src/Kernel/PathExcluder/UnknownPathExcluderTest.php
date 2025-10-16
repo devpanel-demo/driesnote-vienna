@@ -204,38 +204,27 @@ class UnknownPathExcluderTest extends PackageManagerKernelTestBase {
   }
 
   /**
-   * Tests that paths to exclude can be modified by a config option.
+   * Tests that the excluder can be disabled by a config flag.
    */
   public function testExcluderCanBeDisabled(): void {
     $this->createTestProjectForTemplate(TRUE);
 
     $project_root = $this->container->get(PathLocator::class)
       ->getProjectRoot();
-    mkdir($project_root . '/known');
-    touch($project_root . '/known/file.txt');
     mkdir($project_root . '/unknown');
     touch($project_root . '/unknown/file.txt');
 
     $config = $this->config('package_manager.settings');
-    $config->set('include_unknown_files_in_project_root', ['*'])->save();
+    $config->set('include_unknown_files_in_project_root', TRUE)->save();
 
     $stage = $this->createStage();
     $stage->create();
-    $this->assertFileExists($stage->getSandboxDirectory() . '/known/file.txt');
     $this->assertFileExists($stage->getSandboxDirectory() . '/unknown/file.txt');
     $stage->destroy();
 
-    $config->set('include_unknown_files_in_project_root', ['known/*.txt'])->save();
+    $config->set('include_unknown_files_in_project_root', FALSE)->save();
     $this->assertFileExists($project_root . '/unknown/file.txt');
     $stage->create();
-    $this->assertFileExists($stage->getSandboxDirectory() . '/known/file.txt');
-    $this->assertFileDoesNotExist($stage->getSandboxDirectory() . '/unknown/file.txt');
-
-    $config->set('include_unknown_files_in_project_root', [])->save();
-    $this->assertFileExists($project_root . '/known/file.txt');
-    $this->assertFileExists($project_root . '/unknown/file.txt');
-    $stage->create();
-    $this->assertFileDoesNotExist($stage->getSandboxDirectory() . '/known/file.txt');
     $this->assertFileDoesNotExist($stage->getSandboxDirectory() . '/unknown/file.txt');
   }
 

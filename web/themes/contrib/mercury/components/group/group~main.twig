@@ -1,0 +1,25 @@
+
+
+  {% embed 'mercury:group' %}
+    {% block group_slot %}
+      {{ include('mercury:heading',
+        {
+          level: 2,
+          heading_text: "Group Heading",
+          url: '',
+        } )
+      }}
+      {{ include('mercury:text',
+        {
+          text: "<p>Nulla purus suscipit nostra sagittis lectus sapien gravida ultrices. Euismod condimentum volutpat natoque feugiat consequat rutrum duis tellus vestibulum cubilia.</p>",
+        } )
+      }}
+      {{ include('mercury:button', 
+        {
+          label: 'click me',
+          href: 'https://example.com',
+          variant: primary,
+        } )
+      }}
+      {% endblock %}
+  {% endembed %}

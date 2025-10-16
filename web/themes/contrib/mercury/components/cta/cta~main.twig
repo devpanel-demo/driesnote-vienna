@@ -1,0 +1,24 @@
+{# Overriding media_slot just for Storybook #}
+{% embed 'mercury:cta' %}
+
+  {% block media %}
+    {% if media.src is not empty and has_background_image %}
+    <div class="cta--media hg:absolute hg:inset-0">
+      <div class="hg:absolute hg:inset-0 hg:bg-black/50"></div>
+      <img class="hg:object-cover hg:w-full hg:h-full" src="{{ componentMetadata.path ~ '/' ~ media.src }}" alt="{{ media.alt }}" />
+    </div>
+    {% endif %}
+  {% endblock %}
+
+  {% block actions %}
+    {% for link in storybook.links %}
+      {% if  loop.index == 1 %}
+        {% set link_style = 'primary' %}
+      {% else %}
+        {% set link_style = 'secondary' %}
+      {% endif %}
+      {{ include('mercury:button', link|merge({variant: link_style})) }}
+    {% endfor %}
+  {% endblock %}
+
+{% endembed %}

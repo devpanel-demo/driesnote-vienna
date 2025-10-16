@@ -1,0 +1,24 @@
+{% set classes = classes|default([])|merge([
+    'badge',
+    style,
+    'hg:rounded-sm',
+    'hg:border',
+    'hg:flex',
+    icon_first ? 'hg:flex-row' : 'hg:flex-row-reverse',
+    'hg:inline-flex',
+    'hg:items-center',
+    'hg:gap-[2px]',
+    'hg:lg:gap-1',
+    'hg:px-[6px]',
+    'hg:lg:px-2',
+    'hg:2xl:px-3',
+    'hg:py-[5px]',
+    'hg:lg:py-[6px]',
+    'hg:2xl:py-2',
+  ])|filter(v => v is not empty)
+%}
+
+<a href="{{ url }}" aria-label="{{ label }}" class="{{ classes|join(' ') }}">
+  {% if icon is not empty %}{{ include('@mercury/components/icon/icon.twig') }}{% endif %}
+  <span class="badge-label">{{ label }}</span>
+</a>

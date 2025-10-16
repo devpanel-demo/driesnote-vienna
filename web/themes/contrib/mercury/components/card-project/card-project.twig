@@ -1,0 +1,37 @@
+{% set classes = [
+    'card-project',
+    'hg:flex hg:flex-col hg:gap-6',
+    'media-last' in layout ? 'hg:md:flex-row-reverse' : 'hg:md:flex-row',
+  ]
+%}
+
+<div class="{{ classes|join(' ') }}">
+  {% if media.src is not empty %}
+  <div class="card--media hg:flex-1 hg:overflow-hidden">
+    {% block media %}
+      <img src="{{ media.src }}" alt="{{ media.alt }}" class="hg:w-full hg:h-full hg:object-cover"/>
+    {% endblock %}
+  </div>
+  {% endif %}
+
+  <div class="card--content hg:flex-1 hg:flex hg:flex-col hg:gap-2 hg:md:py-4 {{ 'media-last' in layout ? 'hg:md:items-end hg:md:text-right' : 'hg:md:items-start' }}">
+    {% if block('badges') is defined %}
+      {% block badges %}
+        <ul class="hg:list-none hg:ps-0 hg:flex hg:items-center hg:gap-2">
+        {% for badge in badges %}
+          <li>
+            {{ include('mercury:badge', {
+              url: badge.url,
+              label: badge.label,
+              style: 'secondary',
+              })
+            }}
+          </li>
+        {% endfor %}
+        </ul>
+      {% endblock %}
+    {% endif %}
+    {{ include('mercury:heading') }}
+    <p class="hg:font-extralight hg:text-lg hg:xl:text-xl">{{ text }}</p>
+  </div>
+</div>

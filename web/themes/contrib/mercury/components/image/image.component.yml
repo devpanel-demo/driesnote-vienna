@@ -1,0 +1,55 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Image
+description: An image component.
+group: Base
+props:
+  type: object
+  properties:
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Image
+      description: Media and Alt for the card.
+      type: object
+      examples:
+        - src: 'assets/957040.jpg'
+          alt: 'Placeholder text.'
+    size:
+      title: Aspect ratio
+      description: Width:height proportions of the image. Listed from most horizontal to most vertical.
+      type: string
+      enum:
+        - hg:aspect-2/1
+        - hg:aspect-16/9
+        - hg:aspect-3/2
+        - hg:aspect-4/3
+        - hg:aspect-1/1
+      meta:enum:
+        hg:aspect-2/1: 2 × 1
+        hg:aspect-16/9: 16 × 9
+        hg:aspect-3/2: 3 × 2
+        hg:aspect-4/3: 4 × 3
+        hg:aspect-1/1: Square
+      default: hg:aspect-4/3
+      examples:
+        - hg:aspect-4/3
+    radius:
+      type: string
+      title: Image radius
+      description: Image corner radius
+      enum:
+        - hg:rounded-none
+        - hg:rounded-sm
+        - hg:rounded-xl hg:md:rounded-2xl
+        - hg:rounded-[24px] hg:md:rounded-[32px]
+      meta:enum:
+        hg:rounded-none: None
+        hg:rounded-sm: Small
+        hg:rounded-xl hg:md:rounded-2xl: Large
+        hg:rounded-[24px] hg:md:rounded-[32px]: Extra-Large
+      default: hg:rounded-sm
+      examples:
+        - 'hg:rounded-sm'
+    caption:
+      title: Caption
+      description: Set optional caption
+      type: string

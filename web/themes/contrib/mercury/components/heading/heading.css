@@ -1,0 +1,57 @@
+/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer components {
+  .heading {
+    font-family: var(--hg-font-display, 'Inter', -apple-system, 'Segoe UI', Arial, sans-serif);
+    --tw-leading: 1.2;
+    line-height: 1.2;
+    --tw-tracking: var(--hg-tracking-normal, 0em);
+    letter-spacing: var(--hg-tracking-normal, 0em);
+    color: inherit;
+  }
+  h1.heading {
+    --tw-font-weight: var(--hgc-font-weight-h1);
+    font-weight: var(--hgc-font-weight-h1);
+  }
+  h2.heading {
+    --tw-font-weight: var(--hgc-font-weight-h2);
+    font-weight: var(--hgc-font-weight-h2);
+  }
+  h3.heading {
+    --tw-font-weight: var(--hgc-font-weight-h3);
+    font-weight: var(--hgc-font-weight-h3);
+  }
+  h4.heading {
+    --tw-font-weight: var(--hgc-font-weight-h4);
+    font-weight: var(--hgc-font-weight-h4);
+  }
+  h5.heading {
+    --tw-font-weight: var(--hgc-font-weight-h5);
+    font-weight: var(--hgc-font-weight-h5);
+  }
+  h6.heading {
+    --tw-font-weight: var(--hgc-font-weight-h6);
+    font-weight: var(--hgc-font-weight-h6);
+  }
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-leading: initial;
+      --tw-tracking: initial;
+      --tw-font-weight: initial;
+    }
+  }
+}

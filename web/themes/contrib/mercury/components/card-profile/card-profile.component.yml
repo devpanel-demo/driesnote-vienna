@@ -1,0 +1,28 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Profile
+description: Basic card with image, title, teaser, tags
+group: Components/Cards
+props:
+  type: object
+  properties:
+    name:
+      type: string
+      title: Name
+      examples:
+        - 'Chloe Bennett'
+    job_title:
+      type: string
+      title: Job title
+      examples:
+        - 'Operations Manager'
+    url:
+      type: string
+      title: Link
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Card Media
+      description: Media and Alt for the card.
+      type: object
+      examples:
+        - src: 'assets/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.jpg'
+          alt: 'Photo by Christina @ wocintechchat.com on Unsplash'

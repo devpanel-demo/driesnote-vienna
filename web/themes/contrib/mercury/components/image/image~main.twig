@@ -1,0 +1,7 @@
+{% embed 'mercury:image' %}
+  {% block media %}
+    {% if media.src is not empty %}
+      <img class="hg:object-cover hg:w-full hg:h-full" src="{{  componentMetadata.path ~ '/' ~ media.src }}" alt="{{ media.alt }}" />
+    {% endif %}
+  {% endblock %}
+{% endembed %}

@@ -1,0 +1,30 @@
+{# Overriding media_slot just for Storybook #}
+{% embed 'mercury:hero-billboard' %}
+  {% block hero_media %}
+    {% if media.src is not empty %}
+      <div class="hg:absolute hg:inset-0 {{ overlay_opacity }}"></div>
+    {% endif %}
+    <img src="{{  componentMetadata.path ~ '/' ~ storybook.media.src }}" alt="{{ storybook.media.alt }}" class="hg:w-full hg:h-full hg:object-cover {{ object_position }}"/>
+  {% endblock %}
+  {% block hero_content %}
+
+    {{ include('mercury:heading', {
+      heading_text: storybook.heading_text,
+      level: storybook.level,
+      url: 'No URL',
+    }) }}
+
+    {{ include('mercury:text',
+      {
+        text: "<p>Nulla purus suscipit nostra sagittis lectus sapien gravida ultrices. Euismod condimentum volutpat natoque feugiat consequat rutrum duis tellus vestibulum cubilia.</p>",
+      } )
+    }}
+
+    {{ include('mercury:button', {
+      label: 'Example button',
+      href: 'https://example.com',
+      variant: primary,
+    }) }}
+
+  {% endblock %}
+{% endembed %}

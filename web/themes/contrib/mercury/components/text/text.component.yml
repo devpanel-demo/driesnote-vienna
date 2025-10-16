@@ -1,0 +1,60 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Text
+description: A component for rich text.
+group: Base
+props:
+  type: object
+  properties:
+    text:
+      type: string
+      title: Rich text
+      contentMediaType: text/html
+      x-formatting-context: block
+      examples:
+        - <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium pellentesque semper enim aliquam. Vestibulum elit facilisi ridiculus netus blandit diam turpis tempor eleifend vehicula ligula. Elit neque nam morbi viverra congue maximus.</p>
+    font_size_multiplier:
+      type: string
+      title: Font Size Multiplier
+      description: Scale all font sizes by a percentage
+      enum:
+        - text-scale-75
+        - text-scale-87
+        - normal
+        - text-scale-112
+        - text-scale-125
+        - text-scale-137
+        - text-scale-150
+      meta:enum:
+        text-scale-75: 75% (12px)
+        text-scale-87: 87.5% (14px)
+        normal: Normal
+        text-scale-112: 112.5% (18px)
+        text-scale-125: 125% (20px)
+        text-scale-137: 137.5% (22px)
+        text-scale-150: 150% (24px)
+      default: normal
+      examples:
+        - normal
+    font_color:
+      type: string
+      title: Font Color
+      description: Select Font Color
+      enum:
+        - text-inherit
+        - hg:text-body-text-dark
+        - hg:text-white
+        - hg:text-brand
+        - hg:text-brand-light
+        - hg:text-accent
+        - hg:text-accent-light
+      meta:enum:
+        text-inherit: Default
+        hg:text-body-text-dark: Dark
+        hg:text-white: Light
+        hg:text-brand: Brand
+        hg:text-brand-light: Brand Light
+        hg:text-accent: Accent
+        hg:text-accent-light: Accent Light
+      default: text-inherit
+      examples:
+        - text-inherit

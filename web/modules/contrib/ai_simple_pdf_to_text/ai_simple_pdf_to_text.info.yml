@@ -1,0 +1,10 @@
+name: 'AI Simple PDF to Text'
+type: module
+description: 'This module offers automators and agents to convert PDF to text'
+package: AI Tools
+core_version_requirement: ^10 || ^11
+
+# Information added by Drupal.org packaging script on 2025-10-15
+version: '1.0.0-alpha3'
+project: 'ai_simple_pdf_to_text'
+datestamp: 1760508131

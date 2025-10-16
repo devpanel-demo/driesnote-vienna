@@ -1,0 +1,74 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Hero full-width
+description: Hero with stacked slots for media and content.
+group: Layout
+props:
+  type: object
+  properties:
+    layout:
+      type: string
+      title: Layout
+      description: Set hero layout
+      enum:
+        - 'media-first (default)'
+        - 'media-last'
+      examples: ['media-first (default)', 'media-last']
+    heading_text:
+      type: string
+      title: Heading Text
+      examples:
+        - 'This is the heading text'
+    level:
+      type: number
+      title: Heading Level
+      enum:
+        - 1
+        - 2
+        - 3
+      default: 1
+      examples:
+        - 1
+    font_size:
+      type: string
+      title: Font Size
+      description: Select Font Size
+      enum:
+        - default
+        - heading-responsive-8xl
+        - heading-responsive-7xl
+        - heading-responsive-6xl
+        - heading-responsive-5xl
+        - heading-responsive-4xl
+        - heading-responsive-3xl
+        - heading-responsive-2xl
+        - heading-responsive-xl
+      meta:enum:
+        default: Default
+        heading-responsive-8xl: 8xl 72px
+        heading-responsive-7xl: 7xl 96px
+        heading-responsive-6xl: 6xl 60px
+        heading-responsive-5xl: 5xl 48px
+        heading-responsive-4xl: 4xl 40px
+        heading-responsive-3xl: 3xl 32px
+        heading-responsive-2xl: 2xl 24px
+        heading-responsive-xl: xl 20px
+      default: default
+      examples: 
+        - default
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Media Image
+      description: Media image for the hero.
+      type: object
+      examples:
+        - src: 'assets/boliviainteligente-QPu42AAJ5ZY-unsplash.jpg'
+          alt: 'Placeholder image'
+    styles:
+      type: string
+      title: WILL DELETE (do not use)
+      enum:
+        - 'default'
+        - 'alt'
+      default: alt
+      examples:
+        - alt

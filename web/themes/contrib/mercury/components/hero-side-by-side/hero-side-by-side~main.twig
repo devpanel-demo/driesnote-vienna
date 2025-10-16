@@ -1,0 +1,22 @@
+{# Overriding media_slot just for Storybook #}
+{% embed 'mercury:hero-side-by-side' %}
+  {% block hero_media %}
+    <img src="{{  componentMetadata.path ~ '/' ~ storybook.media.src }}" alt="{{ storybook.media.alt }}" class="hg:w-full hg:h-full hg:object-cover"/>
+  {% endblock %}
+  {% block hero_content %}
+    {{ include('mercury:heading', {
+      heading_text: 'Hero heading',
+      url: 'No URL',
+    }) }}
+
+    {{ include('mercury:text', {
+      text: 'Hero text block',
+    }) }}
+
+    {{ include('mercury:button', {
+      label: 'Hero button',
+      href: 'https://example.com',
+      variant: primary,
+    }) }}
+  {% endblock %}
+{% endembed %}

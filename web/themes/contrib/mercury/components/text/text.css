@@ -1,0 +1,55 @@
+/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+.storybook-component--text {
+  max-width: var(--hg-container-3xl, 48rem);
+  padding: calc(var(--hg-spacing, 4px) * 4);
+}
+@layer components {
+  .rich-text {
+    p, ul, ol, li {
+      font-size: inherit;
+    }
+    h1 {
+      font-size: calc(var(--hg-text-5xl) * var(--container-font-scale, 1));
+    }
+    h2 {
+      font-size: calc(var(--hg-text-4xl) * var(--container-font-scale, 1));
+    }
+    h3 {
+      font-size: calc(var(--hg-text-2xl) * var(--container-font-scale, 1));
+    }
+    h4 {
+      font-size: calc(var(--hg-text-xl) * var(--container-font-scale, 1));
+    }
+    h5 {
+      font-size: calc(var(--hg-text-lg) * var(--container-font-scale, 1));
+    }
+    h6 {
+      font-size: calc(var(--hg-text-base) * var(--container-font-scale, 1));
+    }
+    @media (min-width: 768px) {
+      h2 {
+        font-size: calc(var(--hg-text-5xl) * var(--container-font-scale, 1));
+      }
+      h4 {
+        font-size: calc(var(--hg-text-2xl) * var(--container-font-scale, 1));
+      }
+      h5 {
+        font-size: calc(var(--hg-text-xl) * var(--container-font-scale, 1));
+      }
+      h6 {
+        font-size: calc(var(--hg-text-lg) * var(--container-font-scale, 1));
+      }
+    }
+    @media (min-width: 1280px) {
+      h2 {
+        font-size: calc(var(--hg-text-6xl) * var(--container-font-scale, 1));
+      }
+      h3 {
+        font-size: calc(var(--hg-text-3xl) * var(--container-font-scale, 1));
+      }
+    }
+    * {
+      color: inherit;
+    }
+  }
+}

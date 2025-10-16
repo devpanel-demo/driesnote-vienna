@@ -1,0 +1,42 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+@layer properties;
+.storybook-component--dialog-webform {
+  padding: calc(var(--hg-spacing, 4px) * 3);
+}
+@layer components {
+  .webform-confirmation-modal--content {
+    padding: calc(var(--hg-spacing, 4px) * 4);
+    font-size: var(--hg-text-base, 1rem);
+    line-height: var(--tw-leading, var(--hg-text-base--line-height, 1.5));
+    --tw-leading: var(--hg-leading-relaxed, 1.625);
+    line-height: var(--hg-leading-relaxed, 1.625);
+    color: var(--hg-color-gray-800, oklch(0.278 0.033 256.848));
+  }
+  .webform-confirmation-modal .ui-dialog .ui-dialog-title, .ui-dialog[aria-describedby*="webform"] .ui-dialog-title, .ui-dialog[aria-labelledby*="webform"] .ui-dialog-title {
+    font-size: var(--hg-text-xl, 1.25rem);
+    line-height: var(--tw-leading, var(--hg-text-xl--line-height, 1.5));
+    --tw-font-weight: var(--hg-font-weight-semibold, 600);
+    font-weight: var(--hg-font-weight-semibold, 600);
+    color: var(--hg-color-gray-900, oklch(0.21 0.034 264.665));
+  }
+  .webform-confirmation-modal .ui-dialog .ui-dialog-content, .ui-dialog[aria-describedby*="webform"] .ui-dialog-content, .ui-dialog[aria-labelledby*="webform"] .ui-dialog-content {
+    background-color: var(--hg-color-white, #ffffff);
+    padding: calc(var(--hg-spacing, 4px) * 6);
+  }
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+    }
+  }
+}

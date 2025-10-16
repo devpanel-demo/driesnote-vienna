@@ -1,0 +1,53 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Hero blog
+description: Hero with side by side slots for media and content.
+group: Layout
+
+props:
+  type: object
+  properties:
+    heading_text:
+      type: string
+      title: Heading Text
+      default: 'Enter the title'
+      examples:
+        - 'Vivamus curae metus neque mollis orci ipsum sapien velit cursus'
+
+    level:
+      type: integer
+      title: Heading Level
+      enum: [1, 2, 3, 4, 5, 6]
+      examples:
+        - 1
+
+    date:
+      type: integer
+      title: Published Date
+      # 2026-02-12
+      default: 1770856866
+      examples:
+        - 1770856866
+
+    author:
+      type: string
+      title: Author
+      examples:
+        - 'John Smith'
+
+    author_url:
+      type: string
+      title: Author link
+      default: ''
+      examples: []
+
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Media Image
+      description: Media image for the hero.
+      type: object
+      examples:
+        - src: 'assets/boliviainteligente-I1rJ9ViO3ik-unsplash.jpg'
+          alt: 'Placeholder image'
+slots:
+  blog_media:
+    title: 'Place Image'

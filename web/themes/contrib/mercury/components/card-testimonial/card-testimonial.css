@@ -1,0 +1,21 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+.storybook-component--card-testimonial {
+  max-width: var(--hg-container-md, 28rem);
+}
+@layer components {
+  .card-testimonial {
+    border-radius: var(--hg-radius-md, 0.375rem);
+    background-color: var(--hgc-card-testimonial-bg);
+    color: var(--hgc-card-testimonial-text);
+  }
+  .testimonial-text {
+    font-size: var(--hg-text-xl, 1.25rem);
+    line-height: var(--tw-leading, var(--hg-text-xl--line-height, 1.5));
+    color: inherit;
+  }
+  .testimonial-cite--text, .testimonial-name {
+    font-size: var(--hg-text-base, 1rem);
+    line-height: var(--tw-leading, var(--hg-text-base--line-height, 1.5));
+    color: inherit;
+  }
+}

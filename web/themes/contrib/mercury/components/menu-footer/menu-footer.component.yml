@@ -1,0 +1,37 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Footer
+description: A navigation menu component that displays a list of utility links with optional nested children.
+group: Navigation/Menus
+props:
+  type: object
+  properties:
+    items:
+      type: array
+      description: List of menu items to display
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            description: The text to display for the menu item
+          url:
+            type: string
+            description: The URL the menu item links to
+          below:
+            type: array
+            description: Optional nested menu items
+            items:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: The text to display for the sub-menu item
+                url:
+                  type: string
+                  description: The URL the sub-menu item links to
+      examples: []
+      menu_level:
+        type: integer
+        title: Menu Level
+        examples:
+          - 0

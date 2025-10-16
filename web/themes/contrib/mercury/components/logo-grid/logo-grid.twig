@@ -1,0 +1,114 @@
+{# Can't do any of this with arrays or macros because the Tailwind tree-shaker won't see any of the full classes. #}
+{% set columns_mobile = behavior_mobile == 'scroll' ? false : behavior_mobile %}
+{% set scroll_classes_mobile = [
+  'hg:snap-x',
+  'hg:snap-mandatory',
+  'hg:overflow-x-auto',
+  'hg:flex',
+  'hg:flex-nowrap',
+  'hg:justify-start',
+  'hg:relative hg:left-1/2 hg:-translate-x-1/2 hg:w-screen',
+]|join(' ') %}
+
+{% set grid_classes_mobile = [
+  columns_mobile ? 'logo-grid--grid-mobile logo-grid--columns-mobile-' ~ columns_mobile,
+  'hg:grid',
+  'hg:justify-stretch',
+  'hg:items-stretch',
+  'hg:grid-cols-[repeat(var(--hgc-columns-mobile),minmax(0,1fr))]'
+]|join(' ') %}
+
+{% set columns_tablet = behavior_tablet == 'scroll' ? false : behavior_tablet %}
+{% set scroll_classes_tablet = [
+  'hg:md:snap-x',
+  'hg:md:snap-mandatory',
+  'hg:md:overflow-x-auto',
+  'hg:md:flex',
+  'hg:md:flex-nowrap',
+  'hg:md:justify-start',
+  'hg:md:relative hg:md:left-1/2 hg:md:-translate-x-1/2 hg:md:w-screen',
+]|join(' ') %}
+{% set cancel_grid_classes_tablet = [
+  'hg:md:max-w-[none]',
+  'hg:md:mx-0',
+  'hg:md:justify-[initial]',
+  'hg:md:items-[initial]'
+]|join(' ') %}
+
+{% set grid_classes_tablet = [
+  columns_tablet ? 'logo-grid--grid-tablet logo-grid--columns-tablet-' ~ columns_tablet,
+  'hg:md:container',
+  'hg:md:mx-auto',
+  'hg:md:grid',
+  'hg:md:justify-stretch',
+  'hg:md:items-stretch',
+  'hg:md:grid-cols-[repeat(var(--hgc-columns-tablet),minmax(0,1fr))]'
+]|join(' ') %}
+{% set cancel_scroll_classes_tablet = [
+  'hg:md:overflow-x-visible',
+  'hg:md:static hg:md:left-0 hg:md:-translate-x-0 hg:md:w-auto',
+]|join(' ') %}
+
+{% set columns_desktop = behavior_desktop == 'scroll' ? false : behavior_desktop %}
+{% set scroll_classes_desktop = [
+  'hg:xl:snap-x',
+  'hg:xl:snap-mandatory',
+  'hg:xl:overflow-x-auto',
+  'hg:xl:flex',
+  'hg:xl:flex-nowrap',
+  'hg:xl:justify-start',
+  'hg:xl:max-w-[none]',
+  'hg:xl:relative hg:xl:left-1/2 hg:xl:-translate-x-1/2 hg:xl:w-screen',
+]|join(' ') %}
+{% set cancel_grid_classes_desktop = [
+  'hg:xl:max-w-[none]',
+  'hg:xl:mx-0',
+  'hg:xl:justify-[initial]',
+  'hg:xl:items-[initial]'
+]|join(' ') %}
+
+{% set grid_classes_desktop = [
+  columns_desktop ? 'logo-grid--grid-desktop logo-grid--columns-desktop-' ~ columns_desktop,
+  'hg:xl:container',
+  'hg:xl:mx-auto',
+  'hg:xl:grid',
+  'hg:xl:justify-stretch',
+  'hg:xl:items-stretch',
+  'hg:xl:grid-cols-[repeat(var(--hgc-columns-desktop),minmax(0,1fr))]'
+]|join(' ') %}
+{% set cancel_scroll_classes_desktop = [
+  'hg:xl:overflow-x-visible',
+  'hg:xl:static hg:xl:left-0 hg:xl:-translate-x-0 hg:xl:w-auto',
+]|join(' ') %}
+
+{% set classes = [
+  'logo-grid hg:gap-3 hg:min-w-[100%]',
+  columns_mobile ? grid_classes_mobile : scroll_classes_mobile,
+  columns_tablet ? grid_classes_tablet : scroll_classes_tablet,
+  (not columns_mobile) != (not columns_tablet) ? (columns_tablet ? cancel_scroll_classes_tablet : cancel_grid_classes_tablet) : '',
+  columns_desktop ? grid_classes_desktop : scroll_classes_desktop,
+  ((not columns_tablet) != (not columns_desktop)) ? (columns_desktop ? cancel_scroll_classes_desktop : cancel_grid_classes_desktop) : '',
+] %}
+
+{% set styles = [
+  '--hgc-columns-desktop:' ~ columns_desktop,
+  '--hgc-columns-tablet:' ~ columns_tablet,
+  '--hgc-columns-mobile:' ~ columns_mobile,
+] %}
+
+<div class="{{ classes|join(' ') }}" style="{{ styles|join(';') }}">
+  {% block logos %}
+    {% for i in 1..8 %}
+      {% block logos_media %}
+        {% embed 'mercury:tile-logo' with {
+          background: 'light',
+          media: {
+            src: '/' ~ componentMetadata.path ~ '/assets/logo-' ~ i ~ '-vanilla-light.png',
+            alt: 'Placeholder logo ' ~ i,
+          }
+        } %}
+        {% endembed %}
+      {% endblock %}
+    {% endfor %}
+  {% endblock %}
+</div>

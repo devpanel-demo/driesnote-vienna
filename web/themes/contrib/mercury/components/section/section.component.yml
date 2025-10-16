@@ -1,0 +1,143 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Section
+group: Layout
+status: stable
+description: A section for nested components
+props:
+  type: object
+  properties:
+    columns:
+      type: string
+      title: Content layout
+      enum:
+        - '100'
+        - '50-50'
+        - '33-33-33'
+        - '75-25'
+        - '25-75'
+        - '67-33'
+        - '33-67'
+        - '50-25-25'
+        - '25-25-50'
+        - '25-25-25-25'
+      examples:
+        - '50-50'
+      default:
+        - '50-50'
+    width:
+      type: string
+      title: Section width
+      enum:
+        - hg:lg:max-w-full
+        - hg:lg:max-w-9/10
+        - hg:lg:max-w-8/10
+        - hg:lg:max-w-3/4
+        - hg:lg:max-w-1/2
+      meta:enum:
+        hg:lg:max-w-full: 100%
+        hg:lg:max-w-9/10: 90%
+        hg:lg:max-w-8/10: 80%
+        hg:lg:max-w-3/4: 75%
+        hg:lg:max-w-1/2: 50%
+      examples:
+        - 'hg:lg:max-w-full'
+    margin_block_start:
+      type: string
+      title: Margin top
+      enum:
+        - '0'
+        - '8'
+        - '20'
+        - '32'
+        - '48'
+        - '64'
+        - '96'
+        - '128'
+      examples:
+        - '48'
+    margin_block_end:
+      type: string
+      title: Margin bottom
+      enum:
+        - '0'
+        - '8'
+        - '20'
+        - '32'
+        - '48'
+        - '64'
+        - '96'
+        - '128'
+      examples:
+        - '48'
+    padding_block_start:
+      type: string
+      title: Padding top
+      enum:
+        - '0'
+        - '16'
+        - '32'
+        - '64'
+      examples:
+        - '0'
+    padding_block_end:
+      type: string
+      title: Padding bottom
+      enum:
+        - '0'
+        - '16'
+        - '32'
+        - '64'
+      examples:
+        - '0'
+    background_color:
+      type: string
+      title: Background color
+      enum:
+        - hg:bg-none
+        - hg:bg-black/50
+        - hg:bg-brand
+        - hg:bg-brand-light
+        - hg:bg-brand-dark
+        - hg:bg-accent
+        - hg:bg-accent-light
+        - hg:bg-accent-dark
+      meta:enum:
+        hg:bg-none: None
+        hg:bg-black/50: Overlay tint
+        hg:bg-brand: Brand
+        hg:bg-brand-light: Brand Light
+        hg:bg-brand-dark: Brand Dark
+        hg:bg-accent: Accent
+        hg:bg-accent-light: Accent Light
+        hg:bg-accent-dark: Accent Dark
+      default:
+        - 'hg:bg-none'
+      examples:
+        - 'hg:bg-none'
+    background_media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Background image
+      description: The background image for section.
+      type: object
+    section_header:
+      type: boolean
+      title: Show header region
+      examples:
+        - true
+      default:
+        - true
+    section_footer:
+      type: boolean
+      title: Show footer region
+      examples:
+        - true
+      default:
+        - true
+
+slots:
+  header_slot:
+    title: 'Header'
+  main_slot:
+    title: 'Grid'
+  footer_slot:
+    title: 'Footer'

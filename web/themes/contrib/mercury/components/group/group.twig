@@ -1,0 +1,46 @@
+{% set flex_direction_map = {
+  'column': 'hg:flex-col',
+  'row': 'hg:flex-row',
+  'column-reverse': 'hg:flex-col-reverse',
+  'row-reverse': 'hg:flex-row-reverse',
+} %}
+
+{% set radius_map = {
+  'none': '',
+  'sm': 'hg:rounded-sm',
+  'md': 'hg:rounded-md',
+  'lg': 'hg:rounded-lg',
+  'xl': 'hg:rounded-xl',
+} %}
+
+{% set flex_gap_map = {
+  'none': '',
+  'sm': 'hg:gap-4',
+  'md': 'hg:gap-8',
+  'lg': 'hg:gap-16',
+  'xl': 'hg:gap-32',
+} %}
+
+{% set padding_map = {
+  'none': '',
+  'sm': 'hg:p-4',
+  'md': 'hg:p-8',
+  'lg': 'hg:p-16',
+  'xl': 'hg:p-32',
+} %}
+
+{% set flex_align_map = {
+  'start': 'hg:self-start',
+  'end': 'hg:self-end',
+  'center': 'hg:self-center',
+} %}
+
+{% set flex_direction = flex_direction_map[flex_direction] ?? '' %}
+{% set radius = radius_map[radius] ?? '' %}
+{% set flex_gap = flex_gap_map[flex_gap] ?? '' %}
+{% set padding = padding_map[padding] ?? '' %}
+{% set flex_align = flex_align_map[flex_align] ?? '' %}
+<div class="group{{ flex_direction ? ' ' ~ flex_direction }}{{ flex_gap ? ' ' ~ flex_gap }}{{ flex_align ? ' ' ~ flex_align }}{{ background ? ' ' ~ background }}{{ radius ? ' ' ~ radius }}{{ padding ? ' ' ~ padding }}">
+  {% block group_slot %}
+  {% endblock %}
+</div>

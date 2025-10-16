@@ -1,0 +1,32 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Collapsible Section
+description: A single section of content than can be collapsed and expanded. Put several of these in an Accordion Container to prevent more than one from being opened at a time.
+group: Components/Expandable
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Section Title
+      examples:
+        - Collapsible Section
+    heading_level:
+      type: number
+      enum: [2, 3, 4, 5, 6]
+      title: Heading level for title
+      examples:
+        - 3
+    open_by_default:
+      type: boolean
+      title: Open by default
+      examples:
+        - false
+
+slots:
+  collapsible_content:
+    title: Collapsible Content
+    description: Elements to collapse away.
+
+libraryOverrides:
+  js:
+    collapsible-section.js: { attributes: { type: module } }

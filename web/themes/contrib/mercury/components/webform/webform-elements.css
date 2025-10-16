@@ -1,0 +1,253 @@
+/**
+ * @file
+ * Advanced webform element styles.
+ * 
+ * This file contains styles for specialized webform elements
+ * like composite fields, file uploads, and special input types.
+ */
+
+/* File upload */
+.webform-submission-form .form-file {
+  display: block;
+  width: 100%;
+  font-size: var(--hg-text-sm, 0.875rem);
+  color: var(--hg-color-gray-dark, #1f2937);
+}
+
+.webform-submission-form .form-file::-webkit-file-upload-button {
+  margin-right: calc(var(--hg-spacing, 4px) * 4);
+  padding-block: calc(var(--hg-spacing, 4px) * 2);
+  padding-inline: calc(var(--hg-spacing, 4px) * 4);
+  border-radius: var(--hg-radius-sm, 0.25rem);
+  border: 0;
+  font-size: var(--hg-text-sm, 0.875rem);
+  font-weight: var(--hg-font-weight-medium, 500);
+  background-color: var(--hg-color-brand, #155dfc);
+  color: var(--hg-color-white, #ffffff);
+  cursor: pointer;
+}
+
+.webform-submission-form .form-file::-webkit-file-upload-button:hover {
+  background-color: var(--hg-color-brand-dark, #1c398e);
+}
+
+/* Address composite elements */
+.webform-submission-form .webform-element-address {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(var(--hg-spacing, 4px) * 4);
+}
+
+@media (min-width: 768px) {
+  .webform-submission-form .webform-element-address {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Telephone composite elements */
+.webform-submission-form .webform-element-telephone {
+  display: flex;
+  gap: calc(var(--hg-spacing, 4px) * 2);
+}
+
+.webform-submission-form .webform-element-telephone select {
+  width: 6rem;
+}
+
+@media (max-width: 768px) {
+  .webform-submission-form .webform-element-telephone {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .webform-submission-form .webform-element-telephone select {
+    width: 100%;
+  }
+}
+
+/* Date/time elements */
+.webform-submission-form .webform-element-date {
+  display: flex;
+  gap: calc(var(--hg-spacing, 4px) * 2);
+  align-items: end;
+}
+
+.webform-submission-form .webform-element-date select {
+  width: auto;
+}
+
+/* Multiple value elements */
+.webform-submission-form .webform-element-multiple {
+  gap: calc(var(--hg-spacing, 4px) * 3);
+  display: flex;
+  flex-direction: column;
+}
+
+.webform-submission-form .webform-multiple-add {
+  background-color: var(--hg-color-positive, #00cc41);
+  color: var(--hg-color-white, #ffffff);
+  padding-inline: calc(var(--hg-spacing, 4px) * 4);
+  padding-block: calc(var(--hg-spacing, 4px) * 2);
+  border-radius: var(--hg-radius-sm, 0.25rem);
+  font-size: var(--hg-text-sm, 0.875rem);
+  cursor: pointer;
+  border: none;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.webform-submission-form .webform-multiple-add:hover {
+  background-color: var(--hg-color-positive-dark, #009933);
+}
+
+.webform-submission-form .webform-multiple-remove {
+  background-color: var(--hg-color-negative, #e60032);
+  color: var(--hg-color-white, #ffffff);
+  padding-inline: calc(var(--hg-spacing, 4px) * 3);
+  padding-block: calc(var(--hg-spacing, 4px) * 1);
+  border-radius: var(--hg-radius-sm, 0.25rem);
+  font-size: var(--hg-text-sm, 0.875rem);
+  cursor: pointer;
+  border: none;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.webform-submission-form .webform-multiple-remove:hover {
+  background-color: var(--hg-color-negative-dark, #cc0029);
+}
+
+/* Progress bar for multi-step forms */
+.webform-submission-form .webform-progress-bar {
+  width: 100%;
+  background-color: var(--hg-color-gray-light, #d1d5db);
+  border-radius: 9999px;
+  height: 0.5rem;
+  margin-bottom: calc(var(--hg-spacing, 4px) * 6);
+}
+
+.webform-submission-form .webform-progress-bar__progress {
+  background-color: var(--hg-color-brand, #155dfc);
+  height: 0.5rem;
+  border-radius: 9999px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Rating elements */
+.webform-submission-form .webform-element-rating {
+  display: flex;
+  gap: calc(var(--hg-spacing, 4px) * 1);
+}
+
+.webform-submission-form .webform-element-rating input[type="radio"] {
+  display: none;
+}
+
+.webform-submission-form .webform-element-rating label {
+  cursor: pointer;
+  font-size: var(--hg-text-2xl, 1.5rem);
+  color: var(--hg-color-gray-light, #d1d5db);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.webform-submission-form .webform-element-rating label:hover {
+  color: var(--hg-color-warning, #ffbf00);
+}
+
+.webform-submission-form .webform-element-rating input[type="radio"]:checked + label {
+  color: var(--hg-color-warning, #ffbf00);
+}
+
+/* Range slider */
+.webform-submission-form .webform-element-range {
+  width: 100%;
+}
+
+.webform-submission-form .webform-element-range input[type="range"] {
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--hg-color-gray-light, #d1d5db);
+  border-radius: 0.5rem;
+  appearance: none;
+  cursor: pointer;
+}
+
+.webform-submission-form .webform-element-range input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 9999px;
+  background-color: var(--hg-color-brand, #155dfc);
+  cursor: pointer;
+}
+
+/* Toggle switch */
+.webform-submission-form .webform-element-toggle {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--hg-spacing, 4px) * 3);
+}
+
+.webform-submission-form .webform-element-toggle input[type="checkbox"] {
+  appearance: none;
+  width: 2.75rem;
+  height: 1.5rem;
+  background-color: var(--hg-color-gray-light, #d1d5db);
+  border-radius: 9999px;
+  position: relative;
+  cursor: pointer;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.webform-submission-form .webform-element-toggle input[type="checkbox"]:checked {
+  background-color: var(--hg-color-brand, #155dfc);
+}
+
+.webform-submission-form .webform-element-toggle input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: var(--hg-color-white, #ffffff);
+  border-radius: 9999px;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.webform-submission-form .webform-element-toggle input[type="checkbox"]:checked::before {
+  transform: translateX(1.25rem);
+}
+
+/* Terms and conditions */
+.webform-submission-form .webform-element-terms {
+  border: 1px solid var(--hg-color-gray-light, #d1d5db);
+  border-radius: var(--hg-radius-sm, 0.25rem);
+  padding: calc(var(--hg-spacing, 4px) * 4);
+  max-height: 8rem;
+  overflow-y: auto;
+}
+
+/* reCAPTCHA */
+.webform-submission-form .webform-element-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin-block: calc(var(--hg-spacing, 4px) * 4);
+}
+
+/* Honeypot (hidden) */
+.webform-submission-form .webform-element-honeypot {
+  display: none;
+  position: absolute;
+  left: -9999px;
+}

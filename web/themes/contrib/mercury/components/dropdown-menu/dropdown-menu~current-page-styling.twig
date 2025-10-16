@@ -1,0 +1,21 @@
+<div class="hg:p-4 hg:pb-40 hg:text-gray">
+
+  <h3 class="hg:mb-1">First link current</h3>
+
+  {{ include('mercury:dropdown-menu', { items: storybook.first_current }) }}
+
+  <h3 class="hg:my-3">Second link current</h3>
+
+  {{ include('mercury:dropdown-menu', { items: storybook.second_current }) }}
+
+  <h3 class="hg:mt-3">Third link current</h3>
+  <p class="hg:mb-3">Impossible for a nolink to be current; should look like nothing is current.</p>
+
+  {{ include('mercury:dropdown-menu', { items: storybook.third_current }) }}
+
+  <h3 class="hg:mt-3">Inner link current</h3>
+  <p class="hg:mb-3">Inside the second link's dropdown.</p>
+
+  {{ include('mercury:dropdown-menu', { items: storybook.inner_current }) }}
+
+</div>

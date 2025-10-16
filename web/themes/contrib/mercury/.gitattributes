@@ -1,0 +1,15 @@
+/.storybook export-ignore
+/components/*/*.storybook.yml export-ignore
+/components/*/*.tailwind.css export-ignore
+/src/common export-ignore
+/src/stories export-ignore
+/scripts export-ignore
+/tests export-ignore
+/vitePlugins export-ignore
+/.gitlab-ci.yml export-ignore
+/.nvmrc export-ignore
+/dictionary.txt export-ignore
+/package.json export-ignore
+/pnpm-lock.yaml export-ignore
+/*.config.js export-ignore
+/vercel.json export-ignore

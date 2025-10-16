@@ -1,0 +1,40 @@
+@reference './main.css';
+
+.sbdocs-content:has(.docblock-waterfall) h2 {
+  border: 0;
+  margin: 36px 0 0;
+  padding: 0;
+}
+
+.docblock-waterfall {
+  margin: 16px 0 0 !important;
+}
+
+.docblock-tw-code {
+  @apply hg:w-[9%];
+  align-items: self-start;
+  border: 1px solid rgba(39, 42, 43, 0.15);
+  border-right: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem !important;
+  justify-content: center;
+  padding: 15px 10px 15px 20px !important;
+}
+
+.docblock-typeset {
+  @apply hg:w-[91%];
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  margin: 0 !important;
+  padding: 15px 10px !important;
+}
+
+.docblock-typeset > div {
+  align-items: center;
+  display: flex;
+  position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

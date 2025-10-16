@@ -1,0 +1,45 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+@layer properties;
+.storybook-component--cta {
+  width: 100%;
+  @media (width >= 40rem) {
+    max-width: 40rem;
+  }
+  @media (width >= 48rem) {
+    max-width: 48rem;
+  }
+  @media (width >= 64rem) {
+    max-width: 64rem;
+  }
+  @media (width >= 80rem) {
+    max-width: 80rem;
+  }
+  @media (width >= 96rem) {
+    max-width: 96rem;
+  }
+  margin-inline: auto;
+  border-inline-style: var(--tw-border-style);
+  border-inline-width: 1px;
+  --tw-border-style: solid;
+  border-style: solid;
+  border-color: var(--hg-color-gray-200, oklch(0.928 0.006 264.531));
+  padding-inline: calc(var(--hg-spacing, 4px) * 4);
+}
+@layer components {
+  .cta {
+    background-color: var(--hg-color-body-bg);
+    color: var(--hg-color-body-text);
+  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+    }
+  }
+}

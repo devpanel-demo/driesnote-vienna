@@ -1,0 +1,44 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+@layer properties;
+.storybook-component--card-profile {
+  max-width: var(--hg-container-xs, 20rem);
+}
+@layer components {
+  .card-profile {
+    aspect-ratio: 2/3;
+  }
+  .card-profile .card--media {
+    aspect-ratio: 2/3;
+    border-radius: var(--hg-radius-sm, 0.25rem);
+  }
+  .card-profile .card--content {
+    text-align: center;
+    color: var(--hg-color-white, #ffffff);
+  }
+  .card-profile .person-name {
+    font-size: var(--hg-text-2xl, 1.5rem);
+    line-height: var(--tw-leading, var(--hg-text-2xl--line-height, 1.3333));
+    --tw-font-weight: var(--hg-font-weight-bold, 700);
+    font-weight: var(--hg-font-weight-bold, 700);
+  }
+  .card-profile .person-title {
+    font-size: var(--hg-text-lg, 1.125rem);
+    line-height: var(--tw-leading, var(--hg-text-lg--line-height, 1.5));
+    font-style: italic;
+    @media (width >= 80rem) {
+      font-size: var(--hg-text-xl, 1.25rem);
+      line-height: var(--tw-leading, var(--hg-text-xl--line-height, 1.5));
+    }
+  }
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-font-weight: initial;
+    }
+  }
+}

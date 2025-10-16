@@ -1,0 +1,41 @@
+{% set menu_classes = menu_classes|default([])|merge([
+  'utility-menu',
+  'hg:list-none',
+  'hg:gap-4',
+  'hg:flex',
+  'hg:p-0',
+  align ? 'hg:flex-row' : 'hg:flex-col',
+])|filter(v => v is not empty) %}
+
+{% if storybook.items %}
+  {% if menu_level == 0 %}
+    <ul class="{{ menu_classes|join(' ') }}">
+  {% else %}
+    <ul class="menu">
+  {% endif %}
+  {% for item in storybook.items %}
+    {%
+      set classes = [
+        'hg:flex hg:flex-col hg:gap-y-4 hg:max-w-fit',
+        'menu-item',
+        item.is_expanded ? 'menu-item--expanded',
+        item.is_collapsed ? 'menu-item--collapsed',
+        item.in_active_trail ? 'menu-item--active-trail',
+      ]
+    %}
+    <li{{ item.attributes.addClass(classes) }}>
+      <a href="{{ item.url }}" class="hg:flex hg:items-center hg:justify-between hg:gap-x-1 hg:group">
+        <span class="utility-menu--item-text">
+          {{ item.title }}
+        </span>
+        {% if align == false %}
+          <i class="ph-bold ph-caret-right"></i>
+        {% endif %}
+      </a>
+      {# {% if item.below %}
+        {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+      {% endif %} #}
+    </li>
+  {% endfor %}
+  </ul>
+{% endif %}

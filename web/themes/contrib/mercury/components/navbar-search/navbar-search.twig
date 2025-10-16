@@ -1,0 +1,33 @@
+<form
+  action={{action}}
+  method={{method}}
+  id="navbarSearch"
+  accept-charset="UTF-8"
+  class="hg:w-full navbar-search"
+>
+      <div class="hg:relative hg:w-full hg:flex hg:justify-end">
+    <label for="edit-keys" class="hg:sr-only">{{ label }}</label>
+    <input
+      title="Enter the terms you wish to search for."
+      data-drupal-selector="edit-keys"
+      type="search"
+      id="edit-keys"
+      name="keys"
+      value=""
+      size="15"
+      maxlength="128"
+      placeholder={{label}}
+      aria-label="Search"
+      class="hg:hidden hg:peer hg:w-full hg:rounded-lg input-search hg:h-11"
+    />
+    <button
+      type="submit"
+      data-drupal-selector="edit-submit"
+      id="edit-submit"
+      aria-label="{{buttonLabel}}"
+      class="button-search hg:peer-[.hidden]:static hg:peer-[.hidden]:w-11 hg:peer-[.hidden]:h-11 hg:peer-[.hidden]:rounded-lg hg:absolute hg:right-0 hg:top-0 hg:bottom-0 hg:flex hg:items-center hg:justify-center hg:w-11 hg:h-11 hg:rounded-lg hg:border hg:cursor-pointer"
+    >
+      <i class="search-icon hg:flex hg:items-center hg:justify-center ph-bold ph-magnifying-glass"></i>
+    </button>
+  </div>
+</form>

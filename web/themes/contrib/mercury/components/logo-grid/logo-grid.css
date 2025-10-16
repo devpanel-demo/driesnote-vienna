@@ -1,0 +1,67 @@
+/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+@layer components {
+  .logo-grid {
+    min-width: 250px;
+    text-align: center;
+    > * {
+      scroll-snap-align: center;
+      flex: 1 1 250px;
+    }
+  }
+  :where(.logo-grid:not(.logo-grid--grid-mobile)) {
+    > :first-child {
+      margin-left: 50vw;
+    }
+    > :last-child {
+      margin-right: 50vw;
+    }
+  }
+  :where(.logo-grid:not(.logo-grid--grid-tablet)) {
+    > :first-child {
+      @media (width >= 48rem) {
+        margin-left: 50vw;
+      }
+    }
+    > :last-child {
+      @media (width >= 48rem) {
+        margin-right: 50vw;
+      }
+    }
+  }
+  :where(.logo-grid:not(.logo-grid--grid-mobile).logo-grid--grid-tablet) {
+    > :first-child {
+      @media (width >= 48rem) {
+        margin-left: auto;
+      }
+    }
+    > :last-child {
+      @media (width >= 48rem) {
+        margin-right: auto;
+      }
+    }
+  }
+  :where(.logo-grid:not(.logo-grid--grid-desktop)) {
+    > :first-child {
+      @media (width >= 80rem) {
+        margin-left: 50vw;
+      }
+    }
+    > :last-child {
+      @media (width >= 80rem) {
+        margin-right: 50vw;
+      }
+    }
+  }
+  :where(.logo-grid:not(.logo-grid--grid-tablet).logo-grid--grid-desktop) {
+    > :first-child {
+      @media (width >= 80rem) {
+        margin-left: auto;
+      }
+    }
+    > :last-child {
+      @media (width >= 80rem) {
+        margin-right: auto;
+      }
+    }
+  }
+}

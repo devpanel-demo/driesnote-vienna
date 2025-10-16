@@ -1,0 +1,37 @@
+{% set size_classes_map = {
+  'small': 'hg:gap-1 hg:px-4 hg:py-[6px] hg:text-sm hg:rounded-md',
+  'medium': 'hg:gap-2 hg:px-5 hg:py-[10px] hg:text-base hg:rounded-lg',
+  'large': 'hg:gap-3 hg:px-6 hg:py-3 hg:text-lg hg:rounded-xl hg:leading-[22px]!',
+} %}
+
+{% set icon_size_map = {
+  'small': 'hg:text-sm',
+  'medium': 'hg:text-base',
+  'large': 'hg:text-xl'
+} %}
+
+{% set btn_classes = btn_classes|default([])|merge([
+    'button',
+    'button--' ~ variant|default('primary'),
+    'hg:border',
+    'hg:flex',
+    'hg:items-center',
+    'hg:justify-center',
+    icon_first ? 'hg:flex-row' : 'hg:flex-row-reverse',
+    size_classes_map[size|default('medium')]
+])|filter(v => v is not empty) %}
+
+{% set icon_size = icon_size_map[size|default('medium')] %}
+
+{# If href is provided, present a link; otherwise render a button #}
+{% if href %}
+  <a href="{{ href }}" class="{{ btn_classes|join(' ') }}" {% if disabled|default(false) %}aria-disabled="true" {% endif %}>
+    {% if icon %}{{ include('@mercury/components/icon/icon.twig', { weight: 'bold' }) }}{% endif %}
+    {{ label }}
+  </a>
+{% else %}
+  <button class="{{ btn_classes|join(' ') }}" {% if disabled|default(false) %}disabled{% endif %}>
+    {% if icon %}{{ include('@mercury/components/icon/icon.twig', { weight: 'bold' }) }}{% endif %}
+    {{ label }}
+  </button>
+{% endif %}

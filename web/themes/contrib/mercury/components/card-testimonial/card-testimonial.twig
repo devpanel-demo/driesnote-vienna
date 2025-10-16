@@ -1,0 +1,36 @@
+{% set classes = [
+    'card-testimonial',
+    'hg:flex',
+    'hg:flex-col',
+    'hg:p-6',
+    'hg:self-start',
+    align == 'center' ? 'hg:text-center hg:items-center hg:gap-6' : 'hg:text-left hg:items-start hg:gap-4',
+  ]
+%}
+
+<div class="{{ classes|join(' ') }}">
+  <div class="card-testimonial--media hg:w-[100px] hg:aspect-square hg:rounded-full hg:overflow-hidden">
+    {% block media %}
+      <img class="hg:object-cover hg:w-full hg:h-full" src="{{ media.src }}" alt="{{ media.alt }}" />
+    {% endblock %}
+  </div>
+
+  <blockquote class="hg:flex hg:flex-col hg:gap-4" cite="{{ cite_url }}">
+    <p class="testimonial-text">{{ text }}</p>
+
+    <footer class="testimonial-name hg:font-bold">
+      {% set citation = cite_name %}
+      {% if cite_name and cite_text %}
+        {% set citation = cite_name ~ ', ' %}
+      {% endif %}
+      {{ citation }}
+      <cite class="testimonial-cite hg:font-normal">
+        {% if cite_url and cite_url != 'No URL' %}
+          <a href="{{ cite_url}}" target="_blank" class="testimonial-cite--text hg:underline hg:hover:underline">{{ cite_text }}</a>
+        {% else %}
+          <span class="testimonial-cite--text">{{ cite_text }}</span>
+        {% endif %}
+      </cite>
+    </footer>
+  </blockquote>
+</div>

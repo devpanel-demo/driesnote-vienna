@@ -1,0 +1,5 @@
+{% embed 'mercury:card-testimonial' %}
+  {% block media %}
+    <img class="hg:object-cover hg:w-full hg:h-full" src="{{  componentMetadata.path ~ '/' ~ media.src }}" alt="{{ media.alt }}" />
+  {% endblock %}
+{% endembed %}

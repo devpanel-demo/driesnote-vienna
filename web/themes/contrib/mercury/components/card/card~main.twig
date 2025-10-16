@@ -1,0 +1,22 @@
+{# Overriding media_slot just for Storybook #}
+{% embed 'mercury:card' %}
+  {% block media %}
+    {% if media.src is not empty %}
+      <img class="hg:object-cover hg:w-full hg:h-full" src="{{  componentMetadata.path ~ '/' ~ media.src }}" alt="{{ media.alt }}" />
+    {% endif %}
+  {% endblock %}
+  {% block badges %}
+    <ul class="hg:list-none hg:ps-0 hg:flex hg:items-center hg:gap-2">
+      {% for badge in storybook.badges %}
+      <li>
+        {{ include('mercury:badge', {
+          url: badge.url,
+          label: badge.label,
+          style: 'secondary',
+          })
+        }}
+      </li>
+      {% endfor %}
+    </ul>
+  {% endblock %}
+{% endembed %}

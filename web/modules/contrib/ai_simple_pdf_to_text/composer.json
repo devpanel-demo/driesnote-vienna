@@ -1,0 +1,9 @@
+{
+    "name": "drupal/ai",
+    "description": "AI Simple PDF to Text",
+    "type": "drupal-module",
+    "require": {
+        "smalot/pdfparser": "^2.12",
+        "drupal/ai": "^1.1.0"
+    }
+}

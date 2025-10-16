@@ -1,0 +1,39 @@
+{% set classes = classes|default([])|merge([
+    'hero-blog',
+    'hg:py-8',
+    'hg:md:py-12',
+  ])|filter(v => v is not empty)
+%}
+
+{% set date_formatted = date|date('m.d.Y') %}
+
+<section class="{{ classes|join(' ') }}">
+
+  <div class="hero-blog--content hg:container hg:md:w-full hg:lg:w-10/12 hg:xl:w-8/12 hg:mx-auto hg:flex hg:flex-col hg:gap-8 hg:md:gap-12 hg:px-6">
+    <p>
+      <time datetime="{{date_formatted }}">{{ date_formatted }}</time>
+    </p>
+
+    {% block title %}
+      {{ include('mercury:heading', {
+        heading_text: heading_text,
+        level: 1,
+        url: 'No URL',
+      }) }}
+    {% endblock %}
+
+    {% block author %}
+      {% if author is not empty %}
+        <p>By {{ author }}</p>
+      {% endif %}
+    {% endblock %}
+    </div>
+
+  {% if block('blog_media') is defined %}
+    <div class="hg:relative hg:lg:w-full hg:xl:w-10/12 hg:mx-auto hg:mt-8 hg:md:mt-12 hg:px-6">
+      <div class="hg:bg-accent-light hg:absolute hg:h-[calc(33.3%+32px)] hg:md:h-[calc(33.3%+48px)] hg:-bottom-8 hg:md:-bottom-12 hg:left-1/2 hg:w-screen hg:-ml-[50vw] hg:z-[-1]"></div>
+      {% block blog_media %}
+      {% endblock %}
+    </div>
+  {% endif %}
+</section>

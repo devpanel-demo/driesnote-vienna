@@ -1,0 +1,8 @@
+{% set classes = [
+    'rich-text',
+  ]
+%}
+
+<div class="{{ classes|join(' ') }}{{ font_color ? ' ' ~ font_color }}{{ font_size_multiplier == 'default' ? '' : ' ' ~ font_size_multiplier }}">
+  {{ text|raw }}
+</div>

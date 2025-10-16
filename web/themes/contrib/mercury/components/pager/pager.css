@@ -1,0 +1,46 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+@layer properties;
+.storybook-component--pager {
+  padding: calc(var(--hg-spacing, 4px) * 4);
+}
+@layer components {
+  .pager {
+    --tw-font-weight: var(--hg-font-weight-medium, 500);
+    font-weight: var(--hg-font-weight-medium, 500);
+    color: var(--hgc-color-body-text);
+  }
+  .pager__list-item {
+    font-size: var(--hg-text-sm, 0.875rem);
+    line-height: var(--tw-leading, var(--hg-text-sm--line-height, 1.5));
+    white-space: nowrap;
+    @media (width >= 48rem) {
+      font-size: var(--hg-text-base, 1rem);
+      line-height: var(--tw-leading, var(--hg-text-base--line-height, 1.5));
+    }
+  }
+  .pager .pager__icon {
+    height: calc(var(--hg-spacing, 4px) * 6);
+    width: calc(var(--hg-spacing, 4px) * 6);
+    flex-shrink: 0;
+    font-size: var(--hg-text-2xl, 1.5rem);
+    line-height: var(--tw-leading, var(--hg-text-2xl--line-height, 1.3333));
+    --tw-leading: 1;
+    line-height: 1;
+  }
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-font-weight: initial;
+      --tw-leading: initial;
+    }
+  }
+}

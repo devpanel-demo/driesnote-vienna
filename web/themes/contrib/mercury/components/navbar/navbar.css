@@ -1,0 +1,27 @@
+/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+@layer components;
+.navbar--menu {
+  background-color: var(--hg-color-body-bg, #ffffff);
+}
+body.path-xb {
+  .navbar--logo, .navbar--links {
+    min-width: calc(var(--hg-spacing, 4px) * 12);
+  }
+}
+.navbar--links .button.button {
+  margin-inline: calc(var(--hg-spacing, 4px) * 8);
+  margin-block: calc(var(--hg-spacing, 4px) * 3);
+  width: 100%;
+  @media (width >= 48rem) {
+    margin: auto;
+  }
+  @media (width >= 48rem) {
+    width: auto;
+  }
+}
+.navbar--menu-contents .dropdown-menu {
+  width: 100%;
+  @media (width >= 48rem) {
+    width: auto;
+  }
+}

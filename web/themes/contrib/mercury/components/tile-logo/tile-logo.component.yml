@@ -1,0 +1,14 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Logo
+description: A component showing its children in a grid on desktop and in a horizontally-scrolling line on mobile.
+group: Components/Tiles
+props:
+  type: object
+  properties:
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      type: object
+      title: Logo
+      examples:
+        - src: 'assets/dark.png'
+          alt: 'Placeholder brand logo'

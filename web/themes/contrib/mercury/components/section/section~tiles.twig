@@ -1,0 +1,34 @@
+{# Tiles variant for Storybook #}
+{% embed 'mercury:components/section/section' with { 
+  background_media: {
+    src: componentMetadata.path ~ '/' ~ storybook.main.background_media.src,
+    alt: storybook.main.background_media.alt,
+  },
+  columns: '33-33-33',
+  background_color: 'hg:bg-black/50',
+  width: 'hg:lg:max-w-3/4',
+  padding_block_start: '64',
+  padding_block_end: '64',
+} %}
+
+  {% block header_slot %}
+    {{ include('mercury:heading',
+      {
+        level: 2,
+        heading_text: storybook.alt.header_text,
+        url: '',
+      } )
+    }}
+  {% endblock %}
+
+  {% block main_slot %}
+    {% for tile in storybook.alt.tiles %}
+      {{ include('mercury:tile-icon', tile) }}
+    {% endfor %}
+  {% endblock %}
+
+  {% block footer_slot %}
+    {{ storybook.alt.footer_text }}
+  {% endblock %}
+
+{% endembed %}

@@ -1,0 +1,69 @@
+{% set classes = classes|default([])|merge([
+    'card-pricing',
+    'hg:relative',
+    'hg:flex',
+    'hg:flex-col',
+    'hg:gap-4',
+    'hg:md:gap-6',
+    'hg:xl:gap-7',
+    'hg:border',
+    'hg:p-5',
+    'hg:md:p-6',
+    'hg:xl:p-7',
+    'hg:2xl:p-8',
+    'hg:rounded-md',
+    promote ? 'promote',
+  ])|filter(v => v is not empty)
+%}
+
+<article class="{{ classes|join(' ') }}">
+
+  <header class="card-pricing--header hg:flex hg:flex-col hg:gap-2">
+    {{ include('mercury:heading',
+      {
+        heading_classes: ['card-title'],
+        level: 3,
+        url: 'No URL',
+      })
+    }}
+
+    <p class="card-description">
+      {{ description }}
+    </p>
+  </header>
+
+  <div class="card-pricing--price">
+    <h4 class="card-price">
+      <data value="{{ price }}" data-currency="{{ currency_code|default('USD') }}">
+        {% if symbol_position is defined and symbol_position == 'before' %}
+          {{ currency_symbol }}{{ price }}
+        {% else %}
+          {{ price }}{{ currency_symbol }}
+        {% endif %}
+      </data>
+    </h4>
+  </div>
+
+{% if block('richtext') is defined and text is not empty %}
+  <div class="card-pricing--features rich-text hg:border-t">
+  {% block richtext %}
+    {{ include('mercury:text',
+      {
+        text: text|raw,
+      })
+    }}
+  {% endblock %}
+  </div>
+  {% endif %}
+
+  <footer class="card-pricing--footer hg:mt-auto">
+    {{ include('mercury:button', {
+      href: button_url,
+      label: button_label,
+      variant: promote ? 'negative' : 'primary',
+      size: 'medium',
+      btn_classes: ['hg:before:absolute', "hg:before:content-['']", 'hg:before:inset-0'],
+    }) }}
+  </footer>
+
+</article>

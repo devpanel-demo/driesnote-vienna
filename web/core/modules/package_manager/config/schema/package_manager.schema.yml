@@ -17,8 +17,8 @@ package_manager.settings:
         type: package_name
         label: 'Trusted composer plugin'
     include_unknown_files_in_project_root:
-      type: sequence
-      label: 'Path patterns to include in the project root in staging operations'
+      type: boolean
+      label: 'Include unrecognized files and directories in the project root in staging operations'
     log:
       type: string
       label: 'Path of a file to which Composer Stager process output should be logged'

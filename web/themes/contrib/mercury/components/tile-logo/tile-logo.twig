@@ -1,0 +1,14 @@
+{% set tile_classes = tile_classes|default([])|merge([
+    'logo-tile',
+    'hg:aspect-4/3 hg:rounded-sm hg:snap-center hg:min-h-[150px] hg:max-w-full',
+])|filter(v => v is not empty) %}
+
+<div class="{{ tile_classes|join(' ') }}">
+  <div class="hg:p-[10%] hg:h-[100%] hg:flex hg:justify-center hg:items-center">
+    {% block logo %}
+      {% if media.src is not empty %}
+        <img src="{{ media.src }}" alt="{{ media.alt }}" />
+      {% endif %}
+    {% endblock %}
+  </div>
+</div>

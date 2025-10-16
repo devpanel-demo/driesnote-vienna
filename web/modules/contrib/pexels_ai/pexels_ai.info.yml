@@ -1,0 +1,15 @@
+name: 'Pexels AI'
+type: module
+description: 'This module adds functionality for setting up, searching and downloading images via Pexels.'
+package: AI Tools
+core_version_requirement: ^10 || ^11
+dependencies:
+  - ai:ai
+  - ai_agents:ai_agents
+  - key:key
+  - drupal:media
+
+# Information added by Drupal.org packaging script on 2025-10-03
+version: '1.0.0-alpha3'
+project: 'pexels_ai'
+datestamp: 1759506510

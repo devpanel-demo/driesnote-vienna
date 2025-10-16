@@ -1,0 +1,35 @@
+/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+@layer properties;
+.anchor--visible {
+  display: flex;
+  min-height: calc(var(--hg-spacing, 4px) * 10);
+  align-items: center;
+  justify-content: center;
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  --tw-border-style: dotted;
+  border-style: dotted;
+  border-color: var(--hg-color-body-text, #000000);
+  padding: calc(var(--hg-spacing, 4px) * 1);
+  font-size: var(--hg-text-sm, 0.875rem);
+  line-height: var(--tw-leading, var(--hg-text-sm--line-height, 1.5));
+  opacity: 50%;
+  &:is(span, a) {
+    display: inline-flex;
+  }
+  .anchor--help-text {
+    display: inline;
+  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+    }
+  }
+}

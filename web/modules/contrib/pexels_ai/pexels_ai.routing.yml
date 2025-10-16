@@ -1,0 +1,7 @@
+pexels_ai.settings:
+  path: '/admin/config/pexels_ai/settings'
+  defaults:
+    _form: '\Drupal\pexels_ai\Form\PexelsConfigForm'
+    _title: 'Setup Pexels for AI'
+  requirements:
+    _permission: 'administer site configuration'

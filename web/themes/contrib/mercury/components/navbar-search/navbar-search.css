@@ -1,0 +1,65 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+@layer properties;
+.storybook-component--navbar-search {
+  max-width: var(--hg-container-3xl, 48rem);
+}
+@layer components {
+  .navbar-search .input-search {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--hg-color-gray, #6b7280);
+    background-color: var(--hg-color-white, #ffffff);
+    padding-block: calc(var(--hg-spacing, 0.25rem) * 2.5);
+    padding-right: var(--hg-spacing-12, 48px);
+    padding-left: var(--hg-spacing-4, 16px);
+    font-size: var(--hg-text-xl, 1.25rem);
+    line-height: var(--tw-leading, var(--hg-text-xl--line-height, 1.5));
+    --tw-font-weight: var(--hg-font-weight-medium, 500);
+    font-weight: var(--hg-font-weight-medium, 500);
+    color: var(--hg-color-gray, #6b7280);
+    &::placeholder {
+      color: var(--hg-color-gray, #6b7280);
+    }
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--hg-default-transition-timing-function, cubic-bezier(0.4, 0, 0.2, 1)));
+    transition-duration: var(--tw-duration, var(--hg-default-transition-duration, 150ms));
+    &:focus {
+      border-color: var(--hg-color-gray-dark, #374151);
+    }
+  }
+  .navbar-search .button-search {
+    border-color: var(--hg-color-gray, #6b7280);
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--hg-default-transition-timing-function, cubic-bezier(0.4, 0, 0.2, 1)));
+    transition-duration: var(--tw-duration, var(--hg-default-transition-duration, 150ms));
+  }
+  .navbar-search .search-icon {
+    font-size: var(--hg-text-xl, 1.25rem);
+    line-height: var(--tw-leading, var(--hg-text-xl--line-height, 1.5));
+    --tw-leading: 1;
+    line-height: 1;
+    color: var(--hg-color-gray, #6b7280);
+  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+      --tw-font-weight: initial;
+      --tw-leading: initial;
+    }
+  }
+}

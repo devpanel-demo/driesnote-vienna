@@ -65,6 +65,8 @@ jobs:
         docker exec ${{ job.services.webserver.id }} bash -c "export && cd \$APP_ROOT && ls -al"
         echo "INSTALL CUSTOM PACKAGE"
         docker exec ${{ job.services.webserver.id }} bash -c "cd \$APP_ROOT && bash .devpanel/custom_package_installer.sh"
+        echo "Install Composer dependencies"
+        docker exec ${{ job.services.webserver.id }} bash -c "cd \$APP_ROOT && composer install --no-interaction --prefer-dist --optimize-autoloader"
         echo "INSTALL DRUPAL"
         docker exec ${{ job.services.webserver.id }} bash -c "cd \$APP_ROOT && bash .devpanel/init.sh"
         docker exec ${{ job.services.webserver.id }} bash -c "cd \$APP_ROOT && ls -al"

@@ -1,0 +1,146 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+@layer properties;
+.storybook-component--dialog {
+  padding: calc(var(--hg-spacing, 4px) * 3);
+}
+@layer components {
+  .ui-dialog {
+    position: absolute;
+    z-index: 1260;
+    overflow: hidden;
+    border-radius: var(--hg-radius-lg, 0.5rem);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    padding: calc(var(--hg-spacing, 4px) * 0);
+    background-color: var(--hgc-dialog-background);
+    border-color: var(--hgc-dialog-border);
+    color: var(--hgc-dialog-text);
+  }
+  @media all and (max-width: 48em) {
+    .ui-dialog {
+      width: 92%;
+    }
+  }
+  .ui-dialog .ui-dialog-titlebar {
+    border-radius: 0;
+    border-style: var(--tw-border-style);
+    border-width: 0px;
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+    --tw-border-style: solid;
+    border-style: solid;
+    background-color: transparent;
+    padding: calc(var(--hg-spacing, 4px) * 4);
+    --tw-font-weight: var(--hg-font-weight-bold, 700);
+    font-weight: var(--hg-font-weight-bold, 700);
+    border-color: var(--hgc-dialog-border);
+  }
+  .ui-dialog .ui-dialog-titlebar-close {
+    position: absolute;
+    top: calc(var(--hg-spacing, 4px) * 2);
+    right: calc(var(--hg-spacing, 4px) * 2);
+    height: calc(var(--hg-spacing, 4px) * 5);
+    width: calc(var(--hg-spacing, 4px) * 5);
+    border-style: var(--tw-border-style);
+    border-width: 0px;
+    background-image: none;
+    color: transparent;
+  }
+  .ui-dialog .ui-dialog-titlebar-close .ui-button-icon {
+    color: transparent;
+  }
+  .ui-dialog .ui-dialog-buttonpane {
+    margin-top: calc(var(--hg-spacing, 4px) * 0);
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+    --tw-border-style: solid;
+    border-style: solid;
+    border-color: var(--hg-color-gray, #6b7280);
+    background-color: #f3f4ee;
+    padding-top: 0.3em;
+    padding-right: 1em;
+    padding-bottom: 0.3em;
+    padding-left: 1em;
+  }
+  .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    margin: calc(var(--hg-spacing, 4px) * 0);
+    padding: calc(var(--hg-spacing, 4px) * 0);
+  }
+  .ui-dialog .ui-dialog-buttonpane .ui-button-text-only .ui-button-text {
+    padding: calc(var(--hg-spacing, 4px) * 0);
+  }
+  .ui-dialog .ui-dialog-content {
+    padding: calc(var(--hg-spacing, 4px) * 4);
+  }
+  .ui-dialog .ui-dialog-content .form-actions {
+    margin: calc(var(--hg-spacing, 4px) * 0);
+    padding: calc(var(--hg-spacing, 4px) * 0);
+  }
+  .ui-dialog .ajax-progress-throbber {
+    position: fixed;
+    top: 48.5%;
+    left: 49%;
+    z-index: 1000;
+    height: calc(var(--hg-spacing, 4px) * 6);
+    width: calc(var(--hg-spacing, 4px) * 6);
+    border-radius: 7px;
+    background-color: #232323;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: calc(var(--hg-spacing, 4px) * 1);
+    opacity: 90%;
+    background-image: url(../../images/icons/loading-small.svg);
+  }
+  .ui-dialog .ajax-progress-throbber .throbber, .ui-dialog .ajax-progress-throbber .message {
+    display: none;
+  }
+  .ui-dialog .ui-dialog-title {
+    margin: calc(var(--hg-spacing, 4px) * 0);
+    font-size: var(--hg-text-lg, 1.125rem);
+    line-height: var(--tw-leading, var(--hg-text-lg--line-height, 1.5));
+    --tw-font-weight: var(--hg-font-weight-bold, 700);
+    font-weight: var(--hg-font-weight-bold, 700);
+  }
+  .ui-dialog .ui-button-icon {
+    display: inline-block;
+    height: calc(var(--hg-spacing, 4px) * 5);
+    width: calc(var(--hg-spacing, 4px) * 5);
+    cursor: pointer;
+    background-image: none;
+    padding: calc(var(--hg-spacing, 4px) * 2);
+  }
+  .ui-dialog .ui-button-icon::before {
+    position: absolute;
+    inset: calc(var(--hg-spacing, 4px) * 0);
+    display: block;
+    height: calc(var(--hg-spacing, 4px) * 5);
+    width: calc(var(--hg-spacing, 4px) * 5);
+    font-size: var(--hg-text-sm, 0.875rem);
+    line-height: var(--tw-leading, var(--hg-text-sm--line-height, 1.5));
+    --tw-font-weight: var(--hg-font-weight-bold, 700);
+    font-weight: var(--hg-font-weight-bold, 700);
+    content: '✕';
+    color: var(--hgc-dialog-close);
+  }
+  .ui-dialog .ui-button-icon-space {
+    display: inline-block;
+    width: calc(var(--hg-spacing, 4px) * 1);
+  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+      --tw-font-weight: initial;
+    }
+  }
+}

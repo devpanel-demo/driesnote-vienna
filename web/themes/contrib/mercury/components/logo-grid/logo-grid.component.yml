@@ -1,0 +1,74 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Logo Grid
+description: A component showing its children in a grid on desktop and (optionally) in a horizontally-scrolling line on mobile.
+group: Layout
+props:
+  type: object
+  properties:
+    behavior_desktop:
+      title: Desktop behavior
+      type: string
+      default: "4"
+      enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - scroll
+      meta:enum:
+        1: Stacked (1 Column)
+        2: 2 Columns
+        3: 3 Columns
+        4: 4 Columns
+        5: 5 Columns
+        6: 6 Columns
+        scroll: Scroll horizontally
+      description: How to display the grid on desktop
+      examples:
+        - "4"
+    behavior_tablet:
+      title: Tablet behavior
+      type: string
+      default: "2"
+      enum:
+        - scroll
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+      meta:enum:
+        1: Stacked (1 Column)
+        2: 2 Columns
+        3: 3 Columns
+        4: 4 Columns
+        5: 5 Columns
+        6: 6 Columns
+        scroll: Scroll horizontally
+      examples:
+        - "2"
+    behavior_mobile:
+      title: Mobile behavior
+      type: string
+      default: scroll
+      enum:
+        - scroll
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+      meta:enum:
+        1: Stacked (1 Column)
+        2: 2 Columns
+        3: 3 Columns
+        4: 4 Columns
+        scroll: Scroll horizontally
+      examples:
+        - scroll
+slots:
+  logos:
+    title: Logo components
+    description: Components to arrange in a grid or horizontal scroller.

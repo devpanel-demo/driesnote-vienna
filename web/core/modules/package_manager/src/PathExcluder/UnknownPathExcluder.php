@@ -31,12 +31,11 @@ use Symfony\Component\Filesystem\Path;
  * If the web root and the project root are the same, nothing is excluded.
  *
  * This excluder can be disabled by changing the config setting
- * `package_manager.settings:include_unknown_files_in_project_root` to ["*"].
- * A more specific pattern can be used to include only certain files. This may
- * be needed for sites that have files outside the web root (besides the vendor
- * directory) which are nonetheless needed in order for Composer to assemble
- * the code base correctly; a classic example would be a directory of patch
- * files used by `cweagans/composer-patches`.
+ * `package_manager.settings:include_unknown_files_in_project_root` to TRUE.
+ * This may be needed for sites that have files outside the web root (besides
+ * the vendor directory) which are nonetheless needed in order for Composer to
+ * assemble the code base correctly; a classic example would be a directory of
+ * patch files used by `cweagans/composer-patches`.
  *
  * @internal
  *   This is an internal part of Package Manager and may be changed or removed
@@ -77,10 +76,10 @@ final class UnknownPathExcluder implements EventSubscriberInterface, LoggerAware
   private function getExcludedPaths(): array {
     // If this excluder is disabled, or the project root and web root are the
     // same, we are not excluding any paths.
-    $path_patterns = $this->configFactory->get('package_manager.settings')
+    $is_disabled = $this->configFactory->get('package_manager.settings')
       ->get('include_unknown_files_in_project_root');
     $web_root = $this->pathLocator->getWebRoot();
-    if (empty($web_root) || in_array('*', $path_patterns)) {
+    if ($is_disabled || empty($web_root)) {
       return [];
     }
 
@@ -146,12 +145,6 @@ final class UnknownPathExcluder implements EventSubscriberInterface, LoggerAware
       throw new \RuntimeException("Could not scan for files in the project root.");
     }
     while ($entry = readdir($handle)) {
-      foreach ($path_patterns as $pattern) {
-        if (fnmatch($pattern, $entry)) {
-          // If the path matches any of the patterns, skip to the next entry.
-          continue 2;
-        }
-      }
       $files_in_project_root[] = $entry;
     }
     closedir($handle);

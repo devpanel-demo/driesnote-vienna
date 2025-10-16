@@ -1,0 +1,38 @@
+/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+.storybook-component--hero-full-width {
+  width: 100%;
+  @media (width >= 40rem) {
+    max-width: 40rem;
+  }
+  @media (width >= 48rem) {
+    max-width: 48rem;
+  }
+  @media (width >= 64rem) {
+    max-width: 64rem;
+  }
+  @media (width >= 80rem) {
+    max-width: 80rem;
+  }
+  @media (width >= 96rem) {
+    max-width: 96rem;
+  }
+  margin-inline: auto;
+  padding-inline: calc(var(--hg-spacing, 4px) * 4);
+}
+@layer components {
+  .hero-fullwidth {
+    display: flex;
+    gap: calc(var(--hg-spacing, 4px) * 6);
+    padding-block: calc(var(--hg-spacing, 4px) * 8);
+    @media (width >= 48rem) {
+      gap: calc(var(--hg-spacing, 4px) * 8);
+    }
+    @media (width >= 48rem) {
+      padding-block: calc(var(--hg-spacing, 4px) * 12);
+    }
+    @media (width >= 80rem) {
+      padding-block: calc(var(--hg-spacing, 4px) * 20);
+    }
+    color: var(--hg-color-body-text);
+  }
+}

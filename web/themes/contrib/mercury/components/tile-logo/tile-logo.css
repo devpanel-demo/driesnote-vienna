@@ -1,0 +1,16 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+.sb-main-padded:has(.storybook-component--tile-logo) {
+  padding: 0;
+}
+.storybook-component--tile-logo {
+  max-width: 300px;
+  padding: 1rem;
+}
+@layer components {
+  .logo-tile {
+    background-color: var(--hgc-tile-logo-bg);
+  }
+  .logo-tile img {
+    max-height: 86px;
+  }
+}

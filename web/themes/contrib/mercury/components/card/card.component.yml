@@ -1,0 +1,62 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Card
+description: Basic card with image, title, teaser, tags
+group: Components/Cards
+props:
+  type: object
+  properties:
+    heading_text:
+      type: string
+      title: Heading Text
+      examples:
+        - 'This is my title eu torquent suscipit'
+    level:
+      type: number
+      title: Heading Level
+      enum: 
+        - 2
+        - 3
+        - 4
+      default: 3
+      examples:
+        - 3
+    url:
+      type: string
+      title: Link
+      default: 'https://www.example.com'
+      examples: 
+        - 'https://www.example.com'
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Card Media
+      description: Media and Alt for the card.
+      type: object
+      examples:
+        - src: 'assets/277628-911758.jpg'
+          alt: 'Photo by gdtography: https://www.pexels.com/photo/long-exposure-photography-white-dome-building-interior-911758/'
+    text:
+      type: string
+      title: Text
+      description: Teaser text
+      examples:
+        - 'Quaerat laborum rerum dolores dolores dolor qui. Laudantium itaque sint aut culpa omnis eius pariatur. Quia laborum commodi excepturi neque tempore. Fuga dolor dolores perspiciatis.'
+    style:
+      type: string
+      title: Card Style
+      enum: 
+        - "default"
+        - "framed"
+        - "featured"
+      default: "framed"
+      examples: 
+        - "framed"
+    orientation:
+      type: string
+      title: Orientation
+      description: "Set card to horz or vert."
+      enum: 
+        - "stacked"
+        - "landscape"
+      default: "stacked"
+      examples:
+        - "stacked"

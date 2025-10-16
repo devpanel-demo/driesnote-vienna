@@ -1,0 +1,403 @@
+@import 'tailwindcss' prefix(hg);
+
+@theme {
+  --color-black:         #000000;
+  --color-white:         #ffffff;
+
+  --color-gray-lightest: #f3f4f6;
+  --color-gray-light:    #d1d5db;
+  --color-gray:          #6b7280;
+  --color-gray-dark:     #374151;
+  --color-gray-darkest:  #111827;
+
+  --color-brand-light:   #dbeafe;
+  --color-brand:         #155dfc;
+  --color-brand-dark:    #1c398e;
+
+  --color-accent-light:  #fce7f3;
+  --color-accent:        #ec4899;
+  --color-accent-dark:   #9d174d;
+
+  --color-info:          #01a8e4;
+  --color-positive:      #00cc41;
+  --color-warning: 	     #ffbf00;
+  --color-negative: 	   #e60032;
+
+  --color-body-bg:       #ffffff;
+  --color-body-text:     #000000;
+  --color-body-text-dark:     #000000;
+  --color-body-text-light:     #ffffff;
+
+  --text-9xl: 7.5rem;               /* 120px */
+  --text-9xl--line-height: 1;       /* 120px */
+
+  --text-8xl: 6rem;                  /* 96px */
+  --text-8xl--line-height: 1;        /* 96px */
+
+  --text-7xl: 4.5rem;                /* 72px */
+  --text-7xl--line-height: 1;        /* 72px */
+
+  --text-6xl: 3.75rem;               /* 60px */
+  --text-6xl--line-height: 1;        /* 60px */
+
+  --text-5xl: 3rem;                  /* 48px */
+  --text-5xl--line-height: 1.083333; /* 52px */
+
+  --text-4xl: 2.5rem;                /* 40px */
+  --text-4xl--line-height: 1.2;      /* 48px */
+
+  --text-3xl: 2rem;                  /* 32px */
+  --text-3xl--line-height: 1.3125;   /* 42px */
+
+  --text-2xl: 1.5rem;                /* 24px */
+  --text-2xl--line-height: 1.3333;   /* 32px */
+
+  --text-xl: 1.25rem;                /* 20px */
+  --text-xl--line-height: 1.5;       /* 30px */
+
+  --text-lg: 1.125rem;               /* 18px */
+  --text-lg--line-height: 1.5;       /* 27px */
+
+  --text-base: 1rem;                 /* 16px */
+  --text-base--line-height: 1.5;     /* 24px */
+
+  --text-md: var(--text-base);
+  --text-md--line-height: var(--text-base--line-height);
+
+  --text-sm: 0.875rem;               /* 14px */
+  --text-sm--line-height: 1.5;       /* 21px */
+
+  --text-xs: 0.75rem;                /* 12px */
+  --text-xs--line-height: 1.5;       /* 18px */
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --spacing: 4px;
+
+  --animate-show-and-expand-vertically: show-and-expand-vertically 0ms ease-in-out forwards;
+  --animate-collapse-vertically-and-hide: collapse-vertically-and-hide 0ms ease-in-out forwards;
+  --animate-show-and-expand-horizontally: show-and-expand-horizontally 0ms ease-in-out forwards;
+  --animate-collapse-horizontally-and-hide: collapse-horizontally-and-hide 0ms ease-in-out forwards;
+
+  --font-display: 'Inter', -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-body:  'Inter', -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-mono: 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
+  --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+
+  /* Second-level (desktop) menu expansion. */
+  @keyframes show-and-expand-vertically {
+
+    0% {
+      --hgc-display-mode: 'none';
+      visibility: visible;
+      scale: 1 0;
+      height: 0;
+    }
+
+    1% {
+      /*
+       * An invalid display value falls back to the second argument of `var()`.
+       * This way each element can have its own default display mode, whether
+       * block or flex or whatever.
+       */
+      --hgc-display-mode: invaliddisplay;
+      height: auto;
+    }
+
+    100% {
+      scale: 1 1;
+    }
+  }
+
+  /* Second-level (desktop) menu collapse. */
+  @keyframes collapse-vertically-and-hide {
+
+    0% {
+      --hgc-display-mode: invaliddisplay;
+      scale: 1;
+      visibility: visible;
+      height: auto;
+    }
+
+    99% {
+      --hgc-display-mode: invaliddisplay;
+      scale: 1 0;
+      height: auto;
+    }
+
+    100% {
+      --hgc-display-mode: 'none';
+      visibility: hidden;
+      height: 0;
+    }
+  }
+
+  /* Third-level and greater menu expansion (all levels on mobile). */
+  @keyframes show-and-expand-horizontally {
+
+    from {
+      visibility: visible;
+      scale: 0 1;
+    }
+
+    to {
+      scale: 1 1;
+    }
+  }
+
+  /* Third-level and greater menu collapse (all levels on mobile). */
+  @keyframes collapse-horizontally-and-hide {
+
+    0% {
+      scale: 1;
+      visibility: visible;
+    }
+
+    99% {
+      scale: 0 1;
+    }
+
+    100% {
+      visibility: hidden;
+    }
+  }
+}
+
+/* Custom theme classes */
+@layer base {
+  :root {
+    --hgc-font-weight-p:  400;
+    --hgc-font-weight-h1: 600;
+    --hgc-font-weight-h2: 600;
+    --hgc-font-weight-h3: 600;
+    --hgc-font-weight-h4: 500;
+    --hgc-font-weight-h5: 500;
+    --hgc-font-weight-h6: 500;
+  }
+
+  .material-symbols-outlined {
+    font-size: unset;
+  }
+
+  body {
+    @apply hg:bg-body-bg hg:font-body hg:font-(--hgc-font-weight-p) hg:text-(--hg-color-body-text);
+  }
+
+  p, ul, ol, li {
+    @apply hg:font-(--hgc-font-weight-p) hg:text-base hg:lg:text-lg hg:2xl:text-xl hg:text-inherit;
+  }
+
+  ul,
+  ol {
+    @apply hg:list-disc hg:ps-5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply hg:font-display;
+  }
+
+  /* Set base heading styles since Tailwind sets them to inherit */
+  h1 {
+    @apply hg:font-(--hgc-font-weight-h1) hg:text-5xl hg:md:text-6xl hg:2xl:text-8xl hg:leading-none;
+  }
+
+  h2 {
+    @apply hg:font-(--hgc-font-weight-h2) hg:text-4xl hg:md:text-5xl hg:xl:text-6xl;
+  }
+
+  h3 {
+    @apply hg:font-(--hgc-font-weight-h3) hg:text-2xl hg:xl:text-3xl;
+  }
+
+  h4 {
+    @apply hg:font-(--hgc-font-weight-h4) hg:text-xl hg:md:text-2xl;
+  }
+
+  h5 {
+    @apply hg:font-(--hgc-font-weight-h5) hg:text-lg hg:md:text-xl;
+  }
+
+  h6 {
+    @apply hg:font-(--hgc-font-weight-h6) hg:text-base hg:md:text-lg;
+  }
+
+  code,
+  pre {
+    @apply hg:text-sm hg:text-inherit hg:font-mono;
+  }
+
+  small {
+    @apply hg:text-sm hg:text-inherit;
+  }
+
+  strong,
+  b {
+    @apply hg:font-semibold hg:text-inherit;
+  }
+
+  em,
+  i {
+    @apply hg:italic hg:text-inherit;
+  }
+
+  hr {
+    @apply hg:my-4 hg:border-t hg:border-gray;
+  }
+
+  table,
+  th,
+  td {
+    @apply hg:text-base hg:lg:text-lg hg:2xl:text-xl hg:text-inherit;
+  }
+
+  sup {
+    font-size: 60%;
+    top: -0.5em;
+    /* ^ match normalize to avoid conflicts. */
+  }
+
+  .hide-scrollbar-x::-webkit-scrollbar {
+    height: 0px;
+  }
+
+  .hide-scrollbar-x {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  /* These apply to rich-text blocks only. */
+  .rich-text a {
+    @apply hg:underline hg:underline-offset-2 hg:decoration-1;
+    color: var(--hgc-hyperlink-color);
+  }
+
+  .rich-text a:hover,
+  .rich-text a:focus {
+    color: var(--hgc-hyperlink-color-hover);
+  }
+
+  .rich-text p {
+    @apply hg:leading-relaxed hg:my-4;
+  }
+
+  .rich-text ul {
+    @apply hg:list-disc hg:pl-5 hg:my-4;
+  }
+
+  .rich-text ol {
+    @apply hg:list-decimal hg:pl-5 hg:my-4;
+  }
+
+  .rich-text li {
+    @apply hg:mb-1;
+  }
+
+  .rich-text h2 {
+    @apply hg:mt-8 hg:mb-4;
+  }
+
+  .rich-text h3 {
+    @apply hg:mt-6 hg:mb-3;
+  }
+
+  .rich-text h4 {
+    @apply hg:mt-6 hg:mb-2;
+  }
+
+  .rich-text h5 {
+    @apply hg:mt-4 hg:mb-2;
+  }
+
+  .rich-text h6 {
+    @apply hg:mt-4 hg:mb-2;
+  }
+}
+
+@layer components {
+  /* For custom component styles (buttons, cards, etc.) */
+}
+
+@layer utilities {
+  /* For custom utility classes with highest precedence. */
+  .font-display {
+    font-family: var(--hg-font-display);
+  }
+  
+  /* Responsive text size utility */
+  .heading-responsive-8xl {
+    @apply hg:text-6xl hg:md:text-7xl hg:xl:text-8xl;
+  }
+  
+  .heading-responsive-7xl {
+    @apply hg:text-5xl hg:md:text-6xl hg:xl:text-7xl;
+  }
+  
+  .heading-responsive-6xl {
+    @apply hg:text-4xl hg:md:text-5xl hg:xl:text-6xl; /* H1 */
+  }
+
+  .heading-responsive-5xl {
+    @apply hg:text-3xl hg:md:text-4xl hg:xl:text-5xl;
+  }
+
+  .heading-responsive-4xl {
+    @apply hg:text-3xl hg:xl:text-4xl; /* H2 */
+  }
+
+  .heading-responsive-3xl {
+    @apply hg:text-2xl hg:xl:text-3xl; /* H3 */
+  }
+
+  .heading-responsive-2xl {
+    @apply hg:text-xl hg:md:text-2xl; /* H4 */
+  }
+
+  .heading-responsive-xl {
+    @apply hg:text-lg hg:md:text-xl; /* H5 */
+  }
+
+  /* Font size multiplier utilities */
+  .text-scale-75 {
+    font-size: 75%;
+    --container-font-scale: 0.75;
+  }
+
+  .text-scale-87 {
+    font-size: 87.5%;
+    --container-font-scale: 0.875;
+  }
+
+  .text-scale-100 {
+    font-size: 100%;
+    --container-font-scale: 1;
+  }
+
+  .text-scale-112 {
+    font-size: 112.5%;
+    --container-font-scale: 1.125;
+  }
+
+  .text-scale-125 {
+    font-size: 125%;
+    --container-font-scale: 1.25;
+  }
+
+  .text-scale-137 {
+    font-size: 137.5%;
+    --container-font-scale: 1.375;
+  }
+
+  .text-scale-150 {
+    font-size: 150%;
+    --container-font-scale: 1.5;
+  }
+}
+
+/* Custom overrides placed outside @layer to ensure they load last and override external styles */
+.icon-5xl {
+  font-size: var(--hg-text-5xl);
+}

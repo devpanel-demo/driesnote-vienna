@@ -1,0 +1,41 @@
+<div class="navbar hg:flex hg:justify-between hg:relative hg:z-[500] hg:py-4">
+  <div class="navbar--logo hg:max-h-25 hg:flex hg:justify-start hg:items-center hg:grow-0 hg:shrink-0">
+    {% block logo %}
+      {{ include('@mercury/components/branding/branding.twig') }}
+    {% endblock %}
+  </div>
+
+  {% set class_from_menu_align = {
+    left: 'hg:md:justify-start',
+    center: 'hg:md:justify-center',
+    right: 'hg:md:justify-end',
+  } %}
+  <div class="navbar--menu hg:h-[100vh] hg:md:h-auto hg:hidden hg:md:flex hg:fixed hg:top-4 hg:left-0 hg:w-full hg:overflow-y-auto hg:md:overflow-visible hg:md:static hg:flex-col hg:md:flex-row hg:justify-start hg:items-stretch hg:md:items-center hg:grow-1 hg:shrink-1">
+    <button class="navbar--hide-menu hg:md:hidden hg:w-[44px] hg:h-[44px] hg:self-end hg:flex hg:justify-center hg:items-center" aria-label="{{ 'Hide menu'|t }}">
+      {{ include('@mercury/components/icon/icon.twig', { icon: 'x', icon_size: 'hg:text-xl' }) }}
+    </button>
+
+    <div class="navbar--menu-contents hg:w-full hg:px-8 hg:flex hg:items-center {{ class_from_menu_align[menu_align] }}">
+      {% block navigation %}
+      {% endblock %}
+    </div>
+
+
+    <div class="navbar--links hg:w-full hg:md:w-auto hg:ml-auto hg:flex hg:justify-end hg:grow-0 hg:shrink-0">
+      {% block links %}
+        {{ include('mercury:button', {
+          variant: 'primary',
+          label: 'Button'|t,
+          icon: 'arrow-right',
+          href: 'https://example.com',
+        }) }}
+      {% endblock %}
+    </div>
+  </div>
+
+  <div class="navbar--hamburger-container hg:min-w-[44px] hg:min-h-[44px] hg:flex hg:justify-center hg:items-center hg:md:hidden hg:grow-0 hg:shrink-0">
+    <button class="navbar--hamburger hg:flex hg:justify-center hg:items-center" aria-label="{{ 'Show menu'|t }}">
+      {{ include('@mercury/components/icon/icon.twig', { icon: 'list', icon_size: 'hg:text-xl' }) }}
+    </button>
+  </div>
+</div>

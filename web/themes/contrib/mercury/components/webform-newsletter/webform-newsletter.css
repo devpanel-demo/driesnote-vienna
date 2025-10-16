@@ -1,0 +1,123 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+@layer properties;
+.storybook-component--webform-newsletter {
+  padding: calc(var(--hg-spacing, 4px) * 4);
+}
+@layer components {
+  .mercury-scheme--vanilla-light {
+    .webform-category--footer.webform-submission-form .form-email {
+      border-color: var(--hg-color-gray-light, #d1d5db);
+      background-color: var(--hg-color-body-bg, #ffffff);
+      &:focus {
+        border-color: var(--hg-color-brand, #155dfc);
+      }
+    }
+  }
+  .mercury-scheme--vanilla-dark {
+    .webform-category--footer.webform-submission-form .form-email {
+      border-color: var(--hg-color-gray-dark, #374151);
+      background-color: var(--hg-color-body-bg, #ffffff);
+      color: var(--hg-color-white, #ffffff);
+      &::placeholder {
+        color: var(--hg-color-accent-light, #fce7f3);
+      }
+      &:focus {
+        border-color: var(--hg-color-brand, #155dfc);
+      }
+    }
+  }
+  .mercury-scheme--byte-dark {
+    .webform-category--footer.webform-submission-form .form-email {
+      &::placeholder {
+        color: var(--hg-color-accent-light, #fce7f3);
+      }
+    }
+  }
+  .webform-category--footer.webform-submission-form {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--hg-spacing, 4px) * 3);
+    padding-inline: calc(var(--hg-spacing, 4px) * 0);
+    .form-type-webform-markup {
+      p {
+        margin-block: calc(var(--hg-spacing, 4px) * 0);
+        font-size: var(--hg-text-sm, 0.875rem);
+        line-height: var(--tw-leading, var(--hg-text-sm--line-height, 1.5));
+      }
+      h2 {
+        margin-bottom: calc(var(--hg-spacing, 4px) * 2);
+        font-size: var(--hg-text-lg, 1.125rem);
+        line-height: var(--tw-leading, var(--hg-text-lg--line-height, 1.5));
+        --tw-font-weight: var(--hg-font-weight-normal, 400);
+        font-weight: var(--hg-font-weight-normal, 400);
+      }
+    }
+    .visually-hidden {
+      display: none;
+    }
+    .webform-type-fieldset .fieldset-wrapper {
+      display: flex;
+      align-items: center;
+      gap: calc(var(--hg-spacing, 4px) * 2);
+    }
+    .form-item {
+      margin-block: calc(var(--hg-spacing, 4px) * 0) !important;
+    }
+    .form-email {
+      width: 100%;
+      border-radius: var(--hg-radius-md, 0.375rem);
+      border-style: var(--tw-border-style) !important;
+      border-width: 1px !important;
+      padding-inline: calc(var(--hg-spacing, 4px) * 3);
+      padding-block: calc(var(--hg-spacing, 4px) * 0);
+      font-size: var(--hg-text-sm, 0.875rem) !important;
+      line-height: var(--tw-leading, var(--hg-text-sm--line-height, 1.5)) !important;
+      --tw-leading: 30px;
+      line-height: 30px;
+    }
+    .form-item label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+    .form-submit.button {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: calc(var(--hg-spacing, 4px) * 1);
+      border-radius: var(--hg-radius-md, 0.375rem);
+      padding-inline: calc(var(--hg-spacing, 4px) * 4);
+      padding-block: 6px;
+      font-size: var(--hg-text-sm, 0.875rem);
+      line-height: var(--tw-leading, var(--hg-text-sm--line-height, 1.5));
+    }
+  }
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-font-weight: initial;
+      --tw-border-style: solid;
+      --tw-leading: initial;
+    }
+  }
+}

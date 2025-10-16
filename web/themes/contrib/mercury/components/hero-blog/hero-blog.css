@@ -1,0 +1,37 @@
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+.storybook-component--hero-blog {
+  width: 100%;
+  @media (width >= 40rem) {
+    max-width: 40rem;
+  }
+  @media (width >= 48rem) {
+    max-width: 48rem;
+  }
+  @media (width >= 64rem) {
+    max-width: 64rem;
+  }
+  @media (width >= 80rem) {
+    max-width: 80rem;
+  }
+  @media (width >= 96rem) {
+    max-width: 96rem;
+  }
+  margin-inline: auto;
+}
+@layer components {
+  .hero-blog {
+    color: var(--hg-color-body-text);
+    .heading.heading--size-default {
+      --hg-text-8xl: 3.5rem;
+      --hg-text-6xl: 3rem;
+      --hg-text-5xl: 2.5rem;
+    }
+    img {
+      overflow: hidden;
+      border-radius: var(--hg-radius-md, 0.375rem);
+    }
+  }
+  .hero-blog--author > a {
+    color: var(--hg-color-body-text, #000000);
+  }
+}

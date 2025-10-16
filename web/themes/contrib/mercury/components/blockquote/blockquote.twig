@@ -1,0 +1,18 @@
+{% set classes = [
+    'blockquote',
+    'hg:flex hg:flex-col hg:gap-4',
+  ]
+%}
+
+<blockquote class="{{ classes|join(' ') }}" {% if cite_url and cite_url != 'No URL' %}cite="{{ cite_url }}{% endif %}">
+  <p class="blockquote-text">{{ text }}</p>
+  <footer class="blockquote-name hg:text-left">{{ cite_name }}<br>
+    <cite class="blockquote-cite">
+      {% if cite_url and cite_url != 'No URL' %}
+        <a href="{{ cite_url}}" target="_blank" class="blockquote-cite--text">{{ cite_text }}</a>
+      {% else %}
+        <span class="blockquote-cite--text">{{ cite_text }}</span>
+      {% endif %}
+    </cite>
+  </footer>
+</blockquote>

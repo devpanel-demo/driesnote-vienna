@@ -1,0 +1,50 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: CTA
+description: A CTA section with inline styles for testing purposes
+group: Components
+props:
+  type: object
+  properties:
+    heading_text:
+      type: string
+      title: Heading
+      description: The main heading of the cta
+      examples:
+        - Lorem ipsum dolor sit amet finibus aliquam pharetra
+    level:
+      type: number
+      title: Heading Level
+      enum: [1,2,3,4,5,6]
+      examples: 
+        - 2
+    text:
+      type: string
+      title: Text
+      examples:
+        - Lorem ipsum dolor sit amet finibus aliquam pharetra mauris aenean pellentesque enim mus.
+    text_align:
+      type: string
+      title: Text alignment
+      description: Set alignment of text
+      enum: ['center', 'left', 'right']
+      default: center
+      examples: 
+        - center
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Background Image
+      description: The background image for the cta.
+      type: object
+      examples:
+        - src: 'assets/256381.jpg'
+          alt: 'Photo by pixabay'
+    has_background_image:
+      type: boolean
+      title: Show Background image
+      description: Set if the background image is used.
+      default: false
+
+slots:
+  actions:
+    title: Buttons
+    description: This is the links as buttons

@@ -1,0 +1,55 @@
+{% set menu_classes = menu_classes|default([])|merge([
+  'footer-menu',
+  'hg:w-full',
+  'hg:list-none',
+  'hg:grid',
+  'hg:grid-cols-1',
+  'hg:sm:grid-cols-2',
+  'hg:lg:grid-cols-4',
+  'hg:gap-8',
+  'hg:xl:gap-12',
+  'hg:p-0',
+])|filter(v => v is not empty) %}
+
+{% if storybook.items %}
+  {% if menu_level == 0 %}
+    <ul class="{{ menu_classes|join(' ') }}">
+  {% else %}
+    <ul class="menu">
+  {% endif %}
+  {% for item in storybook.items %}
+      {%
+        set classes = [
+          'hg:list-none hg:flex hg:flex-col hg:gap-y-4 hg:max-w-fit',
+          'menu-item',
+          item.is_expanded ? 'menu-item--expanded',
+          item.is_collapsed ? 'menu-item--collapsed',
+          item.in_active_trail ? 'menu-item--active-trail',
+        ]
+      %}
+    <li class="hg:flex hg:flex-col hg:gap-3">
+      <a href="{{ item.url }}" class="parent-link hg:flex hg:items-center hg:justify-between hg:gap-x-1 hg:group">
+        {{ item.title }}
+      </a>
+
+      {# {{ menus.menu_links(item.below, attributes, menu_level + 1) }} #}
+      {% if item.below %}
+        <ul class="footer-menu-children hg:list-none hg:flex hg:flex-col hg:gap-2 hg:md:gap-4 hg:p-0">
+          {% for child in item.below %}
+            <li class="hg:group">
+              <a href="{{ child.url }}" class="hg:block below-link">
+                {{ child.title }}
+              </a>
+
+              {# Recursive call for deeper levels #}
+              {% if child.below %}
+                {{ menus.menu_links(child.below, attributes, menu_level + 2) }}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+{% endif %}
