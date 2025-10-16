@@ -12,7 +12,7 @@
 /patches.lock.json
 /private/
 /README.md
-/recipes/
+# /recipes/
 /vendor/
 
 # /web/core/
