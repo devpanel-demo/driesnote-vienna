@@ -110,6 +110,8 @@
             "url": "https://packages.drupal.org/8"
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "composer/composer": "^2.8",
         "composer/installers": "^2.3",
@@ -153,8 +155,6 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "config": {
         "allow-plugins": {
             "composer/installers": true,
