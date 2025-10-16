@@ -2,10 +2,8 @@
 
 cd $APP_ROOT
 
-#== Remove root-owned files.
-echo
 echo Remove root-owned files.
-time sudo rm -rf lost+found
+sudo rm -rf lost+found
 
 STATIC_FILES_PATH="$WEB_ROOT/sites/default/files"
 SETTINGS_FILES_PATH="$WEB_ROOT/sites/default/settings.php"
