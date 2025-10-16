@@ -17,7 +17,13 @@ fi
 
 #== Composer install.
 if [[ -f "$APP_ROOT/composer.json" ]]; then
-  cd $APP_ROOT && composer install;
+  # cd $APP_ROOT && composer install;
+  cd $APP_ROOT
+  if [[ ! -f composer.lock ]]; then
+    composer update --no-interaction --no-progress
+  else
+    composer install --no-interaction --no-progress
+  fi
 fi
 if [[ -f "$WEB_ROOT/composer.json" ]]; then
   cd $WEB_ROOT && composer install;
@@ -34,7 +40,7 @@ cd $WEB_ROOT && git submodule update --init --recursive
 [[ ! -d $STATIC_FILES_PATH ]] && sudo mkdir --mode 775 $STATIC_FILES_PATH || sudo chmod 775 -R $STATIC_FILES_PATH
 
 #== Drush Site Install
-if [[ $(mysql --ssl-mode=DISABLED -h$DB_HOST -P$DB_PORT -u$DB_USER -p$DB_PASSWORD $DB_NAME -e "show tables;") == '' ]]; then
+if [[ $(mysql -h$DB_HOST -P$DB_PORT -u$DB_USER -p$DB_PASSWORD $DB_NAME --skip-ssl -e "show tables;") == '' ]]; then
   echo "> Drush status"
   drush status
   
