@@ -34,7 +34,6 @@ echo 'Generate hash salt ...'
 DRUPAL_HASH_SALT=$(openssl rand -hex 32);
 echo $DRUPAL_HASH_SALT > $APP_ROOT/.devpanel/salt.txt
 
-
 # Securing file permissions and ownership
 # https://www.drupal.org/docs/security-in-drupal/securing-file-permissions-and-ownership
 [[ ! -d $STATIC_FILES_PATH ]] && sudo mkdir --mode 775 $STATIC_FILES_PATH || sudo chmod 775 -R $STATIC_FILES_PATH

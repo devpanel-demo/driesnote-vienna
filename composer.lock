@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "211c25e7ccf16d08700c52725604dd46",
+    "content-hash": "41cdc1137d8228182a4e3903bb269b98",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1797,7 +1797,8 @@
             "homepage": "https://www.drupal.org/project/ai",
             "support": {
                 "source": "https://git.drupalcode.org/project/ai"
-            }
+            },
+            "time": "2025-10-15T14:03:04+00:00"
         },
         {
             "name": "drupal/ai_agents",
@@ -1871,7 +1872,8 @@
             ],
             "support": {
                 "source": "https://git.drupalcode.org/project/ai_agents"
-            }
+            },
+            "time": "2025-10-13T09:16:55+00:00"
         },
         {
             "name": "drupal/ai_image_alt_text",
@@ -2061,7 +2063,8 @@
             "homepage": "https://www.drupal.org/project/ai_provider_openai",
             "support": {
                 "source": "https://git.drupalcode.org/project/ai_provider_openai"
-            }
+            },
+            "time": "2025-10-13T09:20:57+00:00"
         },
         {
             "name": "drupal/ai_search",
@@ -2253,7 +2256,8 @@
             "homepage": "https://www.drupal.org/project/ai_vdb_provider_milvus",
             "support": {
                 "source": "https://git.drupalcode.org/project/ai_vdb_provider_milvus"
-            }
+            },
+            "time": "2025-09-30T20:18:52+00:00"
         },
         {
             "name": "drupal/automatic_updates",
@@ -3549,34 +3553,6 @@
             }
         },
         {
-            "name": "drupal/drupal_cms_admin_ui",
-            "version": "2.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "recipes/drupal_cms_admin_ui",
-                "reference": "f6b6295c0d5269a5e914d4e4d81ca72fd92e2434"
-            },
-            "require": {
-                "drupal/coffee": "^2",
-                "drupal/core": "^11.2",
-                "drupal/dashboard": "^2",
-                "drupal/drupal_cms_helper": "^2",
-                "drupal/gin": "^5",
-                "drupal/gin_login": "^2.1",
-                "drupal/project_browser": "^2.1-beta3",
-                "drupal/sam": "^1.2",
-                "drupal/tagify": "^1.2"
-            },
-            "type": "drupal-recipe",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Sets up a nice administrative theme and navigation.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
             "name": "drupal/drupal_cms_ai",
             "version": "2.x-dev",
             "dist": {
@@ -3602,92 +3578,6 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Adds integration with AI services, such as alt text generation and a chat bot to assist with site building. Requires an API key from Open AI or Anthropic.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "drupal/drupal_cms_anti_spam",
-            "version": "2.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "recipes/drupal_cms_anti_spam",
-                "reference": "eb699f3422ad42725a1d26ec3a0bb3a6dd3242d5"
-            },
-            "require": {
-                "drupal/captcha": "^2.0.7",
-                "drupal/core": "^10.4 || ^11",
-                "drupal/friendly_captcha_challenge": "^0.9",
-                "drupal/friendlycaptcha": "^1.1",
-                "drupal/honeypot": "^2.1"
-            },
-            "type": "drupal-recipe",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Sets up anti-spam and anti-abuse functionality.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "drupal/drupal_cms_authentication",
-            "version": "2.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "recipes/drupal_cms_authentication",
-                "reference": "81e2c854d3815cdd89702aa03616fded3cb6b754"
-            },
-            "require": {
-                "drupal/bpmn_io": "^3",
-                "drupal/core": "^10.3 || ^11",
-                "drupal/eca": "^3.0.1",
-                "drupal/login_emailusername": "^3",
-                "drupal/modeler_api": "^1",
-                "drupal/token": "^1"
-            },
-            "type": "drupal-recipe",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Sets up a site with useful authentication features.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "drupal/drupal_cms_content_type_base",
-            "version": "2.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "recipes/drupal_cms_content_type_base",
-                "reference": "1bee32638f86e5571e4621b699433350a33d397f"
-            },
-            "require": {
-                "drupal/autosave_form": "^1.10",
-                "drupal/bpmn_io": "^3",
-                "drupal/core": "^10.4 || ^11",
-                "drupal/drupal_cms_image": "^2",
-                "drupal/eca": "^3.0.1",
-                "drupal/linkit": "^7",
-                "drupal/modeler_api": "^1",
-                "drupal/pathauto": "^1.13",
-                "drupal/scheduler": "^2.2",
-                "drupal/scheduler_content_moderation_integration": "^3.0.4",
-                "drupal/tagify": "^1.2",
-                "drupal/token": "^1",
-                "drupal/trash": "^3.0.13"
-            },
-            "type": "drupal-recipe",
-            "autoload": {
-                "classmap": [
-                    "tests/src/Traits/ContentModelTestTrait.php"
-                ]
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Provides basic tools for creating content.",
             "transport-options": {
                 "relative": true
             }
@@ -3758,154 +3648,6 @@
             }
         },
         {
-            "name": "drupal/drupal_cms_image",
-            "version": "2.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "recipes/drupal_cms_image",
-                "reference": "0bc2d4fb592c308c93780d4b977136962d0b5db9"
-            },
-            "require": {
-                "drupal/bpmn_io": "^3",
-                "drupal/core": "^10.4 || ^11",
-                "drupal/eca": "^3.0.4",
-                "drupal/focal_point": "^2",
-                "drupal/modeler_api": "^1",
-                "drupal/svg_image": "^3.1",
-                "drupal/token": "^1"
-            },
-            "type": "drupal-recipe",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Sets up base image configuration including responsive image styles, view modes, focal point-based cropping and SVG images.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "drupal/drupal_cms_page",
-            "version": "2.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "recipes/drupal_cms_page",
-                "reference": "fb58e8079746489868fa045117137e70acc69767"
-            },
-            "require": {
-                "drupal/core": "^10.4 || ^11",
-                "drupal/drupal_cms_content_type_base": "^2"
-            },
-            "type": "drupal-recipe",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Adds a content type for simple pages.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "drupal/drupal_cms_privacy_basic",
-            "version": "2.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "recipes/drupal_cms_privacy_basic",
-                "reference": "529ad0d0ce25445a1f2954799603df710990b282"
-            },
-            "require": {
-                "drupal/bpmn_io": "^3",
-                "drupal/core": "^10.4 || ^11",
-                "drupal/drupal_cms_page": "^2",
-                "drupal/eca": "^3.0.1",
-                "drupal/klaro": "^3",
-                "drupal/menu_link_attributes": "^1.5",
-                "drupal/modeler_api": "^1"
-            },
-            "type": "drupal-recipe",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Adds basic privacy features such as consent management and remote content blocking.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "drupal/drupal_cms_remote_video",
-            "version": "2.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "recipes/drupal_cms_remote_video",
-                "reference": "bba7a19bae8e8f54d2bd889bdaf3d801bf1b7257"
-            },
-            "require": {
-                "drupal/core": "^10.4 || ^11",
-                "drupal/drupal_cms_privacy_basic": "^2"
-            },
-            "type": "drupal-recipe",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Configures display options for remote video.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "drupal/drupal_cms_search",
-            "version": "2.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "recipes/drupal_cms_search",
-                "reference": "139964ba81af67a6aedf20abf8b56c11525cdf36"
-            },
-            "require": {
-                "drupal/core": "^10.4 || ^11",
-                "drupal/drupal_cms_helper": "^2",
-                "drupal/search_api": "^1.39",
-                "drupal/search_api_autocomplete": "^1.9",
-                "drupal/search_api_exclude": "^2",
-                "drupal/simple_search_form": "^1.8"
-            },
-            "type": "drupal-recipe",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Adds a search to help visitors find content.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "drupal/drupal_cms_seo_basic",
-            "version": "2.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "recipes/drupal_cms_seo_basic",
-                "reference": "ab0fbd6b72f25cc4276918b70bad5e9c12340410"
-            },
-            "require": {
-                "drupal/core": "^10.4 || ^11",
-                "drupal/easy_breadcrumb": "^2.0.9",
-                "drupal/pathauto": "^1.13",
-                "drupal/redirect": "^1.10",
-                "drupal/token": "^1.15"
-            },
-            "suggest": {
-                "drupal/drupal_cms_accessibility_tools": "Adds automated checks to help ensure content conforms to web accessibility guidelines.",
-                "drupal/drupal_cms_google_analytics": "Adds website traffic tracking with Google Analytics.",
-                "drupal/drupal_cms_seo_tools": "Add additional SEO tools to help configure and manage meta tags, SEO analysis, sitemaps, with an SEO checklist and dashboard."
-            },
-            "type": "drupal-recipe",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Provides basic SEO best practices.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
             "name": "drupal/drupal_cms_seo_tools",
             "version": "2.x-dev",
             "dist": {
@@ -3937,44 +3679,6 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Adds common search engine optimisation tools such as meta tags, XML sitemap, robots.txt management and more.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "drupal/drupal_cms_starter",
-            "version": "2.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "recipes/drupal_cms_starter",
-                "reference": "d91b0fafb5da4ef3c1c63c890d91bf6b5e3614c1"
-            },
-            "require": {
-                "drupal/automatic_updates": "^4",
-                "drupal/bpmn_io": "^3",
-                "drupal/canvas": "1-rc1",
-                "drupal/core": "^11.2",
-                "drupal/drupal_cms_admin_ui": "^2",
-                "drupal/drupal_cms_anti_spam": "^2",
-                "drupal/drupal_cms_authentication": "^2",
-                "drupal/drupal_cms_helper": "^2",
-                "drupal/drupal_cms_page": "^2",
-                "drupal/drupal_cms_privacy_basic": "^2",
-                "drupal/drupal_cms_remote_video": "^2",
-                "drupal/drupal_cms_search": "^2",
-                "drupal/drupal_cms_seo_basic": "^2",
-                "drupal/easy_email_express": "^1.0.2",
-                "drupal/eca": "^3.0.1",
-                "drupal/gin_login": "^2.1",
-                "drupal/mercury": "0.9.8",
-                "drupal/modeler_api": "^1",
-                "drupal/token": "^1"
-            },
-            "type": "drupal-recipe",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "A basic site template to get started with Drupal CMS. Bring your own design, and build what you need.",
             "transport-options": {
                 "relative": true
             }
@@ -4137,112 +3841,6 @@
             }
         },
         {
-            "name": "drupal/easy_email_express",
-            "version": "1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/easy_email_express.git",
-                "reference": "aff24f73fe8b2e04cbb524a7887c035385ba8662"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://git.drupalcode.org/api/v4/projects/project%2Feasy_email_express/repository/archive.zip?sha=aff24f73fe8b2e04cbb524a7887c035385ba8662",
-                "reference": "aff24f73fe8b2e04cbb524a7887c035385ba8662",
-                "shasum": ""
-            },
-            "require": {
-                "drupal/core": "^10.3 || ^11",
-                "drupal/easy_email_standard": "^1.0.2",
-                "drupal/easy_email_types_core": "^1.0.3",
-                "drupal/easy_email_types_default": "^1.0.1"
-            },
-            "type": "drupal-recipe",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Easy Email configuration that replaces all core emails with HTML formatted emails.",
-            "homepage": "https://www.drupal.org/project/easy_email_express",
-            "keywords": [
-                "drupal"
-            ],
-            "support": {
-                "issues": "https://www.drupal.org/project/issues/easy_email_express",
-                "source": "https://git.drupalcode.org/project/easy_email_express"
-            },
-            "time": "2025-06-16T14:18:11+00:00"
-        },
-        {
-            "name": "drupal/easy_email_standard",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/easy_email_standard.git",
-                "reference": "e252ab7285864d7e3d63ee3e78d5c7a518f00a17"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://git.drupalcode.org/api/v4/projects/project%2Feasy_email_standard/repository/archive.zip?sha=e252ab7285864d7e3d63ee3e78d5c7a518f00a17",
-                "reference": "e252ab7285864d7e3d63ee3e78d5c7a518f00a17",
-                "shasum": ""
-            },
-            "require": {
-                "drupal/core": "^10.3 || ^11",
-                "drupal/easy_email": "^3.0.2",
-                "drupal/easy_email_theme": "^1",
-                "drupal/mailsystem": "^4",
-                "drupal/symfony_mailer_lite": "^2.0.1"
-            },
-            "type": "drupal-recipe",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Easy Email module and theme for sending HTML emails from Drupal.",
-            "homepage": "https://www.drupal.org/project/easy_email_standard",
-            "keywords": [
-                "drupal"
-            ],
-            "support": {
-                "issues": "https://www.drupal.org/project/issues/easy_email_standard",
-                "source": "https://git.drupalcode.org/project/easy_email_standard"
-            },
-            "time": "2025-06-16T14:15:30+00:00"
-        },
-        {
-            "name": "drupal/easy_email_text_format",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/easy_email_text_format.git",
-                "reference": "568b1d97a91c4aab6aa2e6a3936f280cc49f8385"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://git.drupalcode.org/api/v4/projects/project%2Feasy_email_text_format/repository/archive.zip?sha=568b1d97a91c4aab6aa2e6a3936f280cc49f8385",
-                "reference": "568b1d97a91c4aab6aa2e6a3936f280cc49f8385",
-                "shasum": ""
-            },
-            "require": {
-                "drupal/core": "^10.3 || ^11"
-            },
-            "type": "drupal-recipe",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Text format and editor config for editing HTML body of Easy Email templates.",
-            "homepage": "https://www.drupal.org/project/easy_email_text_format",
-            "keywords": [
-                "drupal"
-            ],
-            "support": {
-                "issues": "https://www.drupal.org/project/issues/easy_email_text_format",
-                "source": "https://git.drupalcode.org/project/easy_email_text_format"
-            },
-            "time": "2025-06-16T14:07:18+00:00"
-        },
-        {
             "name": "drupal/easy_email_theme",
             "version": "1.1.0",
             "source": {
@@ -4285,76 +3883,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/easy_email_theme"
             }
-        },
-        {
-            "name": "drupal/easy_email_types_core",
-            "version": "1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/easy_email_types_core.git",
-                "reference": "d8e41ba370031d8978e4dc30efaed9d91be1a75c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://git.drupalcode.org/api/v4/projects/project%2Feasy_email_types_core/repository/archive.zip?sha=d8e41ba370031d8978e4dc30efaed9d91be1a75c",
-                "reference": "d8e41ba370031d8978e4dc30efaed9d91be1a75c",
-                "shasum": ""
-            },
-            "require": {
-                "drupal/core": "^10.3 || ^11",
-                "drupal/easy_email": "^3.0.2",
-                "drupal/easy_email_text_format": "^1"
-            },
-            "type": "drupal-recipe",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Easy Email templates that replicate and override the content of emails sent by Drupal core with HTML-formatted versions.",
-            "homepage": "https://www.drupal.org/project/easy_email_types_core",
-            "keywords": [
-                "drupal"
-            ],
-            "support": {
-                "issues": "https://www.drupal.org/project/issues/easy_email_types_core",
-                "source": "https://git.drupalcode.org/project/easy_email_types_core"
-            },
-            "time": "2025-06-16T14:13:31+00:00"
-        },
-        {
-            "name": "drupal/easy_email_types_default",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/easy_email_types_default.git",
-                "reference": "7f981984cd1d1d9e6eddf4a914210d7ae3d490e2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://git.drupalcode.org/api/v4/projects/project%2Feasy_email_types_default/repository/archive.zip?sha=7f981984cd1d1d9e6eddf4a914210d7ae3d490e2",
-                "reference": "7f981984cd1d1d9e6eddf4a914210d7ae3d490e2",
-                "shasum": ""
-            },
-            "require": {
-                "drupal/core": "^10.3 || ^11",
-                "drupal/easy_email": "^3.0.2",
-                "drupal/easy_email_text_format": "^1.0.2"
-            },
-            "type": "drupal-recipe",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "A default Easy Email template configured to override all emails sent from the site.",
-            "homepage": "https://www.drupal.org/project/easy_email_types_default",
-            "keywords": [
-                "drupal"
-            ],
-            "support": {
-                "issues": "https://www.drupal.org/project/issues/easy_email_types_default",
-                "source": "https://git.drupalcode.org/project/easy_email_types_default"
-            },
-            "time": "2025-06-16T14:10:36+00:00"
         },
         {
             "name": "drupal/eca",
@@ -15411,6 +14939,27 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Adds a news content type and listing page.",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "drupal/drupal_cms_page",
+            "version": "2.x-dev",
+            "dist": {
+                "type": "path",
+                "url": "recipes/drupal_cms_page",
+                "reference": "fb58e8079746489868fa045117137e70acc69767"
+            },
+            "require": {
+                "drupal/core": "^10.4 || ^11",
+                "drupal/drupal_cms_content_type_base": "^2"
+            },
+            "type": "drupal-recipe",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Adds a content type for simple pages.",
             "transport-options": {
                 "relative": true
             }

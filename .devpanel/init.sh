@@ -32,6 +32,11 @@ fi
 # echo "Install drush locally ..."
 # composer require --dev drush/drush
 
+#== Generate hash salt
+echo 'Generate hash salt ...'
+DRUPAL_HASH_SALT=$(openssl rand -hex 32);
+echo $DRUPAL_HASH_SALT > $APP_ROOT/.devpanel/salt.txt
+
 cd $WEB_ROOT && git submodule update --init --recursive
 
 #== Install Drupal.
