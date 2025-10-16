@@ -37,9 +37,11 @@ cd $WEB_ROOT && git submodule update --init --recursive
 
 #== Drush Site Install
 if [[ $(mysql -h$DB_HOST -P$DB_PORT -u$DB_USER -p$DB_PASSWORD $DB_NAME -e "show tables;") == '' ]]; then
+  echo "> Drush status"
+  drush status
+  
   echo "Site installing ..."
   cd $APP_ROOT
-  drush status
   # sudo chown -R $APACHE_RUN_USER:$APACHE_RUN_GROUP $STATIC_FILES_PATH
   # Install
   drush si drupal_cms_installer installer_site_template_form.add_ons=byte --account-name=devpanel --account-pass=devpanel --site-name="Driesnote Vienna 2025 Demo" --db-url=mysql://$DB_USER:$DB_PASSWORD@$DB_HOST:$DB_PORT/$DB_NAME -y
